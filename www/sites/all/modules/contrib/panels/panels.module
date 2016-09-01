@@ -2018,4 +2018,29 @@ function panels_preprocess_html(&$vars) {
   if (!empty($panel_body_css['body_classes_to_add'])) {
     $vars['classes_array'][] = check_plain($panel_body_css['body_classes_to_add']);
   }
+
+  // Set window title if manually configured.
+  $tasks = page_manager_get_current_page();
+  if (isset($tasks['handler'])) {
+    if (strpos($tasks['handler']->handler, 'panelizer') === 0) {
+
+      // Get the display for panelized entities.
+      $display = $tasks['contexts'][$tasks['handler']->conf['context']]->data->panelizer['page_manager']->display;
+    }
+    else {
+
+      // Get the display for page manager pages.
+      $display = $tasks['handler']->conf['display'];
+    }
+
+    if (!empty($display->window_title)) {
+      $display_context = $display->context;
+
+      // Look for any placeholder tokens in the title and convert them for this display.
+      $head_title = ctools_context_keyword_substitute($display->window_title, array(), $display_context);
+
+      // Set the window title.
+      $vars['head_title'] = $head_title;
+    }
+  }
 }

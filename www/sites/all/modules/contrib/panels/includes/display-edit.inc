@@ -246,8 +246,17 @@ function panels_edit_display_settings_form($form, &$form_state) {
       '#maxlength' => 255,
     );
 
+    $form['display_title']['window_title'] = array(
+      '#type' => 'textfield',
+      '#default_value' => $display->window_title,
+      '#title' => t('Window Title'),
+      '#description' => t('The window title of this panel, as shown in the browser\'s title bar. If left blank, a default title will be used.'),
+      '#maxlength' => 255,
+    );
+
     if (!empty($display->context)) {
       $form['display_title']['title']['#description'] .= ' ' . t('You may use substitutions in this title.');
+      $form['display_title']['window_title']['#description'] .= ' ' . t('You may use substitutions in this title.');
 
       // We have to create a manual fieldset because fieldsets do not support IDs.
       // Use 'hidden' instead of 'markup' so that the process will run.
@@ -324,5 +333,9 @@ function panels_edit_display_settings_form_submit($form, &$form_state) {
   if (isset($form_state['values']['display_title']['title'])) {
     $display->title = $form_state['values']['display_title']['title'];
     $display->hide_title = $form_state['values']['display_title']['hide_title'];
+  }
+
+  if (isset($form_state['values']['display_title']['window_title'])) {
+    $display->window_title = $form_state['values']['display_title']['window_title'];
   }
 }
