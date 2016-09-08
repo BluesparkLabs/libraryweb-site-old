@@ -1,15 +1,14 @@
 .pane-page-site-alert {
-  .l-region--help & {
-    margin-left: -20px;
-    margin-right: -20px;
-  }
   div.text {
-    text-align: center;
-    padding: .6em 2em;
-    margin: 0;
+    border: none;
+    color: #58595B;
     font-size: 18px;
     line-height: 32px;
-    color: #58595B;
+    margin: 0 auto;
+    max-width: 1004px;
+    padding: .6em 20px;
+    padding: .6em 1.25rem;
+    text-align: center;
     &:before {
       content: "";
       background-image: url('../../../images/icon-alert.png');
@@ -17,7 +16,6 @@
       background-repeat: no-repeat;
       width: 32px;
       height: 32px;
-      margin-left: -37px;
       display: inline-block;
       vertical-align: middle;
       margin-right: 5px;

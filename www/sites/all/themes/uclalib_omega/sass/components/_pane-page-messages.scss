@@ -1,4 +1,63 @@
 .pane-page-messages {
-  padding: 1em 0;
+  padding: 0;
+  margin: 0;
   word-wrap: break-word;
+}
+.messages {
+  border: none;
+  color: #58595B;
+  font-size: 18px;
+  line-height: 32px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+
+  span[class^='icon-'] {
+    &:before {
+      content: "";
+      background-repeat: no-repeat;
+      width: 32px;
+      height: 32px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+  }
+
+  .icon-error:before,
+  .icon-warning:before {
+    background-image: url('../images/icon-alert.png');
+    background-image: url('../images/icon-alert.svg'), none;
+  }
+
+  .icon-status:before {
+    background-image: url('../images/icon-status.png');
+    background-image: url('../images/icon-status.svg'), none;
+  }
+
+  .krumo-root {
+    text-align: left;
+  }
+}
+
+.messages__wrapper {
+  @include display-flex;
+  @include align-items(center);
+  @include justify-content(center);
+  margin: 0 auto;
+  max-width: 1004px;
+  padding: .6em 20px;
+  padding: .6em 1.25rem;
+}
+
+.messages--status {
+  background: #d2fbb0;
+}
+
+.messages--error {
+  background: #f1c9ca;
+}
+
+.messages--warning {
+  background: #fee4b1;
 }
