@@ -400,7 +400,7 @@ function uclalib_location_panelizer_defaults() {
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => '',
+      'css_class' => 'mobile-collapsible mobile-collapsible--title-hidden-on-desktop',
     );
     $pane->extras = array();
     $pane->position = 1;
