@@ -3909,6 +3909,7 @@ a.next-week:after {
 .page-search .view-id-content_search .views-exposed-widgets .form-text {
   font-size: 18px;
   padding: .3em .5em;
+  width: 100%;
 }
 @media (max-width: 480px) {
   .view-site-multi-search .views-exposed-widgets .form-submit,

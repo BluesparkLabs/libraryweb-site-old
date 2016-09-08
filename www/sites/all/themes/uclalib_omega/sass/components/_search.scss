@@ -39,6 +39,7 @@
     .form-text {
       font-size: 18px;
       padding: .3em .5em;
+      width: 100%;
       @media #{$palm-only} {
         width: 100%;
         float: none;
