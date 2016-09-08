@@ -1,5 +1,18 @@
 (function ($) {
 
+  Drupal.behaviors.uclalibFillMurrayImageFallback = {
+    attach: function() {
+      $('img').error(function() {
+        width = $(this).width() ? $(this).width() : 400;
+        height = $(this).height() ? $(this).height() : 300;
+        console.log('Drupal.behaviors.uclalibFillMurrayImageFallback');
+        console.log('...replacing ' + $(this).attr('src'));
+        console.log('...with http://www.fillmurray.com/g/'  + width + '/' + height );
+        $(this).attr('src', 'http://www.fillmurray.com/g/' + width + '/' + height);
+      });
+    }
+  }
+
   Drupal.behaviors.uclalibSearchToggle = {
     attach: function () {
       $('.header-search-form-label').click( function () {
