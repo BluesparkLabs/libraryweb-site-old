@@ -1,3 +1,4 @@
+.view-site-multi-search,
 .page-search .view-id-content_search {
   .views-exposed-widgets {
     margin: 1em 0 2em;
@@ -7,6 +8,18 @@
   }
   .views-row {
     margin-bottom: 1em;
+  }
+}
+
+.view-site-multi-search {
+  .views-field-page-manager-pages-title,
+  .views-field-site-general-search-title {
+    font-size: 20px;
+
+    ~ .views-field-search-api-excerpt {
+      margin-top: .6em;
+      font-size: 16px;
+    }
   }
 }
 
