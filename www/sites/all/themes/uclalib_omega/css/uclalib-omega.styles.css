@@ -3669,6 +3669,18 @@ a.next-week:after {
     padding-left: 0;
     padding-right: 0;
   }
+
+  .pane-node-field-location-social-links,
+  .pane-bean-arts-research-guides,
+  .pane-at-this-location-block-panel-pane-1,
+  .pane-about-this-library-panel-pane-1 {
+    display: none;
+  }
+
+  .pane-location-header {
+    display: block;
+    text-align: center;
+  }
 }
 @media (max-width: 480px) {
   .panel-display--grid-2 .grid-item:nth-child(odd),
