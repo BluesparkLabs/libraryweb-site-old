@@ -214,67 +214,6 @@ function uclalib_opening_hours_panelizer_defaults() {
     $display->content['new-f847283e-0295-4abf-bb19-b2fcc15a28d1'] = $pane;
     $display->panels['left'][2] = 'new-f847283e-0295-4abf-bb19-b2fcc15a28d1';
     $pane = new stdClass();
-    $pane->pid = 'new-9eb2b41f-9ac8-4182-a6eb-939934f0adc5';
-    $pane->panel = 'left';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_address';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'label' => 'hidden',
-      'formatter' => 'text_default',
-      'delta_limit' => 0,
-      'delta_offset' => '0',
-      'delta_reversed' => FALSE,
-      'formatter_settings' => array(),
-      'context' => 'panelizer',
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 3;
-    $pane->locks = array();
-    $pane->uuid = '9eb2b41f-9ac8-4182-a6eb-939934f0adc5';
-    $display->content['new-9eb2b41f-9ac8-4182-a6eb-939934f0adc5'] = $pane;
-    $display->panels['left'][3] = 'new-9eb2b41f-9ac8-4182-a6eb-939934f0adc5';
-    $pane = new stdClass();
-    $pane->pid = 'new-a3a70c53-4fda-4058-aee8-06c014ec3b64';
-    $pane->panel = 'left';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_location_phone';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'label' => 'hidden',
-      'formatter' => 'phone',
-      'delta_limit' => 0,
-      'delta_offset' => '0',
-      'delta_reversed' => FALSE,
-      'formatter_settings' => array(),
-      'context' => 'panelizer',
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'icon-telephone',
-    );
-    $pane->extras = array();
-    $pane->position = 4;
-    $pane->locks = array();
-    $pane->uuid = 'a3a70c53-4fda-4058-aee8-06c014ec3b64';
-    $display->content['new-a3a70c53-4fda-4058-aee8-06c014ec3b64'] = $pane;
-    $display->panels['left'][4] = 'new-a3a70c53-4fda-4058-aee8-06c014ec3b64';
-    $pane = new stdClass();
     $pane->pid = 'new-b8d781fd-813b-4220-aafd-b02d61f34ec2';
     $pane->panel = 'left';
     $pane->type = 'entity_field';
@@ -296,16 +235,63 @@ function uclalib_opening_hours_panelizer_defaults() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => 'icon-email',
-    );
+    $pane->css = array();
     $pane->extras = array();
-    $pane->position = 5;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = 'b8d781fd-813b-4220-aafd-b02d61f34ec2';
     $display->content['new-b8d781fd-813b-4220-aafd-b02d61f34ec2'] = $pane;
-    $display->panels['left'][5] = 'new-b8d781fd-813b-4220-aafd-b02d61f34ec2';
+    $display->panels['left'][3] = 'new-b8d781fd-813b-4220-aafd-b02d61f34ec2';
+    $pane = new stdClass();
+    $pane->pid = 'new-0e9bd57b-ddf8-472c-bf97-7ed82d21a017';
+    $pane->panel = 'left';
+    $pane->type = 'custom';
+    $pane->subtype = 'field_location_phone_icomoon';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => '',
+      'body' => '',
+      'format' => 'full_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $pane->uuid = '0e9bd57b-ddf8-472c-bf97-7ed82d21a017';
+    $display->content['new-0e9bd57b-ddf8-472c-bf97-7ed82d21a017'] = $pane;
+    $display->panels['left'][4] = 'new-0e9bd57b-ddf8-472c-bf97-7ed82d21a017';
+    $pane = new stdClass();
+    $pane->pid = 'new-684cb279-0034-4acc-8f6e-761208d0bd50';
+    $pane->panel = 'left';
+    $pane->type = 'custom';
+    $pane->subtype = 'field_location_email_icomoon';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => '',
+      'body' => '',
+      'format' => 'full_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 5;
+    $pane->locks = array();
+    $pane->uuid = '684cb279-0034-4acc-8f6e-761208d0bd50';
+    $display->content['new-684cb279-0034-4acc-8f6e-761208d0bd50'] = $pane;
+    $display->panels['left'][5] = 'new-684cb279-0034-4acc-8f6e-761208d0bd50';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $panelizer->display = $display;
