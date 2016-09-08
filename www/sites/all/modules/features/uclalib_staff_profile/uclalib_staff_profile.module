@@ -37,9 +37,16 @@ function uclalib_staff_profile_preprocess_node(&$variables) {
     }
     // prepare name
     if ($variables['field_staff_middle_name']) {
-      $variables['content']['uclalib_staff_name'] = $variables['field_staff_name_prefix'][0]['safe_value'] ." ". $variables['field_staff_first_name'][0]['safe_value'] ." ". $variables['field_staff_middle_name'][0]['safe_value'] ." ". $variables['field_staff_last_name'][0]['safe_value'] ." ". $variables['field_staff_name_suffix'][0]['safe_value'];
+      $variables['content']['uclalib_staff_name'] = @$variables['field_staff_name_prefix'][0]['safe_value']
+        ." ". @$variables['field_staff_first_name'][0]['safe_value']
+        ." ". @$variables['field_staff_middle_name'][0]['safe_value']
+        ." ". @$variables['field_staff_last_name'][0]['safe_value']
+        ." ". @$variables['field_staff_name_suffix'][0]['safe_value'];
     } else {
-      $variables['content']['uclalib_staff_name'] = $variables['field_staff_name_prefix'][0]['safe_value'] ." ". $variables['field_staff_first_name'][0]['safe_value'] ." ". $variables['field_staff_last_name'][0]['safe_value'] ." ". $variables['field_staff_name_suffix'][0]['safe_value'];
+      $variables['content']['uclalib_staff_name'] = @$variables['field_staff_name_prefix'][0]['safe_value']
+        ." ". @$variables['field_staff_first_name'][0]['safe_value']
+        ." ". @$variables['field_staff_last_name'][0]['safe_value']
+        ." ". @$variables['field_staff_name_suffix'][0]['safe_value'];
     }
     // hide select labels
     $variables['content']['field_staff_departments']['#label_display'] = 'hidden';
