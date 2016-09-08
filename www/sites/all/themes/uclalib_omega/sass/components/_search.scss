@@ -1,24 +1,74 @@
 .view-site-multi-search,
 .page-search .view-id-content_search {
+
+  .view-content,
+  .view-content ~ .pager {
+    max-width: 690px;
+  }
+  .views-exposed-form {
+    margin: 0 0 30px;
+    padding: 30px 0;
+    border-bottom: 1px solid $ucla-lt-gray;
+  }
   .views-exposed-widgets {
-    margin: 1em 0 2em;
+    max-width: 690px;
+    @media #{$lap-desk-only} {
+      @include display-flex;
+      @include align-items(stretch);
+      @include justify-content(center);
+
+      > div {
+        float: none;
+        margin: 0;
+      }
+    }
+
+    .views-widget-filter-search_api_multi_fulltext {
+      width: 100%;
+    }
+    label {
+      display: none;
+    }
     .form-submit {
-      margin-top: 1.25em !important;
+      background: #000;
+      border: 1px solid #000;
+      color: #fff;
+      margin-top: 0 !important;
+    }
+    .form-submit,
+    .form-text {
+      font-size: 18px;
+      padding: .3em .5em;
+      @media #{$palm-only} {
+        width: 100%;
+        float: none;
+        margin: 0 0 .5em;
+      }
     }
   }
+
+
+  .views-exposed-form .views-exposed-widget {
+    margin: 0;
+  }
+
   .views-row {
-    margin-bottom: 1em;
+    margin-bottom: 30px;
+    max-width: 690px;
   }
 }
 
 .view-site-multi-search {
+  .views-field-search-api-excerpt {
+    font-size: 16px;
+    font-weight: 100;
+  }
   .views-field-page-manager-pages-title,
   .views-field-site-general-search-title {
     font-size: 20px;
 
     ~ .views-field-search-api-excerpt {
-      margin-top: .6em;
-      font-size: 16px;
+      margin-top: .2em;
     }
   }
 }
