@@ -2277,6 +2277,15 @@ a.more-link,
   font-size: 18px;
 }
 
+.pane-all-facilities {
+  display: none;
+}
+@media (min-width: 768px) {
+  .pane-all-facilities {
+    display: block;
+  }
+}
+
 .pane-ask-a-librarian {
   border-radius: 3px;
   background: #fdb930;

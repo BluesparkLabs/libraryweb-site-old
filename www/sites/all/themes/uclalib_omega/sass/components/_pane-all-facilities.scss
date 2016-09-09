@@ -1,0 +1,7 @@
+.pane-all-facilities {
+  display: none;
+
+  @media #{$desk-only} {
+    display: block;
+  }
+}
