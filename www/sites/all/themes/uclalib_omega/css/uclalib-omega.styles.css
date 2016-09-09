@@ -3598,6 +3598,9 @@ a.next-week:after {
     padding-left: 5%;
     padding-right: 5%;
   }
+  .sidebar-tier-1 + .sidebar-tier-1 ul li ul li, .l-region--sidebar-left .pane-sibling-content + .sidebar-tier-1 ul li ul li, .l-region--sidebar-left .pane-sub-content + .sidebar-tier-1 ul li ul li, .l-region--sidebar-left .pane-uclalib-nav + .sidebar-tier-1 ul li ul li, .l-region--sidebar-left .sidebar-tier-1 + .pane-sibling-content ul li ul li, .l-region--sidebar-left .pane-sibling-content + .pane-sibling-content ul li ul li, .l-region--sidebar-left .pane-sub-content + .pane-sibling-content ul li ul li, .l-region--sidebar-left .pane-uclalib-nav + .pane-sibling-content ul li ul li, .l-region--sidebar-left .sidebar-tier-1 + .pane-sub-content ul li ul li, .l-region--sidebar-left .pane-sibling-content + .pane-sub-content ul li ul li, .l-region--sidebar-left .pane-sub-content + .pane-sub-content ul li ul li, .l-region--sidebar-left .pane-uclalib-nav + .pane-sub-content ul li ul li, .l-region--sidebar-left .sidebar-tier-1 + .pane-uclalib-nav ul li ul li, .l-region--sidebar-left .pane-sibling-content + .pane-uclalib-nav ul li ul li, .l-region--sidebar-left .pane-sub-content + .pane-uclalib-nav ul li ul li, .l-region--sidebar-left .pane-uclalib-nav + .pane-uclalib-nav ul li ul li {
+    border-bottom: 0;
+  }
 }
 
 .sidebar-tier-2, .l-region--sidebar-left .pane-quick-links {
