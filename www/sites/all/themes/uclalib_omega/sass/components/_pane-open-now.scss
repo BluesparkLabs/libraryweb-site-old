@@ -7,5 +7,15 @@
     font-size: 14px;
     font-weight: bold;
     background: $ucla-yellow;
+
+    @media #{$palm-lap-only} {
+      padding: 12px 28px;
+      position: relative;
+    }
+  }
+
+  @media #{$palm-lap-only} {
+    padding: 0 !important;
+    border-bottom: 1px solid #fff !important;
   }
 }

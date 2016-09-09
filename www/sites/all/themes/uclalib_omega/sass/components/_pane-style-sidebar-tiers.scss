@@ -85,8 +85,16 @@
 // Make two adjoined sidebar tier 1s appear as connected, by removing whitespace
 // between them.
 .sidebar-tier-1 + .sidebar-tier-1 {
-  margin-top: -15px;
-  padding-top: 0;
+  @media #{$desk-only} {
+    margin-top: -15px;
+    padding-top: 0;
+  }
+  @media #{$palm-lap-only} {
+    padding: 0;
+    ul li {
+      border-bottom: 1px solid #fff;
+    }
+  }
 }
 
 .sidebar-tier-2 {

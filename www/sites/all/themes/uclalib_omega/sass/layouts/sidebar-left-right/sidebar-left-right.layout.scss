@@ -119,6 +119,8 @@
 }
 
 @media #{$palm-lap-only} {
+  .l-region--below-main-left,
+  .l-region--below-main-right,
   .l-region--below-secondary-left,
   .l-region--below-secondary-right {
     margin-top: 15px;
