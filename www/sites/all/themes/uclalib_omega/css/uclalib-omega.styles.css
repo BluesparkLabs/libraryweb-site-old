@@ -2655,6 +2655,12 @@ a.more-link,
   }
 }
 
+@media (max-width: 767px) {
+  .pane-location-header .pane-location-contact {
+    margin: 1.2em;
+  }
+}
+
 .location__address,
 .location__phone,
 .location__email {
@@ -2710,27 +2716,29 @@ a.more-link,
   margin-right: 3px;
 }
 
-.pane-location-contact--inline .location__address,
-.pane-location-contact--inline .location__phone,
-.pane-location-contact--inline .location__email {
-  display: inline-block;
-}
-.pane-location-contact--inline .location__phone:before,
-.pane-location-contact--inline .location__email:before {
-  content: " | ";
-  display: inline-block;
-  padding: 0 .4em;
+@media (min-width: 768px) {
+  .pane-location-contact--inline .location__address,
+  .pane-location-contact--inline .location__phone,
+  .pane-location-contact--inline .location__email {
+    display: inline-block;
+  }
+  .pane-location-contact--inline .location__phone:before,
+  .pane-location-contact--inline .location__email:before {
+    content: " | ";
+    display: inline-block;
+    padding: 0 .4em;
+  }
+  .pane-location-contact--inline a {
+    color: #666666;
+    transition: color .3s ease-out;
+  }
+  .pane-location-contact--inline a:hover, .pane-location-contact--inline a:active, .pane-location-contact--inline a:focus {
+    color: #3283be;
+  }
 }
 .pane-location-contact--inline .location__phone .icon-telephone,
 .pane-location-contact--inline .location__email .icon-email {
   display: none;
-}
-.pane-location-contact--inline a {
-  color: #666666;
-  transition: color .3s ease-out;
-}
-.pane-location-contact--inline a:hover, .pane-location-contact--inline a:active, .pane-location-contact--inline a:focus {
-  color: #3283be;
 }
 
 .pane-location-destinations-panel-pane-1 .view-location-destinations > .view-content > .views-row {

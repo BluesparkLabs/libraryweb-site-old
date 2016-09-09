@@ -1,4 +1,9 @@
 // Styles for location_contact.inc custom CTools content type.
+.pane-location-header .pane-location-contact {
+  @media #{$palm-lap-only} {
+    margin: 1.2em;
+  }
+}
 
 .location__address,
 .location__phone,
@@ -48,31 +53,34 @@
 }
 
 .pane-location-contact--inline {
-  .location__address,
-  .location__phone,
-  .location__email {
-    display: inline-block;
-  }
-
-  .location__phone,
-  .location__email {
-    &:before {
-      content: " | ";
+  @media #{$desk-only} {
+    .location__address,
+    .location__phone,
+    .location__email {
       display: inline-block;
-      padding: 0 .4em;
+    }
+
+    .location__phone,
+    .location__email {
+      &:before {
+        content: " | ";
+        display: inline-block;
+        padding: 0 .4em;
+      }
+    }
+    a {
+      color: $text-color;
+      transition: color .3s ease-out;
+      &:hover,
+      &:active,
+      &:focus {
+        color: $ucla-blue;
+      }
     }
   }
+
   .location__phone .icon-telephone,
   .location__email .icon-email {
     display: none;
-  }
-  a {
-    color: $text-color;
-    transition: color .3s ease-out;
-    &:hover,
-    &:active,
-    &:focus {
-      color: $ucla-blue;
-    }
   }
 }
