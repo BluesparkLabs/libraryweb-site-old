@@ -1,0 +1,78 @@
+// Styles for location_contact.inc custom CTools content type.
+
+.location__address,
+.location__phone,
+.location__email {
+  margin-top: .4em;
+  overflow: hidden;
+}
+
+.location__address .icon-mappin {
+  transition: color .3s ease-out;
+  color: $ucla-blue;
+}
+
+.location__address a:active,
+.location__address a:focus,
+.location__address a:hover {
+  text-decoration: none;
+   .icon-mappin {
+     color: $ucla-dark-gray;
+   }
+   .location__address-text {
+     text-decoration: underline;
+   }
+}
+
+.location__phone,
+.location__email {
+  font-size: 13px;
+  clear: both;
+}
+
+.location__phone .icon-telephone,
+.location__email .icon-email {
+  display: none;
+  @media #{$desk-only} {
+    clear: right;
+    display: inline-block;
+    font-size: 0.875em;
+    margin: 0;
+    vertical-align: middle;
+  }
+  &:before {
+    float: left;
+    font-size: 1.429em;
+    margin-right: 3px;
+  }
+}
+
+.pane-location-contact--inline {
+  .location__address,
+  .location__phone,
+  .location__email {
+    display: inline-block;
+  }
+
+  .location__phone,
+  .location__email {
+    &:before {
+      content: " | ";
+      display: inline-block;
+      padding: 0 .4em;
+    }
+  }
+  .location__phone .icon-telephone,
+  .location__email .icon-email {
+    display: none;
+  }
+  a {
+    color: $text-color;
+    transition: color .3s ease-out;
+    &:hover,
+    &:active,
+    &:focus {
+      color: $ucla-blue;
+    }
+  }
+}

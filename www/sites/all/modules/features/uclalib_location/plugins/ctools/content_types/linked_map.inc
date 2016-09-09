@@ -8,7 +8,7 @@
  */
 
 $plugin = array(
-  'category' => t('UCLALIB Location'),
+  'category' => t('Locations'),
   'title' => t('Linked map image'),
   'description' => t('The location image thumbnail linked to the map pdf file if avail.'),
 
@@ -78,4 +78,3 @@ function uclalib_location_ctools_content_types_linked_map_render($subtype, $conf
 
   return $block;
 }
-

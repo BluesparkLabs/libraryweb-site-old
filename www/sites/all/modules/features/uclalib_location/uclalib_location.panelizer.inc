@@ -729,35 +729,6 @@ function uclalib_location_panelizer_defaults() {
     $display->content['new-e848d85f-0b60-4345-9d33-d0192e2ba19e'] = $pane;
     $display->panels['center_'][1] = 'new-e848d85f-0b60-4345-9d33-d0192e2ba19e';
     $pane = new stdClass();
-    $pane->pid = 'new-d1606162-b8ae-4d98-bc39-ee339e4c746f';
-    $pane->panel = 'center_';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_address';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'label' => 'hidden',
-      'formatter' => 'text_default',
-      'delta_limit' => 0,
-      'delta_offset' => '0',
-      'delta_reversed' => FALSE,
-      'formatter_settings' => array(),
-      'context' => 'panelizer',
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = 'd1606162-b8ae-4d98-bc39-ee339e4c746f';
-    $display->content['new-d1606162-b8ae-4d98-bc39-ee339e4c746f'] = $pane;
-    $display->panels['center_'][2] = 'new-d1606162-b8ae-4d98-bc39-ee339e4c746f';
-    $pane = new stdClass();
     $pane->pid = 'new-ed79bfc1-dcc2-42fa-b6c0-a2286e899f2d';
     $pane->panel = 'center_';
     $pane->type = 'todays_hours';
@@ -778,11 +749,35 @@ function uclalib_location_panelizer_defaults() {
       'css_class' => '',
     );
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = 'ed79bfc1-dcc2-42fa-b6c0-a2286e899f2d';
     $display->content['new-ed79bfc1-dcc2-42fa-b6c0-a2286e899f2d'] = $pane;
-    $display->panels['center_'][3] = 'new-ed79bfc1-dcc2-42fa-b6c0-a2286e899f2d';
+    $display->panels['center_'][2] = 'new-ed79bfc1-dcc2-42fa-b6c0-a2286e899f2d';
+    $pane = new stdClass();
+    $pane->pid = 'new-e6bea458-e646-4034-942a-dcb17cbcf6e9';
+    $pane->panel = 'center_';
+    $pane->type = 'location_contact';
+    $pane->subtype = 'location_contact';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => 'panelizer',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = 'e6bea458-e646-4034-942a-dcb17cbcf6e9';
+    $display->content['new-e6bea458-e646-4034-942a-dcb17cbcf6e9'] = $pane;
+    $display->panels['center_'][3] = 'new-e6bea458-e646-4034-942a-dcb17cbcf6e9';
     $pane = new stdClass();
     $pane->pid = 'new-f51b51d6-6f17-42cb-ad56-0c944a5edd85';
     $pane->panel = 'right';

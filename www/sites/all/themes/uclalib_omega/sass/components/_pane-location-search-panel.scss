@@ -18,6 +18,11 @@
   }
 }
 
+.panelizer-view-mode.node-teaser {
+  .pane-at-this-location-block-panel-pane-1 h2 {
+    margin-top: 4px;
+  }
+}
 
 .pane-location-search-panel-pane-1 {
   .view-location-search > .view-content {
@@ -28,6 +33,7 @@
     h3 {
       font-size: 18px;
       margin-bottom: 10px;
+      margin-top: 0;
     }
     @media #{$desk-only} {
       h3 {

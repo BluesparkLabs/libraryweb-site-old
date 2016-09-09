@@ -4,6 +4,7 @@
  */
 
 $plugin = array(
+  'category' => t('Locations'),
   'title' => t('Open Now'),
   'description' => t('Displays Open Now/Closed text for the current location page.'),
   'single' => TRUE,
@@ -11,7 +12,6 @@ $plugin = array(
   'required context' => new ctools_context_required(t('Node'), 'node'),
   'defaults' => array(),
   'edit form' => 'open_now_content_type_edit_form',
-  'category' => t('UCLALIB Location'),
 );
 
 /**

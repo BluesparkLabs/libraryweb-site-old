@@ -2624,39 +2624,14 @@ a.more-link,
   font-weight: 100;
   margin-top: 0;
 }
-@media (min-width: 900px) {
+@media (min-width: 768px) {
   .pane-library-hours-panel-pane-1 .views-row .pane-linked-map,
   .pane-library-hours-panel-pane-1 .views-row .pane-node-field-location-map-image {
     float: left;
     margin-right: 16px;
+    margin-bottom: 10px;
+    max-width: 100px;
   }
-}
-@media (min-width: 768px) {
-  .pane-library-hours-panel-pane-1 .views-row .pane-node-field-location-building {
-    padding-top: 26px;
-  }
-}
-.pane-library-hours-panel-pane-1 .views-row .icon-telephone,
-.pane-library-hours-panel-pane-1 .views-row .icon-email {
-  clear: right;
-  font-size: 0.875em;
-  margin: 0;
-  display: inline-block;
-  vertical-align: middle;
-  width: 2.1em;
-  text-align: center;
-}
-@media (max-width: 767px) {
-  .pane-library-hours-panel-pane-1 .views-row .icon-telephone,
-  .pane-library-hours-panel-pane-1 .views-row .icon-email {
-    display: none;
-  }
-}
-.pane-library-hours-panel-pane-1 .views-row .icon-telephone:before,
-.pane-library-hours-panel-pane-1 .views-row .icon-email:before {
-  float: left;
-  font-size: 1.429em;
-  margin-right: 3px;
 }
 .pane-library-hours-panel-pane-1 .views-row .panels-flexible-region-last {
   padding-top: 24px;
@@ -2678,6 +2653,84 @@ a.more-link,
     padding-left: 1.25rem;
     padding-right: 1.25rem;
   }
+}
+
+.location__address,
+.location__phone,
+.location__email {
+  margin-top: .4em;
+  overflow: hidden;
+}
+
+.location__address .icon-mappin {
+  transition: color .3s ease-out;
+  color: #3283be;
+}
+
+.location__address a:active,
+.location__address a:focus,
+.location__address a:hover {
+  text-decoration: none;
+}
+.location__address a:active .icon-mappin,
+.location__address a:focus .icon-mappin,
+.location__address a:hover .icon-mappin {
+  color: #2d2f35;
+}
+.location__address a:active .location__address-text,
+.location__address a:focus .location__address-text,
+.location__address a:hover .location__address-text {
+  text-decoration: underline;
+}
+
+.location__phone,
+.location__email {
+  font-size: 13px;
+  clear: both;
+}
+
+.location__phone .icon-telephone,
+.location__email .icon-email {
+  display: none;
+}
+@media (min-width: 768px) {
+  .location__phone .icon-telephone,
+  .location__email .icon-email {
+    clear: right;
+    display: inline-block;
+    font-size: 0.875em;
+    margin: 0;
+    vertical-align: middle;
+  }
+}
+.location__phone .icon-telephone:before,
+.location__email .icon-email:before {
+  float: left;
+  font-size: 1.429em;
+  margin-right: 3px;
+}
+
+.pane-location-contact--inline .location__address,
+.pane-location-contact--inline .location__phone,
+.pane-location-contact--inline .location__email {
+  display: inline-block;
+}
+.pane-location-contact--inline .location__phone:before,
+.pane-location-contact--inline .location__email:before {
+  content: " | ";
+  display: inline-block;
+  padding: 0 .4em;
+}
+.pane-location-contact--inline .location__phone .icon-telephone,
+.pane-location-contact--inline .location__email .icon-email {
+  display: none;
+}
+.pane-location-contact--inline a {
+  color: #666666;
+  transition: color .3s ease-out;
+}
+.pane-location-contact--inline a:hover, .pane-location-contact--inline a:active, .pane-location-contact--inline a:focus {
+  color: #3283be;
 }
 
 .pane-location-destinations-panel-pane-1 .view-location-destinations > .view-content > .views-row {
@@ -2812,6 +2865,10 @@ a.more-link,
   }
 }
 
+.panelizer-view-mode.node-teaser .pane-at-this-location-block-panel-pane-1 h2 {
+  margin-top: 4px;
+}
+
 .pane-location-search-panel-pane-1 .view-location-search > .view-content .pane-todays-hours {
   font-weight: bold;
   margin-top: 10px;
@@ -2819,6 +2876,7 @@ a.more-link,
 .pane-location-search-panel-pane-1 .view-location-search > .view-content h3 {
   font-size: 18px;
   margin-bottom: 10px;
+  margin-top: 0;
 }
 @media (min-width: 768px) {
   .pane-location-search-panel-pane-1 .view-location-search > .view-content h3 {
