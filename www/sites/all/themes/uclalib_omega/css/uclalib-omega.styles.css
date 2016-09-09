@@ -2640,19 +2640,23 @@ a.more-link,
 .pane-library-hours-panel-pane-1 .views-row .icon-email {
   clear: right;
   font-size: 0.875em;
-  margin: 10px 0;
+  margin: 0;
+  display: inline-block;
+  vertical-align: middle;
+  width: 2.1em;
+  text-align: center;
+}
+@media (max-width: 767px) {
+  .pane-library-hours-panel-pane-1 .views-row .icon-telephone,
+  .pane-library-hours-panel-pane-1 .views-row .icon-email {
+    display: none;
+  }
 }
 .pane-library-hours-panel-pane-1 .views-row .icon-telephone:before,
 .pane-library-hours-panel-pane-1 .views-row .icon-email:before {
   float: left;
   font-size: 1.429em;
   margin-right: 3px;
-}
-@media (max-width: 480px) {
-  .pane-library-hours-panel-pane-1 .views-row .icon-telephone:before,
-  .pane-library-hours-panel-pane-1 .views-row .icon-email:before {
-    content: none;
-  }
 }
 .pane-library-hours-panel-pane-1 .views-row .panels-flexible-region-last {
   padding-top: 24px;

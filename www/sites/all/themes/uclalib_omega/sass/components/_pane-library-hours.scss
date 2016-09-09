@@ -24,16 +24,20 @@
     .icon-email {
       clear: right;
       font-size: 0.875em;
-      margin: 10px 0;
+      margin: 0;
+      display: inline-block;
+      vertical-align: middle;
+      width: 2.1em;
+      text-align: center;
+      @media #{$palm-lap-only} {
+        display: none;
+      }
     }
     .icon-telephone:before,
     .icon-email:before {
       float: left;
       font-size: 1.429em;
       margin-right: 3px;
-      @media #{$palm-only} {
-        content: none;
-      }
     }
     .panels-flexible-region-last {
       padding-top: 24px;
