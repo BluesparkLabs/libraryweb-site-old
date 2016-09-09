@@ -673,6 +673,10 @@ a[href="#main-content"] {
     background: url(../images/mol-bg.jpg) 0 0;
   }
 }
+.l-region--top .panel-pane {
+  margin: 24px 0;
+}
+
 @media (min-width: 768px) {
   .l-region--top {
     background: #eff3f4;
@@ -686,9 +690,6 @@ a[href="#main-content"] {
     content: "";
     display: table;
     clear: both;
-  }
-  .l-region--top .panel-pane {
-    margin: 24px 0;
   }
 
   .l-region--top:before,
