@@ -1451,11 +1451,13 @@ span.views-field.views-field-field-donor-name-bookplates.bookplates-donor-gift:a
   font-size: 32px;
 }
 
-.node-type-uclalib-event .l-region--bottom-left,
-.node-type-exhibition .l-region--bottom-left,
-.node-type-news .l-region--bottom-left {
-  padding-right: 35px;
-  border-right: 1px solid #adcde5;
+@media (min-width: 768px) {
+  .node-type-uclalib-event .l-region--bottom-left,
+  .node-type-exhibition .l-region--bottom-left,
+  .node-type-news .l-region--bottom-left {
+    padding-right: 35px;
+    border-right: 1px solid #adcde5;
+  }
 }
 .node-type-uclalib-event .l-region--bottom-right,
 .node-type-exhibition .l-region--bottom-right,
@@ -1516,6 +1518,7 @@ span.views-field.views-field-field-donor-name-bookplates.bookplates-donor-gift:a
 .node-type-uclalib-event .pane-node-body p,
 .node-type-exhibition .pane-node-body p,
 .node-type-news .pane-node-body p {
+  word-wrap: break-word;
   margin: 0 0 1em !important;
 }
 .node-type-uclalib-event .pane-body-summary-pane + .pane-node-body,
@@ -1568,6 +1571,12 @@ span.views-field.views-field-field-donor-name-bookplates.bookplates-donor-gift:a
 .pane-news-byline p {
   margin: 0;
   padding: 0;
+}
+
+@media (max-width: 767px) {
+  .pane-news-byline {
+    text-align: center;
+  }
 }
 
 .pane-node-field-news-related-content,
