@@ -2940,7 +2940,7 @@ a.more-link,
 @media (max-width: 767px) {
   .pane-open-now .location-open-now,
   .pane-open-now .location-closed {
-    padding: 12px 28px;
+    padding: 12px 5%;
     position: relative;
   }
 }
@@ -3594,6 +3594,10 @@ a.next-week:after {
   .sidebar-tier-1 + .sidebar-tier-1 ul li, .l-region--sidebar-left .pane-sibling-content + .sidebar-tier-1 ul li, .l-region--sidebar-left .pane-sub-content + .sidebar-tier-1 ul li, .l-region--sidebar-left .pane-uclalib-nav + .sidebar-tier-1 ul li, .l-region--sidebar-left .sidebar-tier-1 + .pane-sibling-content ul li, .l-region--sidebar-left .pane-sibling-content + .pane-sibling-content ul li, .l-region--sidebar-left .pane-sub-content + .pane-sibling-content ul li, .l-region--sidebar-left .pane-uclalib-nav + .pane-sibling-content ul li, .l-region--sidebar-left .sidebar-tier-1 + .pane-sub-content ul li, .l-region--sidebar-left .pane-sibling-content + .pane-sub-content ul li, .l-region--sidebar-left .pane-sub-content + .pane-sub-content ul li, .l-region--sidebar-left .pane-uclalib-nav + .pane-sub-content ul li, .l-region--sidebar-left .sidebar-tier-1 + .pane-uclalib-nav ul li, .l-region--sidebar-left .pane-sibling-content + .pane-uclalib-nav ul li, .l-region--sidebar-left .pane-sub-content + .pane-uclalib-nav ul li, .l-region--sidebar-left .pane-uclalib-nav + .pane-uclalib-nav ul li {
     border-bottom: 1px solid #fff;
   }
+  .sidebar-tier-1 + .sidebar-tier-1 ul li a, .l-region--sidebar-left .pane-sibling-content + .sidebar-tier-1 ul li a, .l-region--sidebar-left .pane-sub-content + .sidebar-tier-1 ul li a, .l-region--sidebar-left .pane-uclalib-nav + .sidebar-tier-1 ul li a, .l-region--sidebar-left .sidebar-tier-1 + .pane-sibling-content ul li a, .l-region--sidebar-left .pane-sibling-content + .pane-sibling-content ul li a, .l-region--sidebar-left .pane-sub-content + .pane-sibling-content ul li a, .l-region--sidebar-left .pane-uclalib-nav + .pane-sibling-content ul li a, .l-region--sidebar-left .sidebar-tier-1 + .pane-sub-content ul li a, .l-region--sidebar-left .pane-sibling-content + .pane-sub-content ul li a, .l-region--sidebar-left .pane-sub-content + .pane-sub-content ul li a, .l-region--sidebar-left .pane-uclalib-nav + .pane-sub-content ul li a, .l-region--sidebar-left .sidebar-tier-1 + .pane-uclalib-nav ul li a, .l-region--sidebar-left .pane-sibling-content + .pane-uclalib-nav ul li a, .l-region--sidebar-left .pane-sub-content + .pane-uclalib-nav ul li a, .l-region--sidebar-left .pane-uclalib-nav + .pane-uclalib-nav ul li a {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
 }
 
 .sidebar-tier-2, .l-region--sidebar-left .pane-quick-links {
@@ -3606,7 +3610,7 @@ a.next-week:after {
 }
 @media (max-width: 767px) {
   .sidebar-tier-2, .l-region--sidebar-left .pane-quick-links {
-    padding: 15px 8px;
+    padding: 15px 5%;
     margin: 0;
     font-weight: normal;
     font-size: 1em;
