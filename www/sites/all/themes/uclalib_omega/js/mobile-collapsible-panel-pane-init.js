@@ -76,7 +76,7 @@
   Drupal.behaviors.mobileCollapsibleLocationHours = {
     attach: function (context, settings) {
       $options = $(context).find('.node-type-location .pane-opening-hours-table').addClass('mobile-collapsible--blue').mobileCollapsible({
-        breakpoint: "(max-width: 767px)",
+        breakpoint: "(max-width: 620px)",
         titleSelector: ".pane-title",
         contentSelector: ".pane-content"
       });
