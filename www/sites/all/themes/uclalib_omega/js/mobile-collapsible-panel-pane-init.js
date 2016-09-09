@@ -70,6 +70,19 @@
     }
   };
 
+  // Adding the mobile-collapsible class to the opening-hours-table on Location
+  // detail pages is unpredictable because this view mode is nearly always
+  // overridden via panelizer, thus we make it collapsible via Javascript.
+  Drupal.behaviors.mobileCollapsibleLocationHours = {
+    attach: function (context, settings) {
+      $options = $(context).find('.node-type-location .pane-opening-hours-table').addClass('mobile-collapsible--blue').mobileCollapsible({
+        breakpoint: "(max-width: 767px)",
+        titleSelector: ".pane-title",
+        contentSelector: ".pane-content"
+      });
+    }
+  };
+
   // Group the multiple individually collapsible sidebar facets into a single
   // collapsible "Search Facets" item for mobile.
   Drupal.behaviors.mobileCollapsibleSearchFacets = {
