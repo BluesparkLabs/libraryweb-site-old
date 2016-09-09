@@ -332,10 +332,10 @@ span.views-label.views-label-field-donor-name-bookplates {
 }
 
 .node-type-bookplates.section-bookplates .views-field.views-field-field-bookplate-image .field-content img {
-  float: left;
-  padding: 8px 20px 0 0;
-  float: left;
-  padding: 8px 20px 0 0;
+  @media #{$lap-desk-only} {
+    float: left;
+    padding: 8px 20px 0 0;
+  }
 }
 
 span.views-field.views-field-field-bookplates-spak-code span.field-content a {

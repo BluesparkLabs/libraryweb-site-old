@@ -1080,11 +1080,11 @@ span.views-label.views-label-field-donor-name-bookplates {
   margin: 0 0 -50px;
 }
 
-.node-type-bookplates.section-bookplates .views-field.views-field-field-bookplate-image .field-content img {
-  float: left;
-  padding: 8px 20px 0 0;
-  float: left;
-  padding: 8px 20px 0 0;
+@media (min-width: 481px) {
+  .node-type-bookplates.section-bookplates .views-field.views-field-field-bookplate-image .field-content img {
+    float: left;
+    padding: 8px 20px 0 0;
+  }
 }
 
 span.views-field.views-field-field-bookplates-spak-code span.field-content a {
@@ -2112,6 +2112,9 @@ a.more-link,
     width: auto;
     margin: 0;
   }
+}
+.bean-news-and-events-bean .pane-title {
+  padding-right: 4.6875em;
 }
 .bean-news-and-events-bean .pane-title a {
   color: #333333;
