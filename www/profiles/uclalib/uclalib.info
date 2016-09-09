@@ -81,7 +81,7 @@ dependencies[] = search_api_facetapi
 dependencies[] = search_api_views
 
 ; Other contrib modules.
-dependencies[] = ajax_pane
+;dependencies[] = ajax_pane
 dependencies[] = better_formats
 dependencies[] = ckeditor
 dependencies[] = insert

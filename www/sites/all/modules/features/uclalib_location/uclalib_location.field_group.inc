@@ -83,7 +83,7 @@ function uclalib_location_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Categories',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -108,7 +108,7 @@ function uclalib_location_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Destinations',
-    'weight' => '5',
+    'weight' => '7',
     'children' => array(
       0 => 'field_location_destinations',
     ),
@@ -164,7 +164,7 @@ function uclalib_location_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Default Hours',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
       0 => 'field_location_oh_name',
       1 => 'default_opening_hours',
@@ -192,12 +192,13 @@ function uclalib_location_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Map',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
       0 => 'field_location_map_file',
       1 => 'field_location_map_image',
       2 => 'field_location_map_link',
       3 => 'field_location_floor_plan',
+      4 => 'field_location_map_link_mobile',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -222,7 +223,7 @@ function uclalib_location_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Quick Links',
-    'weight' => '6',
+    'weight' => '8',
     'children' => array(
       0 => 'field_quick_links',
     ),

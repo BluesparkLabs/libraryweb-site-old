@@ -552,7 +552,7 @@ function uclalib_location_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 15,
+      'weight' => 16,
     ),
   );
 
@@ -862,6 +862,71 @@ function uclalib_location_field_default_field_instances() {
       'settings' => array(),
       'type' => 'link_field',
       'weight' => 14,
+    ),
+  );
+
+  // Exported field_instance: 'node-location-field_location_map_link_mobile'
+  $field_instances['node-location-field_location_map_link_mobile'] = array(
+    'bundle' => 'location',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Please enter the corresponding URL to the mobile version of the map. Use <a href="http://maps.ucla.edu/m/campus" target="_blank">http://maps.ucla.edu/m/campus</a> to search for the desired URL.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 23,
+      ),
+      'hours_page' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_location_map_link_mobile',
+    'label' => 'Mobile Map Link',
+    'required' => 0,
+    'settings' => array(
+      'attributes' => array(
+        'class' => '',
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'rel_remove' => 'default',
+      'title' => 'none',
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 15,
     ),
   );
 
@@ -1222,9 +1287,11 @@ function uclalib_location_field_default_field_instances() {
   t('Location image');
   t('Map Link');
   t('Map thumbnail image');
+  t('Mobile Map Link');
   t('Nickname');
   t('Opening Hours alternate short name');
   t('Phone Number');
+  t('Please enter the corresponding URL to the mobile version of the map. Use <a href="http://maps.ucla.edu/m/campus" target="_blank">http://maps.ucla.edu/m/campus</a> to search for the desired URL.');
   t('Quick Links');
   t('Social Links');
   t('Study areas');
