@@ -4152,6 +4152,7 @@ img[src="images/up.png"] {
   margin: 20px 0;
   overflow: hidden;
   padding-left: 1.8em;
+  word-wrap: break-word;
 }
 .staff-profile__phone [class^="icon-"],
 .staff-profile__email [class^="icon-"] {
