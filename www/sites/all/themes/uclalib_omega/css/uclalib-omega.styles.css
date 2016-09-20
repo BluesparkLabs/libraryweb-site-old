@@ -3976,7 +3976,7 @@ body.section-staff-departments .panel-sidebar-left-golden .l-region--sidebar-lef
 
 @media (max-width: 480px) {
   .responsive-data-table table {
-    width: 100%;
+    width: 100% !important;
     border-collapse: collapse;
     border: 0;
     table-layout: fixed;
@@ -3998,17 +3998,23 @@ body.section-staff-departments .panel-sidebar-left-golden .l-region--sidebar-lef
   .responsive-data-table td:before {
     content: attr(data-label);
     float: left;
-    margin-right: 1em;
+    box-sizing: border-box;
+    padding-right: 1em;
     text-align: left;
+    width: 35%;
+    margin-bottom: 1px;
   }
-  .responsive-data-table td.views-field-title {
+  .responsive-data-table td:first-child {
     font-weight: bold;
     text-align: left;
     border: 0;
     font-size: 16px;
-    padding: 1em 0;
+    padding: 1em 0 !important;
   }
-  .responsive-data-table td.views-field-title:before {
+  .responsive-data-table td:first-child:before {
+    display: none;
+  }
+  .responsive-data-table td:first-child br {
     display: none;
   }
   .responsive-data-table .views-field-contextual-links {
@@ -4018,6 +4024,10 @@ body.section-staff-departments .panel-sidebar-left-golden .l-region--sidebar-lef
     display: none;
   }
 }
+.responsive-contained-table table {
+  width: 100% !important;
+}
+
 .palm-only, .palm-lap-only, .lap-only, .lap-desk-only, .desk-only {
   display: none;
 }

@@ -1,7 +1,7 @@
 @media #{$palm-only} {
   .responsive-data-table {
     table {
-      width: 100%;
+      width: 100% !important;
       border-collapse: collapse;
       border: 0;
       table-layout: fixed;
@@ -23,16 +23,22 @@
         // Adds the original header title infront of each table cell
         content: attr(data-label);
         float: left;
-        margin-right: 1em;
+        box-sizing: border-box;
+        padding-right: 1em;
         text-align: left;
+        width: 35%;
+        margin-bottom: 1px;
       }
-      &.views-field-title {
+      &:first-child {
         font-weight: bold;
         text-align: left;
         border: 0;
         font-size: 16px;
-        padding: 1em 0;
+        padding: 1em 0 !important;
         &:before {
+          display: none;
+        }
+        br {
           display: none;
         }
       }
@@ -44,4 +50,8 @@
       display: none;
     }
   }
+}
+
+.responsive-contained-table table {
+  width: 100% !important;
 }

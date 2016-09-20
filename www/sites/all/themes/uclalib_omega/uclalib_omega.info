@@ -39,6 +39,7 @@ scripts[] = js/mobile-collapsible-panel-pane-init.js
 scripts[] = js/uclalib-omega.behaviors.js
 scripts[] = js/mobile-nav.js
 scripts[] = js/mobile-search.js
+scripts[] = js/body-mobile-table.js
 
 ; ========================================
 ; Plugins
