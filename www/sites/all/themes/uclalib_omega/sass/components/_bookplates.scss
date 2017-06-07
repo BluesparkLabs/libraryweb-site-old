@@ -391,7 +391,7 @@ span {
     font-style: italic;
   }
   .views-field-title span.field-content a {
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 
@@ -456,6 +456,10 @@ span.views-field.views-field-field-donor-name-bookplates.bookplates-donor-gift {
 .views-field-field-give-now-link span.icon.icomoon.icon-give-now {
   font-size: 4em;
 }
+td.grid-3:nth-last-child(-n+3) {
+  width:33%
+}
+
 @media #{$palm-only} {
   .page-bookplates.section-bookplates {
     td.grid-3 {

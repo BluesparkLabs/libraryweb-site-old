@@ -1153,7 +1153,7 @@ span.views-field.views-field-field-url-after-spak-code, span.views-field.views-f
   font-style: italic;
 }
 .section-bookplates .views-field-title span.field-content a {
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .view.view-bookplates-landing-page .view-header p {
@@ -1214,6 +1214,10 @@ span.views-field.views-field-field-donor-name-bookplates.bookplates-donor-gift:a
 
 .views-field-field-give-now-link span.icon.icomoon.icon-give-now {
   font-size: 4em;
+}
+
+td.grid-3:nth-last-child(-n+3) {
+  width: 33%;
 }
 
 @media (max-width: 480px) {
