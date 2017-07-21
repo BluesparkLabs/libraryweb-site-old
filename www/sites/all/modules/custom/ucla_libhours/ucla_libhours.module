@@ -1,0 +1,380 @@
+<?php
+
+/**
+ * Implements hook_menu().
+ */
+function ucla_libhours_menu() {
+  $items = array();
+  $items['ajax/libhours/%/weeks/%'] = array(
+    'title' => 'libhours',
+    'access callback' => true,
+    'page callback' => 'ucla_libhours_get_hours',
+    'page arguments' => array(2, 4),
+  );
+  # open now endpoint
+  $items['ajax/libhours/hours/today/%'] = array(
+    'title' => 'libhours open now',
+    'access callback' => true,
+    'page callback' => 'ucla_libhours_get_open_now',
+    'page arguments' => array(4),
+  );
+  return $items;
+}
+
+function ucla_libhours_get_hours($library, $length) {
+  // call hours service
+  $library_hours = ucla_libhours_get_library_hours('hours', 'weekly', $library, $length);
+
+  // pass hours to theme function (template) from API response
+  $element['hours']['locations'] = $library_hours['locations'];
+
+  // use temp $weeks var for readability
+  $weeks = $element['hours']['locations'][0]['weeks'];
+
+  // put header day values in a keyed array
+  foreach($weeks as $week => $days) {
+    foreach ($weeks[$week] as $day => $value) {
+      $weeks[$week]['days'][$day] = $weeks[$week][$day];
+    }
+    $weeks[$week]['week_range'] = ucla_libhours_format_date_range($weeks[$week]['Sunday']['date'], $weeks[$week]['Saturday']['date']);
+  }
+  foreach ($weeks as $week => $days) {
+    $weeks[$week]['week_range'] = ucla_libhours_format_date_range($weeks[$week]['Sunday']['date'], $weeks[$week]['Saturday']['date']);
+  }
+
+  // format table headers for each fetched week
+  foreach($weeks as $week => $days) {
+    ucla_libhours_format_week_header_days($weeks[$week]['days'], $element['hours']['locations'], $week);
+  }
+  // put $weeks back into the $element
+  $element['hours']['locations'][0]['weeks'] = $weeks;
+
+  // return $element as json
+  drupal_json_output($element);
+}
+
+function ucla_libhours_get_open_now($library) {
+  $service_hours = wsclient_service_load('service_library_hours');
+  try {
+    // call UCLA Library service to get hours by week
+    $library_hours = $service_hours->getToday('hours', 'today', $library);
+    drupal_json_output($library_hours);
+  }
+  catch (WSClientException $exception) {
+    // TODO: log exception to watchdog and maybe to screen (or even #slack)
+    return false;
+  }
+}
+
+// TODO: make a widget to grab integers for library's from a select list
+/**
+ * Implements hook_field_widget_info().
+ */
+// function ucla_libhours_field_widget_info() {
+//   return array(
+//     'library_hours_textfield' => array(
+//       'label' => t('Text field'),
+//       'field types' => array('library_hours'),
+//       'settings' => array('size' => 10),
+//     ),
+//   );
+// }
+
+/**
+ * Implements hook_field_formatter_info().
+ */
+function ucla_libhours_field_formatter_info() {
+  return array(
+    'library_hours_table' => array(
+      'label' => t('Library Hours Table'),
+      'description' => t('Displays the int of the location'),
+      'field types' => array('number_integer'),
+    ),
+    'library_hours_today' => array(
+      'label' => t('Today\'s Library Hours'),
+      'description' => t('Display today\'s library hours'),
+      'field types' => array('number_integer'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_field_formatter_view().
+ */
+function ucla_libhours_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  if ($display['type'] == 'library_hours_today') {
+    $hours = array(
+      '#theme' => 'ucla_libhours_hours_today',
+      '#pre_render' => array('ucla_libhours_pre_render_today'),
+    );
+    return $hours;
+  } else if ($display['type'] == 'library_hours_table') {
+    $hours = array(
+      '#theme' => 'ucla_libhours_hours',
+      '#attached' => array(
+        'library' => array(
+          array('ucla_libhours', 'underscore'),
+          array('ucla_libhours', 'backbone'),
+        ),
+        'js' => array(
+          array(
+            'type' => 'external',
+            'data' => 'https://cdn.rawgit.com/z3cka/3a1c3a01b38943d95b09a94cd0c19bd0/raw/7741bf02cabb84008c8e08609e1245d91ae0a080/date.format.js', // TODO: move this to a URL that we own
+          ),
+          array(
+            'type' => 'file',
+            'data' => drupal_get_path('module', 'ucla_libhours') . '/ucla_libhours.js',
+            'scope' => 'header',
+            'weight' => 10,
+          ),
+          array(
+            'type' => 'setting',
+            'data' => array('ucla_libhours' => array()),
+          ),
+        ),
+      ),
+      '#pre_render' => array('ucla_libhours_pre_render'),
+    );
+    return $hours;
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function ucla_libhours_theme($existing, $type, $theme, $path) {
+  return array(
+    'ucla_libhours_hours' => array(
+      'render element' => 'lib',
+      'template' => 'ucla-libhours-hours',
+    ),
+    'ucla_libhours_hours_today' => array(
+      'render element' => 'lib',
+      'template' => 'ucla-libhours-hours-today',
+    ),
+    'node__location__todays_hours' => array(
+      'render element' => 'content',
+      'base hook' => 'node',
+      'template' => 'node--location--todays-hours',
+    ),
+  );
+}
+
+/**
+ * helper function to call hours API before (pre)processing
+ */
+function ucla_libhours_pre_render($element) {
+  $element['hours']['lid'] = $element['#items'][0]['value'];
+  // call hours service
+  $library_hours = ucla_libhours_get_library_hours('hours', 'weekly', $element['hours']['lid'], '1');
+
+  // pass hours to theme function (template) from API response
+  $element['hours']['locations'] = $library_hours['locations'];
+  // put header day values in a keyed array
+  foreach ($element['hours']['locations'][0]['weeks'][0] as $day => $value) {
+    $element['hours']['weeks'][0]['days'][$day] = $element['hours']['locations'][0]['weeks'][0][$day];
+  }
+  // set week range
+  $element['hours']['weeks'][0]['week_range'] = ucla_libhours_format_date_range($element['hours']['locations'][0]['weeks'][0]['Sunday']['date'], $element['hours']['locations'][0]['weeks'][0]['Saturday']['date']);
+  
+  // format the dates in the header like: Su 30
+  ucla_libhours_format_week_header_days($element['hours']['weeks'][0]['days'], $element['hours']['locations']);
+  
+  // pass data to javascript via #attached settings array
+  $element['#attached']['js'][2]['data']['ucla_libhours']['hours'] = $element['hours'];
+
+  return $element;
+}
+
+function ucla_libhours_pre_render_today($element) {
+  if (!empty($element['#items'])) {
+    $element['hours']['lid'] = $element['#items'][0]['value'];
+    // call hours service
+    $library_hours = ucla_libhours_get_library_hours('hours', 'today', $element['hours']['lid']);
+    $element['hours']['today'] = $library_hours['locations'][0]['rendered'];
+    return $element;
+  }
+
+  return $element;
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function ucla_libhours_views_pre_render(&$view) {
+  if ($view->name == 'location_destinations') {
+    // add a pre_render function to the hours from a view
+    foreach ($view->result as $destination) {
+      unset($destination->field_field_hours[0]['rendered']['#markup']);
+      $destination->field_field_hours[0]['rendered']['#items'][] = array('value' => $destination->field_field_hours[0]['raw']['value']);
+      $destination->field_field_hours[0]['rendered']['#theme'] = 'ucla_libhours_hours';
+      $destination->field_field_hours[0]['rendered']['#attached'] = array(
+        'library' => array(
+          array('ucla_libhours', 'underscore'),
+          array('ucla_libhours', 'backbone'),
+        ),
+        'js' => array(
+          array(
+            'type' => 'external',
+            'data' => 'https://cdn.rawgit.com/z3cka/3a1c3a01b38943d95b09a94cd0c19bd0/raw/7741bf02cabb84008c8e08609e1245d91ae0a080/date.format.js', // TODO: move this to a URL that we own
+          ),
+          array(
+            'type' => 'file',
+            'data' => drupal_get_path('module', 'ucla_libhours') . '/ucla_libhours.js',
+            'scope' => 'header',
+            'weight' => 10,
+          ),
+          array(
+            'type' => 'setting',
+            'data' => array('ucla_libhours' => array()),
+          ),
+        ),
+      );
+      $destination->field_field_hours[0]['rendered']['#pre_render'] = array('ucla_libhours_pre_render');
+    }
+  }
+}
+
+/*
+ * Implements hook_default_wsclient_service().
+ */
+function ucla_libhours_default_wsclient_service() {
+  $service = new WSClientServiceDescription();
+  $service->name = 'service_library_hours';
+  $service->label = 'UCLA Library Hours Service';
+  // TODO: make url configurable via admin
+  $service->url = 'https://webservices.library.ucla.edu/calendar/';
+  $service->type = 'rest';
+  
+  // operation settings & parameters
+  $operation['type'] = 'GET';
+  // url operation config
+  $operation['url'] = '@endpoint/@period/@lid/weeks/@length';
+  // add parameters to request
+  $operation['parameter']['endpoint'] = array('type' => 'text', 'default_value' => '');
+  $operation['parameter']['period'] = array('type' => 'text', 'default_value' => '');
+  $operation['parameter']['lid'] = array('type' => 'text', 'default_value' => '');
+  $operation['parameter']['length'] = array('type' => 'text', 'default_value' => '1');
+  
+  // add operation to service
+  $service->operations['getWeek'] = $operation;
+
+  // define new operation
+  $operation['url'] = '@endpoint/@period/@lid';
+  // remove last param
+  unset($operation['parameter']['length']);
+
+  $service->operations['getToday'] = $operation;
+
+  $service->settings['curl options'] = array('Accept: application/json');
+  
+  // add service to $services array
+  $services[$service->name] = $service;
+
+  // clear $operation array for possible later use
+  $operation = array();
+  // TODO: make another operation to getUnits
+
+  return $services;
+}
+
+/**
+ * Implements hook_views_api().
+ */
+function ucla_libhours_views_api() {
+  return array(
+    'api' => 3,
+  );
+}
+
+function ucla_libhours_get_library_hours($endpoint, $period, $library, $length = null) {
+  $service_hours = wsclient_service_load('service_library_hours');
+  try {
+    if ($period == 'weekly') {
+      $library_hours = $service_hours->getWeek(
+        $endpoint,
+        $period,
+        $library,
+        $length
+      );
+    } else {
+      // no length parameter for getToday
+      $library_hours = $service_hours->getToday(
+        $endpoint,
+        $period,
+        $library
+      );
+    }
+  }
+  catch (WSClientException $exception) {
+    // TODO: log exception to watchdog and maybe to screen (or even #slack)
+    return false;
+  }
+  return $library_hours;
+}
+
+/**
+ * Utility function that returns a date range as a string like: "May 21 - May 27"
+ */
+function ucla_libhours_format_date_range($start_date, $end_date) {
+  return ucla_libhours_format_as_monthdate($start_date) ." - ". ucla_libhours_format_as_monthdate($end_date);
+}
+
+/**
+ * Utility function that adds formatted day values to arrays
+ */
+function ucla_libhours_format_week_header_days(&$days, $locations, $week = 0) {
+  foreach($days as $day => $date) {
+    // add an abbreviation to the $day array
+    $days[$day]['abrv'] = strtolower(substr($day, 0, 3));
+    // add a day label like "Su 1" to the $day array
+    $days[$day]['label'] = ucla_libhours_format_as_daydate($day, $locations[0]['weeks'][$week][$day]['date']);
+    // signify current day in header (week data logic in template)
+    if ($date['date'] == date("Y-m-d")) {
+      $days[$day]['current_day'] = TRUE;
+    } else {
+      $days[$day]['current_day'] = FALSE;
+    }
+  }
+}
+
+/**
+ * Utility function that returns a date as a string of Month date: Sun 1
+ */
+function ucla_libhours_format_as_monthdate($date)
+{
+  return format_date(strtotime($date), 'custom', "M j");
+}
+
+/**
+ * Utility function that returns a date as a string of day of the week and date 
+ * like: "Su 1" or "M 2" for Sun, Tues, Thurs, & Sat, use 2 characters for the
+ * day, the rest use 1 character
+ */
+function ucla_libhours_format_as_daydate($day, $date)
+{
+  if (substr($day, 0, 1) === 'S' || substr($day, 0, 1) === 'T') {
+    return substr($day, 0, 2) ." ". format_date(strtotime($date), 'custom', "j");
+  } else {
+    return substr($day, 0, 1) ." ". format_date(strtotime($date), 'custom', "j");
+  }
+}
+
+/**
+ * Implements hook_library().
+ */
+function ucla_libhours_library() {
+  // Underscore
+  $libraries['underscore'] = _navbar_convert_libraries_to_library(libraries_detect('underscore'), array(
+    'group' => JS_LIBRARY,
+    'weight' => -20,
+  ));
+
+  // Backbone
+  $libraries['backbone'] = _navbar_convert_libraries_to_library(libraries_detect('backbone'), array(
+    'group' => JS_LIBRARY,
+    'weight' => -19,
+  ));
+
+  return $libraries;
+}

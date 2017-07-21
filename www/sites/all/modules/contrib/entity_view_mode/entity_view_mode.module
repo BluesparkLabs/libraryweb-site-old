@@ -164,8 +164,7 @@ function entity_view_mode_save($entity_type, $view_mode) {
   // Save the view mode.
   $view_modes = variable_get('entity_view_modes', array());
   unset($view_modes[$entity_type][$existing_view_mode]);
-  $view_modes[$entity_type][$view_mode_name] = array_intersect_key($view_mode, drupal_map_assoc(array('label', 'custom settings')));
-  $view_modes[$entity_type][$view_mode_name] += array('custom settings' => TRUE);
+  $view_modes[$entity_type][$view_mode_name] = _entity_view_mode_sanitize($view_mode);
   variable_set('entity_view_modes', $view_modes);
 
   // Allow modules to respond after the view mode is saved.
@@ -417,4 +416,12 @@ function entity_view_mode_get_possible_bundles($entity_type) {
   }
 
   return $bundles;
+}
+
+/**
+ * Prepare a view mode for the format used in hook_entity_view_mode_info().
+ */
+function _entity_view_mode_sanitize($view_mode) {
+  // @todo Should the 'custom settings' default value be TRUE?
+  return array_intersect_key($view_mode, drupal_map_assoc(array('label', 'custom settings'))) + array('custom settings' => FALSE);
 }

@@ -98,7 +98,50 @@ function uclalib_search_views_default_views() {
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['bef'] = array(
+    'general' => array(
+      'allow_secondary' => 0,
+      'secondary_label' => 'Advanced options',
+    ),
+    'search_api_views_fulltext' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'ucla_libhours_filter_open_now' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_collapsible' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+  );
+  $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
+  $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'full_html';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -157,22 +200,29 @@ function uclalib_search_views_default_views() {
     'field_location_nickname' => 'field_location_nickname',
     'field_location_alt_names' => 'field_location_alt_names',
   );
-  /* Filter criterion: Opening hours: Open Now */
-  $handler->display->display_options['filters']['open_now']['id'] = 'open_now';
-  $handler->display->display_options['filters']['open_now']['table'] = 'search_api_index_location_search';
-  $handler->display->display_options['filters']['open_now']['field'] = 'open_now';
-  $handler->display->display_options['filters']['open_now']['value'] = 0;
-  $handler->display->display_options['filters']['open_now']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['open_now']['expose']['operator_id'] = '';
-  $handler->display->display_options['filters']['open_now']['expose']['label'] = 'Open Now';
-  $handler->display->display_options['filters']['open_now']['expose']['operator'] = 'open_now_op';
-  $handler->display->display_options['filters']['open_now']['expose']['identifier'] = 'open_now';
-  $handler->display->display_options['filters']['open_now']['expose']['remember_roles'] = array(
+  /* Filter criterion: LibHours: LibHours Open Now */
+  $handler->display->display_options['filters']['ucla_libhours_filter_open_now']['id'] = 'ucla_libhours_filter_open_now';
+  $handler->display->display_options['filters']['ucla_libhours_filter_open_now']['table'] = 'views';
+  $handler->display->display_options['filters']['ucla_libhours_filter_open_now']['field'] = 'ucla_libhours_filter_open_now';
+  $handler->display->display_options['filters']['ucla_libhours_filter_open_now']['value'] = 0;
+  $handler->display->display_options['filters']['ucla_libhours_filter_open_now']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['ucla_libhours_filter_open_now']['expose']['operator_id'] = '';
+  $handler->display->display_options['filters']['ucla_libhours_filter_open_now']['expose']['label'] = 'Open Now';
+  $handler->display->display_options['filters']['ucla_libhours_filter_open_now']['expose']['operator'] = 'ucla_libhours_filter_open_now_op';
+  $handler->display->display_options['filters']['ucla_libhours_filter_open_now']['expose']['identifier'] = 'ucla_libhours_filter_open_now';
+  $handler->display->display_options['filters']['ucla_libhours_filter_open_now']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
-    3 => 0,
     4 => 0,
+    8 => 0,
     5 => 0,
+    9 => 0,
+    10 => 0,
+    3 => 0,
+    6 => 0,
+    7 => 0,
+    11 => 0,
+    12 => 0,
   );
 
   /* Display: Content pane */
@@ -188,73 +238,6 @@ function uclalib_search_views_default_views() {
   $handler->display->display_options['allow']['exposed_form'] = 0;
   $handler->display->display_options['allow']['fields_override'] = 0;
   $handler->display->display_options['inherit_panels_path'] = '1';
-
-  /* Display: Open Now */
-  $handler = $view->new_display('page', 'Open Now', 'page_1');
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'views_json';
-  $handler->display->display_options['style_options']['plaintext_output'] = 1;
-  $handler->display->display_options['style_options']['remove_newlines'] = 0;
-  $handler->display->display_options['style_options']['jsonp_prefix'] = '';
-  $handler->display->display_options['style_options']['using_views_api_mode'] = 0;
-  $handler->display->display_options['style_options']['object_arrays'] = 0;
-  $handler->display->display_options['style_options']['numeric_strings'] = 0;
-  $handler->display->display_options['style_options']['bigint_string'] = 0;
-  $handler->display->display_options['style_options']['pretty_print'] = 0;
-  $handler->display->display_options['style_options']['unescaped_slashes'] = 0;
-  $handler->display->display_options['style_options']['unescaped_unicode'] = 0;
-  $handler->display->display_options['style_options']['char_encoding'] = array();
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['empty'] = FALSE;
-  /* No results behavior: Global: Text area */
-  $handler->display->display_options['empty']['area']['id'] = 'area';
-  $handler->display->display_options['empty']['area']['table'] = 'views';
-  $handler->display->display_options['empty']['area']['field'] = 'area';
-  $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = '<span class="location-closed">Closed</span>';
-  $handler->display->display_options['empty']['area']['format'] = 'full_html';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Indexed Content: Node ID */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_location_search';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['alter']['text'] = '<span class="location-open-now">Open Now</span>';
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['nid']['separator'] = '';
-  $handler->display->display_options['fields']['nid']['link_to_entity'] = 0;
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Indexed Content: Node ID */
-  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['table'] = 'search_api_index_location_search';
-  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['default_action'] = 'empty';
-  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['nid']['break_phrase'] = 0;
-  $handler->display->display_options['arguments']['nid']['not'] = 0;
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Opening hours: Open Now */
-  $handler->display->display_options['filters']['open_now']['id'] = 'open_now';
-  $handler->display->display_options['filters']['open_now']['table'] = 'search_api_index_location_search';
-  $handler->display->display_options['filters']['open_now']['field'] = 'open_now';
-  $handler->display->display_options['filters']['open_now']['value'] = 1;
-  $handler->display->display_options['filters']['open_now']['expose']['operator_id'] = '';
-  $handler->display->display_options['filters']['open_now']['expose']['label'] = 'Open Now';
-  $handler->display->display_options['filters']['open_now']['expose']['operator'] = 'open_now_op';
-  $handler->display->display_options['filters']['open_now']['expose']['identifier'] = 'open_now';
-  $handler->display->display_options['filters']['open_now']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-  );
-  $handler->display->display_options['path'] = 'ajax/open_now/%';
   $export['location_search'] = $view;
 
   $view = new view();
@@ -485,13 +468,12 @@ function uclalib_search_views_default_views() {
   $handler->display->display_options['fields']['site_general_search']['display'] = 'view';
   $handler->display->display_options['fields']['site_general_search']['view_mode'] = 'teaser';
   $handler->display->display_options['fields']['site_general_search']['bypass_access'] = 0;
-  /* Field: Page manager pages: Title (indexed) */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['page_manager_pages_title']['id'] = 'page_manager_pages_title';
   $handler->display->display_options['fields']['page_manager_pages_title']['table'] = 'search_api_multi';
   $handler->display->display_options['fields']['page_manager_pages_title']['field'] = 'page_manager_pages_title';
   $handler->display->display_options['fields']['page_manager_pages_title']['label'] = '';
   $handler->display->display_options['fields']['page_manager_pages_title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['page_manager_pages_title']['link_to_entity'] = 1;
   /* Field: Site General Search: Title (indexed) */
   $handler->display->display_options['fields']['site_general_search_title']['id'] = 'site_general_search_title';
   $handler->display->display_options['fields']['site_general_search_title']['table'] = 'search_api_multi';

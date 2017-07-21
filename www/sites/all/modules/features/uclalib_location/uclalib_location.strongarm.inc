@@ -78,6 +78,9 @@ function uclalib_location_strongarm() {
       'event_listed_from_bean' => array(
         'custom_settings' => FALSE,
       ),
+      'weeks_hours' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -90,12 +93,22 @@ function uclalib_location_strongarm() {
         'default_opening_hours' => array(
           'weight' => '5',
         ),
+        'redirect' => array(
+          'weight' => '30',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '30',
+        ),
       ),
       'display' => array(
         'default_opening_hours' => array(
           'hours_page' => array(
             'weight' => '5',
             'visible' => TRUE,
+          ),
+          'todays_hours' => array(
+            'weight' => '1',
+            'visible' => FALSE,
           ),
         ),
       ),
@@ -142,20 +155,6 @@ function uclalib_location_strongarm() {
   $strongarm->name = 'node_submitted_location';
   $strongarm->value = 0;
   $export['node_submitted_location'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'opening_hours_category_vocabulary_location';
-  $strongarm->value = '0';
-  $export['opening_hours_category_vocabulary_location'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'opening_hours_enabled_location';
-  $strongarm->value = 1;
-  $export['opening_hours_enabled_location'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

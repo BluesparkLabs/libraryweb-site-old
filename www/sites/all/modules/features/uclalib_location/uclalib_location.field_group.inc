@@ -21,7 +21,7 @@ function uclalib_location_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'About the library',
-    'weight' => '1',
+    'weight' => '2',
     'children' => array(
       0 => 'body',
     ),
@@ -58,7 +58,8 @@ function uclalib_location_field_group_info() {
       5 => 'field_location_phone',
       6 => 'field_location_social_links',
       7 => 'field_location_image',
-      8 => 'title',
+      8 => 'field_hours',
+      9 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -83,7 +84,7 @@ function uclalib_location_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Categories',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -135,7 +136,7 @@ function uclalib_location_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'At this location',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(
       0 => 'field_amenities',
       1 => 'field_equipment',
@@ -156,34 +157,6 @@ function uclalib_location_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_location_hours|node|location|form';
-  $field_group->group_name = 'group_location_hours';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'location';
-  $field_group->mode = 'form';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Default Hours',
-    'weight' => '5',
-    'children' => array(
-      0 => 'field_location_oh_name',
-      1 => 'default_opening_hours',
-    ),
-    'format_type' => 'tab',
-    'format_settings' => array(
-      'formatter' => 'closed',
-      'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-location-hours field-group-tab',
-        'required_fields' => 1,
-      ),
-    ),
-  );
-  $export['group_location_hours|node|location|form'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
   $field_group->identifier = 'group_location_map|node|location|form';
   $field_group->group_name = 'group_location_map';
   $field_group->entity_type = 'node';
@@ -192,7 +165,7 @@ function uclalib_location_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Map',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
       0 => 'field_location_map_file',
       1 => 'field_location_map_image',
@@ -223,7 +196,7 @@ function uclalib_location_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Quick Links',
-    'weight' => '8',
+    'weight' => '9',
     'children' => array(
       0 => 'field_quick_links',
     ),

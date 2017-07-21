@@ -189,7 +189,10 @@ function uclalib_homepage_default_page_manager_pages() {
       ),
       'style' => 'border-blue',
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'mobile-collapsible',
+    );
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();

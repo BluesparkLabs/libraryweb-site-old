@@ -23,16 +23,6 @@ function uclalib_elysia_cron_default_elysia_cron_rules() {
   $cron_rule = new stdClass;
   $cron_rule->disabled = FALSE; /* Edit this to true to make a default cron_rule disabled initially */
   $cron_rule->api_version = 1;
-  $cron_rule->name = ':hours';
-  $cron_rule->disable = TRUE;
-  $cron_rule->rule = NULL;
-  $cron_rule->weight = NULL;
-  $cron_rule->context = NULL;
-  $cron_rules[':hours'] = $cron_rule;
-
-  $cron_rule = new stdClass;
-  $cron_rule->disabled = FALSE; /* Edit this to true to make a default cron_rule disabled initially */
-  $cron_rule->api_version = 1;
   $cron_rule->name = 'backup_migrate_cron';
   $cron_rule->disable = NULL;
   $cron_rule->rule = NULL;
@@ -59,26 +49,6 @@ function uclalib_elysia_cron_default_elysia_cron_rules() {
   $cron_rule->weight = NULL;
   $cron_rule->context = NULL;
   $cron_rules['ctools_cron'] = $cron_rule;
-
-  $cron_rule = new stdClass;
-  $cron_rule->disabled = FALSE; /* Edit this to true to make a default cron_rule disabled initially */
-  $cron_rule->api_version = 1;
-  $cron_rule->name = 'dblog_cron';
-  $cron_rule->disable = NULL;
-  $cron_rule->rule = NULL;
-  $cron_rule->weight = NULL;
-  $cron_rule->context = NULL;
-  $cron_rules['dblog_cron'] = $cron_rule;
-
-  $cron_rule = new stdClass;
-  $cron_rule->disabled = FALSE; /* Edit this to true to make a default cron_rule disabled initially */
-  $cron_rule->api_version = 1;
-  $cron_rule->name = 'default_opening_hours_cron';
-  $cron_rule->disable = TRUE;
-  $cron_rule->rule = NULL;
-  $cron_rule->weight = NULL;
-  $cron_rule->context = 'hours';
-  $cron_rules['default_opening_hours_cron'] = $cron_rule;
 
   $cron_rule = new stdClass;
   $cron_rule->disabled = FALSE; /* Edit this to true to make a default cron_rule disabled initially */
@@ -139,16 +109,6 @@ function uclalib_elysia_cron_default_elysia_cron_rules() {
   $cron_rule->weight = NULL;
   $cron_rule->context = NULL;
   $cron_rules['node_cron'] = $cron_rule;
-
-  $cron_rule = new stdClass;
-  $cron_rule->disabled = FALSE; /* Edit this to true to make a default cron_rule disabled initially */
-  $cron_rule->api_version = 1;
-  $cron_rule->name = 'opening_hours_cron';
-  $cron_rule->disable = NULL;
-  $cron_rule->rule = NULL;
-  $cron_rule->weight = NULL;
-  $cron_rule->context = NULL;
-  $cron_rules['opening_hours_cron'] = $cron_rule;
 
   $cron_rule = new stdClass;
   $cron_rule->disabled = FALSE; /* Edit this to true to make a default cron_rule disabled initially */
@@ -259,6 +219,26 @@ function uclalib_elysia_cron_default_elysia_cron_rules() {
   $cron_rule->weight = NULL;
   $cron_rule->context = NULL;
   $cron_rules['xmlsitemap_node_cron'] = $cron_rule;
+
+  $cron_rule = new stdClass;
+  $cron_rule->disabled = FALSE; /* Edit this to true to make a default cron_rule disabled initially */
+  $cron_rule->api_version = 1;
+  $cron_rule->name = ':hours';
+  $cron_rule->disable = TRUE;
+  $cron_rule->rule = NULL;
+  $cron_rule->weight = NULL;
+  $cron_rule->context = NULL;
+  $cron_rules[':hours'] = $cron_rule;
+
+  $cron_rule = new stdClass;
+  $cron_rule->disabled = FALSE; /* Edit this to true to make a default cron_rule disabled initially */
+  $cron_rule->api_version = 1;
+  $cron_rule->name = 'dblog_cron';
+  $cron_rule->disable = NULL;
+  $cron_rule->rule = NULL;
+  $cron_rule->weight = NULL;
+  $cron_rule->context = NULL;
+  $cron_rules['dblog_cron'] = $cron_rule;
 
   return $cron_rules;
 

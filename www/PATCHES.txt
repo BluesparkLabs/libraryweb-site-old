@@ -16,6 +16,10 @@ Ctools - hide empty page title pane when wrapper tag is used
 https://drupal.org/node/2265451
 https://drupal.org/files/issues/ctools-hide-empty-page-title-with-wrapper-tag-2265451.patch
 
+Entity View Modes - Features Module Support
+https://www.drupal.org/node/1425620
+https://www.drupal.org/files/1425620-features-support_3.patch
+
 Facetapi_bonus - add plugin filter to hide facet count.
 https://drupal.org/node/2266717
 https://drupal.org/files/issues/facetapi-bonus-hide-count-2266717-1.patch

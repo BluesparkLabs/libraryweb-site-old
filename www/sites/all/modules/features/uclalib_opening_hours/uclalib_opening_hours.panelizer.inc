@@ -126,6 +126,36 @@ function uclalib_opening_hours_panelizer_defaults() {
     $display->content['new-15e0fdaf-8344-49fa-81d7-8eb7d841eac2'] = $pane;
     $display->panels['center'][0] = 'new-15e0fdaf-8344-49fa-81d7-8eb7d841eac2';
     $pane = new stdClass();
+    $pane->pid = 'new-1d1b4584-02f8-4299-b9f5-8b1d2390639c';
+    $pane->panel = 'center';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_hours';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'title',
+      'formatter' => 'library_hours_table',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(),
+      'context' => 'panelizer',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '1d1b4584-02f8-4299-b9f5-8b1d2390639c';
+    $display->content['new-1d1b4584-02f8-4299-b9f5-8b1d2390639c'] = $pane;
+    $display->panels['center'][1] = 'new-1d1b4584-02f8-4299-b9f5-8b1d2390639c';
+    $pane = new stdClass();
     $pane->pid = 'new-26aa84a2-c3d2-4f8d-96f7-aa46ef884bc0';
     $pane->panel = 'left';
     $pane->type = 'node_title';

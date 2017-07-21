@@ -24,6 +24,14 @@ function uclalib_opening_hours_strongarm() {
         'label' => 'Event Listed From a Bean',
         'custom settings' => 1,
       ),
+      'todays_hours' => array(
+        'label' => 'Today\'s Hours',
+        'custom settings' => 1,
+      ),
+      'weeks_hours' => array(
+        'label' => 'Week\'s Hours',
+        'custom settings' => 1,
+      ),
     ),
     'file' => array(
       'thumbnail' => array(

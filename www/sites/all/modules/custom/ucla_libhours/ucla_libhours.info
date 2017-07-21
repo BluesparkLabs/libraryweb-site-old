@@ -1,0 +1,9 @@
+name = UCLA Library Hours
+description = Fetches hours from the hours API and displays them
+package = Custom
+core = 7.x
+version = 7.x-1.1
+dependencies[] = navbar
+dependencies[] = wsclient
+dependencies[] = wsclient_rest
+dependencies[] = xautoload

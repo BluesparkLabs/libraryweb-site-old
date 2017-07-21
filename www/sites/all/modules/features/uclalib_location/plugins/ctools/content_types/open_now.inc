@@ -33,18 +33,55 @@ function open_now_content_type_render($subtype, $conf, $args, $context) {
   $block->content = '';
 
   if (isset($node->nid)) {
+    if (!empty($node->field_hours)) {
+      $block->content = '<div class="open-now-pane"><span class="location-open-now"><div class="spinner"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div></span></div>';
+      # TODO: move this to a css file, not inline :-P
+      drupal_add_css(
+        '.spinner {
+          height: 17px;
+          text-align: left;
+        }
 
-    // Add the js
-    drupal_add_js(drupal_get_path('module', 'uclalib_location') . '/uclalib_location.js');
-    drupal_add_js(array('locationNid' => array('nid' => $node->nid)), 'setting');
+        .spinner > div {
+          width: 12px;
+          height: 12px;
+          background-color: #1e4b87;
+          margin: 0 0.5em;
+          border-radius: 100%;
+          display: inline-block;
+          -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+          animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+        }
 
-    $block->content = '<div class="open-now-pane"></div>';
+        .spinner .bounce1 {
+          -webkit-animation-delay: -0.32s;
+          animation-delay: -0.32s;
+        }
+
+        .spinner .bounce2 {
+          -webkit-animation-delay: -0.16s;
+          animation-delay: -0.16s;
+        }
+
+        @-webkit-keyframes sk-bouncedelay {
+          0%, 80%, 100% { -webkit-transform: scale(0) }
+          40% { -webkit-transform: scale(1.0) }
+        }
+
+        @keyframes sk-bouncedelay {
+          0%, 80%, 100% { 
+            -webkit-transform: scale(0);
+            transform: scale(0);
+          } 40% { 
+            -webkit-transform: scale(1.0);
+            transform: scale(1.0);
+          }
+        }', 
+        'inline'
+      );
+    }
   }
-
-  if ($block->content) {
-    return $block;
-  }
-
+  return $block;
 }
 
 /**

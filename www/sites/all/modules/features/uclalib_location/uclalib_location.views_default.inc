@@ -535,17 +535,18 @@ function uclalib_location_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'time';
+  $handler->display->display_options['cache']['results_lifespan'] = '3600';
+  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['output_lifespan'] = '3600';
+  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['inline'] = array(
-    'title' => 'title',
-    'opening_hours_today' => 'opening_hours_today',
-  );
+  $handler->display->display_options['row_plugin'] = 'entity';
+  $handler->display->display_options['row_options']['view_mode'] = 'todays_hours';
   /* Relationship: Nodequeue: Queue */
   $handler->display->display_options['relationships']['nodequeue_rel']['id'] = 'nodequeue_rel';
   $handler->display->display_options['relationships']['nodequeue_rel']['table'] = 'node';
@@ -554,57 +555,6 @@ function uclalib_location_views_default_views() {
   $handler->display->display_options['relationships']['nodequeue_rel']['limit'] = 1;
   $handler->display->display_options['relationships']['nodequeue_rel']['names'] = array(
     'promoted_locations' => 'promoted_locations',
-  );
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Opening hours: Opening hours today */
-  $handler->display->display_options['fields']['opening_hours_today']['id'] = 'opening_hours_today';
-  $handler->display->display_options['fields']['opening_hours_today']['table'] = 'node';
-  $handler->display->display_options['fields']['opening_hours_today']['field'] = 'opening_hours_today';
-  $handler->display->display_options['fields']['opening_hours_today']['label'] = '';
-  $handler->display->display_options['fields']['opening_hours_today']['element_label_colon'] = FALSE;
-  /* Field: Content: Phone Number */
-  $handler->display->display_options['fields']['field_location_phone']['id'] = 'field_location_phone';
-  $handler->display->display_options['fields']['field_location_phone']['table'] = 'field_data_field_location_phone';
-  $handler->display->display_options['fields']['field_location_phone']['field'] = 'field_location_phone';
-  $handler->display->display_options['fields']['field_location_phone']['label'] = '';
-  $handler->display->display_options['fields']['field_location_phone']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_location_phone']['element_label_colon'] = FALSE;
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Field: Global: Custom text */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Edit opening hours';
-  $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'node/[nid]/opening_hours';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  /* Field: Global: Contextual Links */
-  $handler->display->display_options['fields']['contextual_links']['id'] = 'contextual_links';
-  $handler->display->display_options['fields']['contextual_links']['table'] = 'views';
-  $handler->display->display_options['fields']['contextual_links']['field'] = 'contextual_links';
-  $handler->display->display_options['fields']['contextual_links']['label'] = '';
-  $handler->display->display_options['fields']['contextual_links']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['contextual_links']['fields'] = array(
-    'nothing' => 'nothing',
-    'title' => 0,
-    'opening_hours_today' => 0,
-    'field_location_phone' => 0,
-    'nid' => 0,
   );
   /* Sort criterion: Nodequeue: Position */
   $handler->display->display_options['sorts']['position']['id'] = 'position';
