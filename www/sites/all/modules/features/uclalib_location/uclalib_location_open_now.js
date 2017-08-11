@@ -3,7 +3,7 @@
     attach: function (context, settings) {
       // Open Now backbone stuff
       var libHoursAppLocationModel = Backbone.Model.extend({
-        url: '/ajax/libhours/hours/today/'+ settings.ucla_libhours.hours.lid
+        url: '/ajax/libhours/hours/today/'+ settings.uclalib_location.lid
       });
       var libHoursAppLocationOpenNowView = Backbone.View.extend({
         el: '.open-now-pane',

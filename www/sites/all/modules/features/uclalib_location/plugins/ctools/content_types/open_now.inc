@@ -33,11 +33,28 @@ function open_now_content_type_render($subtype, $conf, $args, $context) {
 
   if (isset($node->nid)) {
     if (!empty($node->field_hours)) {
-      $block->content['#markup'] = '<div class="open-now-pane"><span class="location-open-now"><div class="spinner"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div></span></div>';
-      $block->content['#attached']['css'] = array(drupal_get_path('module', 'uclalib_location') . '/uclalib_location_open_now.css');
-      $block->content['#attached']['js'] = array(drupal_get_path('module', 'uclalib_location') . '/uclalib_location_open_now.js');
+      $block->content['open_now']['#markup'] = '<div class="open-now-pane"><span class="location-open-now"><div class="spinner"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div></span></div>';
+      $block->content['open_now']['#attached']['css'] = array(drupal_get_path('module', 'uclalib_location') . '/uclalib_location_open_now.css');
+      $block->content['open_now']['#attached']['library'] = array(
+          array('ucla_libhours', 'underscore'),
+          array('ucla_libhours', 'backbone'),
+      );
+      $block->content['open_now']['#attached']['js'] = array(
+        array(
+          'type' => 'setting',
+          'data' =>  array(
+            'uclalib_location' => array('lid' => $node->field_hours[LANGUAGE_NONE][0]['value']),
+          ),
+        ),
+        array(
+          'data' => drupal_get_path('module', 'uclalib_location') . '/uclalib_location_open_now.js',
+        ),
+      );
     }
+
+    return $block;
   }
+
   return $block;
 }
 
