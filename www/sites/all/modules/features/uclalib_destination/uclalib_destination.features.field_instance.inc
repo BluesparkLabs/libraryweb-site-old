@@ -66,6 +66,12 @@ function uclalib_destination_field_default_field_instances() {
         'type' => 'text_summary_or_trimmed',
         'weight' => 0,
       ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'weeks_hours' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -137,6 +143,12 @@ function uclalib_destination_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'weeks_hours' => array(
         'label' => 'above',
         'module' => 'taxonomy',
@@ -176,6 +188,12 @@ function uclalib_destination_field_default_field_instances() {
         'weight' => 2,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'todays_hours' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -224,6 +242,12 @@ function uclalib_destination_field_default_field_instances() {
         'weight' => 4,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'todays_hours' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -283,6 +307,12 @@ function uclalib_destination_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'weeks_hours' => array(
         'label' => 'above',
         'module' => 'phone',
@@ -327,6 +357,12 @@ function uclalib_destination_field_default_field_instances() {
         'weight' => 13,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'todays_hours' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -406,6 +442,12 @@ function uclalib_destination_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'weeks_hours' => array(
         'label' => 'above',
         'module' => 'link',
@@ -467,6 +509,12 @@ function uclalib_destination_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'todays_hours' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'weeks_hours' => array(
         'label' => 'above',
         'module' => 'taxonomy',
@@ -511,6 +559,12 @@ function uclalib_destination_field_default_field_instances() {
         'weight' => 16,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'todays_hours' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -564,6 +618,12 @@ function uclalib_destination_field_default_field_instances() {
         'weight' => 14,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'todays_hours' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -638,6 +698,12 @@ function uclalib_destination_field_default_field_instances() {
         'weight' => 10,
       ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'todays_hours' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',

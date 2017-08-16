@@ -78,12 +78,6 @@ function uclalib_destination_strongarm() {
       'event_listed_from_bean' => array(
         'custom_settings' => FALSE,
       ),
-      'todays_hours' => array(
-        'custom_settings' => FALSE,
-      ),
-      'weeks_hours' => array(
-        'custom_settings' => TRUE,
-      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -91,16 +85,10 @@ function uclalib_destination_strongarm() {
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '4',
+          'weight' => '3',
         ),
         'default_opening_hours' => array(
           'weight' => '7',
-        ),
-        'redirect' => array(
-          'weight' => '6',
-        ),
-        'xmlsitemap' => array(
-          'weight' => '5',
         ),
       ),
       'display' => array(),

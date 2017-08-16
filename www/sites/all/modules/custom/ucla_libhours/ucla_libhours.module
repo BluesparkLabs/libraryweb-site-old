@@ -205,32 +205,34 @@ function ucla_libhours_views_pre_render(&$view) {
   if ($view->name == 'location_destinations') {
     // add a pre_render function to the hours from a view
     foreach ($view->result as $destination) {
-      unset($destination->field_field_hours[0]['rendered']['#markup']);
-      $destination->field_field_hours[0]['rendered']['#items'][] = array('value' => $destination->field_field_hours[0]['raw']['value']);
-      $destination->field_field_hours[0]['rendered']['#theme'] = 'ucla_libhours_hours';
-      $destination->field_field_hours[0]['rendered']['#attached'] = array(
-        'library' => array(
-          array('ucla_libhours', 'underscore'),
-          array('ucla_libhours', 'backbone'),
-        ),
-        'js' => array(
-          array(
-            'type' => 'external',
-            'data' => 'https://cdn.rawgit.com/z3cka/3a1c3a01b38943d95b09a94cd0c19bd0/raw/7741bf02cabb84008c8e08609e1245d91ae0a080/date.format.js', // TODO: move this to a URL that we own
+      if (!empty($destination->field_field_hours)) {
+        unset($destination->field_field_hours[0]['rendered']['#markup']);
+        $destination->field_field_hours[0]['rendered']['#items'][] = array('value' => $destination->field_field_hours[0]['raw']['value']);
+        $destination->field_field_hours[0]['rendered']['#theme'] = 'ucla_libhours_hours';
+        $destination->field_field_hours[0]['rendered']['#attached'] = array(
+          'library' => array(
+            array('ucla_libhours', 'underscore'),
+            array('ucla_libhours', 'backbone'),
           ),
-          array(
-            'type' => 'file',
-            'data' => drupal_get_path('module', 'ucla_libhours') . '/ucla_libhours.js',
-            'scope' => 'header',
-            'weight' => 10,
+          'js' => array(
+            array(
+              'type' => 'external',
+              'data' => 'https://cdn.rawgit.com/z3cka/3a1c3a01b38943d95b09a94cd0c19bd0/raw/7741bf02cabb84008c8e08609e1245d91ae0a080/date.format.js', // TODO: move this to a URL that we own
+            ),
+            array(
+              'type' => 'file',
+              'data' => drupal_get_path('module', 'ucla_libhours') . '/ucla_libhours.js',
+              'scope' => 'header',
+              'weight' => 10,
+            ),
+            array(
+              'type' => 'setting',
+              'data' => array('ucla_libhours' => array()),
+            ),
           ),
-          array(
-            'type' => 'setting',
-            'data' => array('ucla_libhours' => array()),
-          ),
-        ),
-      );
-      $destination->field_field_hours[0]['rendered']['#pre_render'] = array('ucla_libhours_pre_render');
+        );
+        $destination->field_field_hours[0]['rendered']['#pre_render'] = array('ucla_libhours_pre_render');
+      }
     }
   }
 }

@@ -60,6 +60,6 @@ function uclalib_opening_hours_master_ctools_content_types_todays_hours_render($
     ),
   );
 
-  drupal_add_js(drupal_get_path('module', 'uclalib_opening_hours') . '/uclalib_opening_hours_master.js');
+  // drupal_add_js(drupal_get_path('module', 'uclalib_opening_hours') . '/uclalib_opening_hours_master.js');
   return $block;
 }

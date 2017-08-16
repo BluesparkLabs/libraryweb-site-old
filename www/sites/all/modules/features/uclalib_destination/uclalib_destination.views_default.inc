@@ -98,6 +98,8 @@ function uclalib_destination_views_default_views() {
   $handler->display->display_options['fields']['field_hours']['id'] = 'field_hours';
   $handler->display->display_options['fields']['field_hours']['table'] = 'field_data_field_hours';
   $handler->display->display_options['fields']['field_hours']['field'] = 'field_hours';
+  $handler->display->display_options['fields']['field_hours']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_hours']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['field_hours']['settings'] = array(
     'thousand_separator' => '',
     'prefix_suffix' => 1,
