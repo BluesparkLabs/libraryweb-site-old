@@ -40,6 +40,19 @@ function uclalib_search_form_views_exposed_form_alter(&$form, &$form_state, $for
 }
 
 /**
+ * Implements hook_preprocess_HOOK().
+ */
+function uclalib_search_preprocess_pager(&$variables) {
+  // pager link workaround for custom Open Now views filter on /loactions
+  if (arg(0) == 'locations') {
+    // remove open now param from link if it does not exist in params
+    if (!array_key_exists('ucla_libhours_filter_open_now', drupal_get_query_parameters())) {
+      unset($variables['parameters']['ucla_libhours_filter_open_now']);
+    }
+  } 
+}
+
+/**
  * Entity property getter callback: Returns the relevant nodequeue position for the queue.
  */
 function uclalib_search_queue_position($entity, $options, $name, $entity_type, $info) {
