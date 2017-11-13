@@ -25,7 +25,7 @@ $conf['search_api_solr_overrides'] = array(
   'uclalib_solr_server' => array(
     'name' => t('Solr Server (UCLA Stage)'),
     'options' => array(
-      'host' => 'p-w-solrlb01.library.ucla.edu',
+      'host' => 'solr.library.ucla.edu',
       'port' => '80',
       'path' => '/solr/www-stage',
     ),
@@ -42,4 +42,3 @@ $conf['shib_auth_full_logout_url'] = 'https://www-stage.library.ucla.edu/Shibbol
 $conf['shib_auth_link_text'] = 'Shibboleth Login';
 $conf['shib_auth_logout_url'] = 'https://shb.ais.ucla.edu/shibboleth-idp/Logout';
 $conf['shib_auth_username_variable'] = 'HTTP_SHIBUCLAUNIVERSITYID';
-

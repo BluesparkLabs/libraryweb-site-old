@@ -25,7 +25,7 @@ $conf['search_api_solr_overrides'] = array(
   'uclalib_solr_server' => array(
     'name' => t('Solr Server (UCLA Test)'),
     'options' => array(
-      'host' => 't-w-solrlb01.library.ucla.edu',
+      'host' => 'test-solr.library.ucla.edu',
       'port' => '80',
       'path' => '/solr/www-test',
     ),
@@ -48,4 +48,3 @@ error_reporting(E_ALL);  // Have PHP complain about absolutely everything.
 $conf['error_level'] = 2;  // Show all messages on your screen
 ini_set('display_errors', TRUE);  // These lines give you content on WSOD pages.
 ini_set('display_startup_errors', TRUE);
-
