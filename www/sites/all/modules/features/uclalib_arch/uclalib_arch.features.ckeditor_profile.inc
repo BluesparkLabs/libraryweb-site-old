@@ -127,8 +127,6 @@ function uclalib_arch_ckeditor_profile_defaults() {
         'filebrowser_flash' => '',
         'UserFilesPath' => '%b%f/',
         'UserFilesAbsolutePath' => '%d%b%f/',
-        'ckeditor_load_method' => 'ckeditor.js',
-        'ckeditor_load_time_out' => 0,
         'forcePasteAsPlainText' => 'f',
         'html_entities' => 'f',
         'scayt_autoStartup' => 'f',
@@ -137,22 +135,15 @@ function uclalib_arch_ckeditor_profile_defaults() {
         'loadPlugins' => array(
           'media' => array(
             'name' => 'media',
-            'desc' => 'Plugin for inserting images from Drupal media module',
-            'path' => '/sites/all/modules/contrib/media/modules/media_wysiwyg/wysiwyg_plugins/media_ckeditor/',
+            'desc' => 'Plugin for embedding files using Media CKEditor',
+            'path' => '%base_path%sites/all/modules/contrib/media_ckeditor/js/plugins/media/',
             'buttons' => array(
               'Media' => array(
-                'icon' => 'images/icon.gif',
+                'icon' => 'icons/media.png',
                 'label' => 'Add media',
               ),
             ),
             'default' => 'f',
-          ),
-          'tableresize' => array(
-            'name' => 'tableresize',
-            'desc' => 'Table Resize plugin',
-            'path' => '%editor_path%/plugins/tableresize/',
-            'buttons' => FALSE,
-            'default' => 't',
           ),
         ),
       ),

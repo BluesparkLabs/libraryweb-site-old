@@ -1,8 +1,0 @@
-name = "Manualcrop Media Browser WYSIWYG"
-description = "Alters Manualcrop to only display allowed view modes for cropping froma  WYSIWYG upload."
-core = 7.x
-package = "Media"
-version = 7.x-1.0-beta1
-
-dependencies[] = media
-dependencies[] = manualcrop

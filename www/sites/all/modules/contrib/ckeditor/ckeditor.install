@@ -146,7 +146,7 @@ function ckeditor_install() {
     $arr['ckeditor_path'] = $ckeditor_path;
   }
   else {
-    $arr['ckeditor_path'] = '//cdn.ckeditor.com/4.4.3/full-all';
+    $arr['ckeditor_path'] = '//cdn.ckeditor.com/' . CKEDITOR_LATEST . '/full-all';
   }
 
   db_insert('ckeditor_settings')->fields(array("name" => "CKEditor Global Profile", "settings" => serialize($arr)))->execute();
@@ -580,39 +580,6 @@ function ckeditor_update_7005() {
         ->condition('name', $name, '=')
         ->execute();
   }
-}
-
-/**
- * Move support for the Media module to media_wysiwyg.
- */
-function ckeditor_update_7006() {
-  module_load_include('inc', 'ckeditor', 'includes/ckeditor.lib');
-
-  $available_plugins = ckeditor_load_plugins();
-  $profiles = ckeditor_profile_load();
-
-  // Media wysiwyg now supplies the media plugin, as it has been removed from
-  // CKeditor.
-  $media_wysiwyg_enabled = isset($available_plugins['media']);
-
-  foreach ($profiles as $profile) {
-    if (isset($profile->settings['loadPlugins'], $profile->settings['loadPlugins']['media'])) {
-      if ($media_wysiwyg_enabled) {
-        $profile->settings['loadPlugins']['media'] = $available_plugins['media'];
-      }
-      else {
-        throw new DrupalUpdateException(t('The "@profile" CKEdtior profile is using the media plugin. Support for the media module has now moved to media wysiwyg, please enable it to continue.', array('@profile' => $profile->name)));
-      }
-
-      db_update('ckeditor_settings')
-        ->fields(array(
-          'settings' => serialize($profile->settings),
-        ))
-        ->condition('name', $profile->name, '=')
-        ->execute();
-    }
-  }
-
 }
 
 /**

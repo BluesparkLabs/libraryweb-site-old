@@ -1215,6 +1215,7 @@ function uclalib_users_user_default_permissions() {
   $permissions['administer permissions'] = array(
     'name' => 'administer permissions',
     'roles' => array(
+      'Lead Site Editor' => 'Lead Site Editor',
       'administrator' => 'administrator',
     ),
     'module' => 'user',
@@ -1330,6 +1331,7 @@ function uclalib_users_user_default_permissions() {
   $permissions['administer users'] = array(
     'name' => 'administer users',
     'roles' => array(
+      'Lead Site Editor' => 'Lead Site Editor',
       'administrator' => 'administrator',
     ),
     'module' => 'user',
@@ -1578,6 +1580,7 @@ function uclalib_users_user_default_permissions() {
   $permissions['create destination content'] = array(
     'name' => 'create destination content',
     'roles' => array(
+      'CE_Basic' => 'CE_Basic',
       'Lead Site Editor' => 'Lead Site Editor',
       'administrator' => 'administrator',
       'content editors' => 'content editors',
@@ -1649,6 +1652,7 @@ function uclalib_users_user_default_permissions() {
   $permissions['create staff_profile content'] = array(
     'name' => 'create staff_profile content',
     'roles' => array(
+      'CE_Basic' => 'CE_Basic',
       'Lead Site Editor' => 'Lead Site Editor',
       'administrator' => 'administrator',
       'content editors' => 'content editors',
@@ -2723,9 +2727,7 @@ function uclalib_users_user_default_permissions() {
     'name' => 'edit opening hours for content',
     'roles' => array(
       'Hours' => 'Hours',
-      'Lead Site Editor' => 'Lead Site Editor',
       'administrator' => 'administrator',
-      'content editors' => 'content editors',
     ),
     'module' => 'opening_hours',
   );
@@ -3448,6 +3450,18 @@ function uclalib_users_user_default_permissions() {
       'content editors' => 'content editors',
     ),
     'module' => 'manualcrop',
+  );
+
+  // Exported permission: 'use media wysiwyg'.
+  $permissions['use media wysiwyg'] = array(
+    'name' => 'use media wysiwyg',
+    'roles' => array(
+      'CE_Basic' => 'CE_Basic',
+      'Lead Site Editor' => 'Lead Site Editor',
+      'administrator' => 'administrator',
+      'content editors' => 'content editors',
+    ),
+    'module' => 'media_wysiwyg',
   );
 
   // Exported permission: 'use page manager'.
