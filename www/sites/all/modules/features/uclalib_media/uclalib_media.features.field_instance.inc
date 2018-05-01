@@ -51,7 +51,6 @@ function uclalib_media_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
-      'wysiwyg_override' => 1,
     ),
     'widget' => array(
       'active' => 1,
@@ -101,7 +100,6 @@ function uclalib_media_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
-      'wysiwyg_override' => 1,
     ),
     'widget' => array(
       'active' => 1,
@@ -151,7 +149,6 @@ function uclalib_media_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
-      'wysiwyg_override' => 1,
     ),
     'widget' => array(
       'active' => 1,
@@ -485,7 +482,6 @@ function uclalib_media_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
-      'wysiwyg_override' => 0,
     ),
     'widget' => array(
       'active' => 1,
@@ -552,7 +548,6 @@ function uclalib_media_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
-      'wysiwyg_override' => 0,
     ),
     'widget' => array(
       'active' => 1,
@@ -619,7 +614,6 @@ function uclalib_media_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
-      'wysiwyg_override' => 0,
     ),
     'widget' => array(
       'active' => 1,

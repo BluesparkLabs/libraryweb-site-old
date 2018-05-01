@@ -24,23 +24,13 @@ Facetapi_bonus - add plugin filter to hide facet count.
 https://drupal.org/node/2266717
 https://drupal.org/files/issues/facetapi-bonus-hide-count-2266717-1.patch
 
-Media - Blank WYSWIG with existing multiple Media content
-https://www.drupal.org/node/2317519
-https://www.drupal.org/files/issues/blank_wyswig_with-2317519-12.patch
-
-** The folowing media patches were applied to 7.x-2.0-alpha3 but are no longer present – 4/21/2015 **
-TODO: check if these Media module patches are still needed: 
-Media - Allow custom file view modes for WYSIWYG display
-https://www.drupal.org/node/1792738
-https://www.drupal.org/files/issues/media-custom_view_modes_for_wysiwyg-1792738-139.patch
-
-Media - Custom wrapper breaks tokens with CKEditor >=4.0 without widget plugin
-https://www.drupal.org/node/2177893
-https://www.drupal.org/files/issues/media-ckeditor4-media-plugin-2177893-13.patch
-
-Media - Media inline filter: Delegate "float" to outer element
-https://www.drupal.org/node/2018075
-https://www.drupal.org/files/issues/media_filter_float_delegate-2018075-8.patch
+Google Tag Manager
+* Add aria-hidden state to GTM noscript snippet
+  - https://www.drupal.org/node/2878894
+  - https://www.drupal.org/files/issues/2878894--aria-hidden-noscript--1.patch
+* Fatal error: Can't use function return value in write context
+  - https://www.drupal.org/node/2911657
+  - https://www.drupal.org/files/issues/2911657_variable_php_error.patch
 
 Panels - Allow users to manually control window title.
 https://drupal.org/node/2262173

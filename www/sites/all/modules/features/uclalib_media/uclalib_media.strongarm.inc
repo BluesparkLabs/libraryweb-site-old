@@ -221,6 +221,13 @@ function uclalib_media_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'media_ckeditor_fully_rendered_files';
+  $strongarm->value = 0;
+  $export['media_ckeditor_fully_rendered_files'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'media_dialogclass';
   $strongarm->value = 'media-wrapper';
   $export['media_dialogclass'] = $strongarm;
@@ -291,10 +298,38 @@ function uclalib_media_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'media_wysiwyg_alignment';
+  $strongarm->value = 1;
+  $export['media_wysiwyg_alignment'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'media_wysiwyg_external_link';
+  $strongarm->value = 0;
+  $export['media_wysiwyg_external_link'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'media_wysiwyg_remove_media_class';
+  $strongarm->value = 0;
+  $export['media_wysiwyg_remove_media_class'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'media_wysiwyg_use_link_text_for_filename';
+  $strongarm->value = 1;
+  $export['media_wysiwyg_use_link_text_for_filename'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'media_wysiwyg_wysiwyg_allowed_types';
   $strongarm->value = array(
-    0 => 'document',
-    1 => 'image',
+    0 => 'image',
+    1 => 'document',
   );
   $export['media_wysiwyg_wysiwyg_allowed_types'] = $strongarm;
 
@@ -308,6 +343,23 @@ function uclalib_media_strongarm() {
     2 => 'media_default--media_browser_my_files',
   );
   $export['media_wysiwyg_wysiwyg_browser_plugins'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'media_wysiwyg_wysiwyg_override_field_types';
+  $strongarm->value = array(
+    0 => 'text_long',
+    1 => 'text',
+  );
+  $export['media_wysiwyg_wysiwyg_override_field_types'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'media_wysiwyg_wysiwyg_override_multivalue';
+  $strongarm->value = 0;
+  $export['media_wysiwyg_wysiwyg_override_multivalue'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
