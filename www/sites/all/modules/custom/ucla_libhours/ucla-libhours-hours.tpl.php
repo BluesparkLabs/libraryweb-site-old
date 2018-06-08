@@ -65,7 +65,7 @@
           </td>
           <% _.each(location.weeks[week_index], function(day) { %>
             <% if (day.date) { %>
-              <td data-label="<%= dateFormat(day.date, "ddd d") %>" <% if (day.date == dateFormat("yyyy-mm-dd")) { %>' class="current-day"'<% } %>><%= day.rendered %></td>
+              <td data-label="<%= dateFormat(day.date, "ddd d", true) %>" <% if (day.date == dateFormat("yyyy-mm-dd")) { %>' class="current-day"'<% } %>><%= day.rendered %></td>
             <% } %>
           <% }); %>
         </tr>  
