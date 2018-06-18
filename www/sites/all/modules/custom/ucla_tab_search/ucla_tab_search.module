@@ -95,7 +95,7 @@ function ucla_tab_search_tabs_form($form, &$form_state) {
         'SUBJ@' => t('Subject list'),
         'SUBJ+' => t('Subject list - start of'),
         'CALL+' => t('Call number'),
-        'ISBN' => t('ISBN'),
+        'ISBL' => t('ISBN'),
         'ISSN' => t('ISSN'),
     ),
     '#states' => array(
