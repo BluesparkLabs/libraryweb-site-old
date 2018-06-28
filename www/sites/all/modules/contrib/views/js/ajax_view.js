@@ -60,6 +60,9 @@ Drupal.views.ajaxView = function(settings) {
   this.$exposed_form = this.$view.children('.view-filters').children('form');
   this.$exposed_form.once(jQuery.proxy(this.attachExposedFormAjax, this));
 
+  // Store Drupal.ajax objects here for all pager links.
+  this.links = [];
+
   // Add the ajax to pagers.
   this.$view
     // Don't attach to nested views. Doing so would attach multiple behaviors
@@ -123,6 +126,7 @@ Drupal.views.ajaxView.prototype.attachPagerLinkAjax = function(id, link) {
 
   this.element_settings.submit = viewData;
   this.pagerAjax = new Drupal.ajax(false, $link, this.element_settings);
+  this.links.push(this.pagerAjax);
 };
 
 Drupal.ajax.prototype.commands.viewsScrollTop = function (ajax, response, status) {

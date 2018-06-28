@@ -13,30 +13,3 @@ $plugin = array(
     'summary' => 'ctools_query_string_exists_ctools_access_summary',
     'defaults' => array('key' => ''),
   );
-/**
- * Settings form.
- */
-function ctools_query_string_exists_ctools_access_settings($form, &$form_state, $config) {
-    $form['settings']['key'] = array(
-        '#title' => t('Query string key'),
-        '#description' => t('Enter the key of the query string.'),
-        '#type' => 'textfield',
-        '#required' => TRUE,
-        '#default_value' => $config['key']
-        );
-  
-    return $form;
-}
-/**
- * Check for access
- */
-function ctools_query_string_exists_ctools_access_check($config, $context) {
-    return isset($_GET[$config['key']]);
- }
-
-/**
- * Provide a summary description.
- */
-function ctools_query_string_exists_ctools_access_summary($config, $context) {
-    return t('@identifier exists', array('@identifier' => $config['key']));
-}

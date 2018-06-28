@@ -1,55 +1,30 @@
-.pane-staff-directory-staff-directory-pane {
-  .view-staff-directory > .view-content {
-    & > .views-row {
-      border-bottom: 1px solid $border-color;
-      margin-bottom: 30px;
-      padding-bottom: 27px;
-      .views-field-field-staff-last-name {
-        font-size: 1.143em;
-        padding-top: 11px;
-      }
-      .views-field-field-staff-image-thumbnail {
-        float: left;
-        margin-right: 18px;
-      }
-    }
-    & > .views-row-last {
-      border-bottom: none;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-  }
+.pane-staff-department-department-title .uclalib-nav-breadcrumb a {
+    font-weight: 400;
+}
+.panel-pane.pane-views-panes.pane-staff-department-department-title {
+    float: left;
 }
 
-/* Staff directory search panel */
-.l-region--main {
-  .views-exposed-form-staff-directory-staff-directory-pane {
-    .views-widget-filter-field_staff_is_subject_librarian > label,
-    .views-widget-filter-search_api_views_fulltext,
-    .views-submit-button {
-      // display: none;
-    }
-    .form-radios > div {
-      float: left;
-      margin: 8px 18px 0 0 !important;
-    }
-    .views-exposed-form .views-exposed-widget .form-submit {
-      margin-top: 0;
-    }
-  }
-  .facetapi-facet-field-staff-glossary-index {
-    list-style: none;
-    padding: 0 0 30px;
-    li {
-      border-right: 1px solid $border-color;
-      float: left;
-      padding: 0 8px;
-      &:first-child {
-        padding-left: 0;
-      }
-      &:last-child {
-        border-right: none;
-      }
-    }
-  }
+.pane-bean-staff-directory-gallery
+
+.panel-pane.pane-entity-field.pane-taxonomy-term-field-department-social-links {
+    float: right;
+}
+
+body.page-staff .panel-sidebar-left .l-region--sidebar-left,
+body.section-staff-departments .panel-sidebar-left-golden .l-region--sidebar-left,
+/* body.page-node-staff .panel-sidebar-left-golden .l-region--sidebar-left */
+{
+    padding: 0;
+}
+
+.page-taxonomy.page-taxonomy-term .pane-taxonomy-term-field-department-social-links .field__items .field__item {
+    float: right;
+    padding-right: 3px;
+}
+
+.panel-pane.pane-views-panes.pane-staff-pane-staff-dept h2,
+.panel-pane.pane-views-panes.pane-staff-staff-loc-list h2,
+.panel-pane.pane-views-panes.pane-staff-department-departments h2 {
+    margin-top: calc(2rem - 0.142857em);
 }

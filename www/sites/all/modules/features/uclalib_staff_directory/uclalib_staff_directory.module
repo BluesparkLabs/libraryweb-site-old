@@ -1,0 +1,213 @@
+<?php
+/**
+ * @file
+ * Code for the UCLALIB Staff Directory feature.
+ */
+
+include_once 'uclalib_staff_directory.features.inc';
+
+/**
+ * Implements hook_page_alter().
+ */
+function uclalib_staff_directory_page_alter(&$page) {
+  if ((arg(0) == 'node') && (arg(2) == 'staff')) {
+    // Generate a staff alias if it does not exist
+    $request_uri = request_uri();
+    $alias = drupal_get_path_alias();
+    $path = drupal_get_normal_path($alias);
+    // detect if an alias needs to be created
+    if ($path == $alias) {
+      $location_alias = drupal_get_path_alias('node/'. arg(1));
+      if ($location_alias == 'node/'. arg(1)) {
+        // do not create alias
+      } else {
+        // create alias
+        $alias_new = array(
+          'source' => $alias,
+          'alias' => $location_alias ."/staff"
+        );
+        path_save($alias_new);
+        drupal_goto(drupal_get_path_alias());
+      }
+    } else {
+      if ("/". $alias != $request_uri) {
+        drupal_goto($alias);
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function uclalib_staff_directory_preprocess_views_view_summary(&$variables) {
+  // Staff Directory Glossary modifications
+  if ($variables['view']->name == 'staff' && $variables['view']->current_display == 'attachment_glossary') {
+    // makes panels compatible staff glossary links
+    foreach ($variables['rows'] as $row) {
+      $row->url = '/staff/'. $row->link;
+    }
+    // add 'all' link to end of array
+    $variables['rows'][] = (object) array(
+      'link' => 'All',
+      'url' => '/staff/all',
+    );
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function uclalib_staff_directory_preprocess_panels_pane(&$variables) {
+  // staff pane modifications
+  if ((arg(0) == 'node') && (arg(2) == 'staff')) {
+    // template for adding breadcrumbs to the Staff location title pane
+    if ($variables['pane']->type == 'node_title') {
+      $variables['theme_hook_suggestions'][] = 'panels_pane__node_title__node_title_staff';
+    }
+  }
+  if (arg(0) == 'staff') {
+    // page title handler for adding breadcrumbs
+    if ($variables['pane']->type == 'page_title') {
+      $params = drupal_get_query_parameters();
+      // search results handler
+      if ((array_key_exists('search_api_views_fulltext', $params))
+        // or A-Z list handler including "/staff/all"
+        || ( preg_match('/^[a-zA-Z](?!.)/', arg(1))) || (arg(1) == 'all') ) {
+        $variables['theme_hook_suggestions'][] = 'panels_pane__page_title__staff';
+      }
+    }
+  }
+}
+
+
+
+/**
+ * Implements hook_theme().
+ */
+function uclalib_staff_directory_theme($existing, $type, $theme, $path) {
+  return array(
+    // custom views exposed form element for Seach textfield
+    'views_view_staff_directory_search_text' => array(
+      'render element' => 'form',
+      'template' => 'views-view-staff-directory-search-text',
+      'path' => drupal_get_path('module', 'uclalib_staff_directory'),
+    ),
+    // panels pane
+    'panels_pane__node_title__node_title_staff' => array(
+      'template' => 'panels-pane--node-title--node-title-staff',
+      'path' => drupal_get_path('module', 'uclalib_staff_directory'),
+    ),
+    'panels_pane__page_title__staff' => array(
+      'template' => 'panels-pane--page-title--staff',
+      'path' => drupal_get_path('module', 'uclalib_staff_directory'),
+    ),
+    // style
+    'views_view_unformatted__staff_department__department_title' => array(
+      'base hook' => 'views_view_unformatted',
+      'template' => 'views-view-unformatted--staff-department--department-title',
+      'path' => drupal_get_path('module', 'uclalib_staff_directory'),
+    ),
+    'views_view_unformatted__staff' => array(
+      'base hook' => 'views_view_unformatted',
+      'template' => 'views-view-unformatted--staff',
+      'path' => drupal_get_path('module', 'uclalib_staff_directory'),
+    ),
+    'views_view_unformatted__staff_search' => array(
+      'base hook' => 'views_view_unformatted',
+      'template' => 'views-view-unformatted--staff-search',
+      'path' => drupal_get_path('module', 'uclalib_staff_directory'),
+    ),
+    'views_view_unformatted__staff_search_results' => array(
+      'base hook' => 'views_view_unformatted',
+      'template' => 'views-view-unformatted--staff-search-results',
+      'path' => drupal_get_path('module', 'uclalib_staff_directory'),
+    ),
+    // fields "Row style output"
+    'views_view_fields__staff' => array(
+      'base hook' => 'views_view_fields',
+      'template' => 'views-view-fields--staff',
+      'path' => drupal_get_path('module', 'uclalib_staff_directory'),
+    ),
+    'views_view_fields__staff__pane_staff_dept' => array(
+      'base hook' => 'views_view_fields',
+      'template' => 'views-view-fields--staff--pane-staff-dept',
+      'path' => drupal_get_path('module', 'uclalib_staff_directory'),
+    ),
+    'views_view_fields__staff__staff_loc_list' => array(
+      'base hook' => 'views_view_fields',
+      'template' => 'views-view-fields--staff--staff-loc-list',
+      'path' => drupal_get_path('module', 'uclalib_staff_directory'),
+    ),
+    'views_view_fields__staff_search' => array(
+      'base hook' => 'views_view_fields',
+      'template' => 'views-view-fields--staff-search',
+      'path' => drupal_get_path('module', 'uclalib_staff_directory'),
+    ),
+    'views_view_fields__staff_search__staff_search_results' => array(
+      'base hook' => 'views_view_fields',
+      'template' => 'views-view-fields--staff-search--staff-search-results',
+      'path' => drupal_get_path('module', 'uclalib_staff_directory'),
+    ),
+    // summary
+    'views_view_summary__staff__attachment_glossary' => array(
+      'base hook' => 'views_view_summary',
+      'template' => 'views-view-summary--staff--attachment-glossary',
+      'path' => drupal_get_path('module', 'uclalib_staff_directory'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function uclalib_staff_directory_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
+  // modify staff directiry search form with template via theme function
+  if (($form['#id'] == 'views-exposed-form-staff-search-staff-search-results')
+    ||($form['#id'] == 'views-exposed-form-staff-search-default')) {
+    $form['#attached']['css'][] = array(
+       'type' => 'file',
+       'data' => drupal_get_path('module', 'uclalib_staff_directory'). '/uclalib_staff_directory.css',
+    );
+    $form['#attached']['js'][] = array(
+      'type' => 'file',
+      'data' => drupal_get_path('module', 'uclalib_staff_directory'). '/uclalib_staff_directory.js',
+      'scope' => 'footer',
+    );
+    $form['search_api_views_fulltext']['#theme'] = array('views_view_staff_directory_search_text');
+  }
+}
+
+/**
+* Create Staff Directory Gallery default block.
+*/
+function uclalib_staff_directory_install() {
+  // Bean content info.
+  $beans = array(
+    'staff-directory-gallery' => array(
+      'label' => 'Staff Directory Gallery',
+      'title' => '',
+    ),
+  );
+  // Create beans using existing images via their file IDs (fid).
+  foreach ($beans as $delta => $content) {
+    $bean = bean_create(array('type' => 'living_library_gallery'));
+    $bean->delta = $delta;
+    $bean->label = $content['label'];
+    $bean->field_gallery_images[LANGUAGE_NONE] = array(
+      0 => array(
+        'fid' => 3059,
+      ),
+      1 => array(
+        'fid' => 842,
+      ),
+      2 => array(
+        'fid' => 1002,
+      ),
+      3 => array(
+        'fid' => 929,
+      ),
+    );
+    $bean->save();
+  }
+}

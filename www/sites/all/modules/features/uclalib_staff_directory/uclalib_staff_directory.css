@@ -1,0 +1,4 @@
+#views-exposed-form-staff-search-default .views-exposed-form .views-exposed-widget,
+#views-exposed-form-staff-search-staff-search-results .views-exposed-form .views-exposed-widget {
+  float: none;
+}

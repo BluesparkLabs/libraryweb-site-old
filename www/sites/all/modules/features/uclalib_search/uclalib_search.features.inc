@@ -49,7 +49,8 @@ function uclalib_search_fe_nodequeue_export_fields() {
     'i18n' => 0,
     'subqueues' => 1,
     'types' => array(
-      0 => 'location',
+      0 => 'destination',
+      1 => 'location',
     ),
     'roles' => array(),
     'count' => 0,
@@ -167,11 +168,7 @@ function uclalib_search_default_search_api_index() {
     "options" : {
       "index_directly" : 0,
       "cron_limit" : "50",
-      "fields" : {
-        "content" : { "type" : "text" },
-        "search_api_language" : { "type" : "string" },
-        "title" : { "type" : "text" }
-      },
+      "fields" : { "content" : { "type" : "text" }, "title" : { "type" : "text" } },
       "data_alter_callbacks" : {
         "uclalib_search_staff_index_fields" : { "status" : 0, "weight" : "0", "settings" : [] },
         "search_api_alter_add_panelized_entity" : { "status" : 0, "weight" : "0", "settings" : { "mode" : false } },
@@ -383,15 +380,19 @@ function uclalib_search_default_search_api_server() {
     "class" : "search_api_solr_service",
     "options" : {
       "clean_ids" : true,
+      "site_hash_form" : [],
+      "site_hash" : false,
       "scheme" : "http",
-      "host" : "localhost",
-      "port" : "8080",
-      "path" : "\\/solr\\/uclalibdev",
+      "host" : "index",
+      "port" : "8983",
+      "path" : "\\/solr\\/collection1",
       "http_user" : "",
       "http_pass" : "",
       "excerpt" : 1,
       "retrieve_data" : 0,
       "highlight_data" : 0,
+      "skip_schema_check" : 0,
+      "solr_version" : "",
       "http_method" : "AUTO"
     },
     "enabled" : "1"

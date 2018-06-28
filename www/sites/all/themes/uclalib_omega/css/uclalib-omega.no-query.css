@@ -1775,6 +1775,10 @@ td.grid-3:nth-last-child(-n+3) {
   margin-top: 2em;
 }
 
+body.page-staff .l-region--highlighted .panel-pane {
+  padding: 24px 0;
+}
+
 .ap_graphic {
   width: 38%;
 }
@@ -1900,6 +1904,10 @@ td.grid-3:nth-last-child(-n+3) {
 /* Hide more than 4 Living Library thumbnails */
 .field--name-field-gallery-images .field__item:nth-child(n+5) {
   display: none;
+}
+
+.section-staff-departments .pane-bean-staff-directory-gallery {
+  display: inline-block;
 }
 
 .media-element-container {
@@ -3444,47 +3452,33 @@ td.title {
   transform: rotate(-45deg);
 }
 
-.pane-staff-directory-staff-directory-pane .view-staff-directory > .view-content > .views-row {
-  border-bottom: 1px solid #1e4b87;
-  margin-bottom: 30px;
-  padding-bottom: 27px;
-}
-.pane-staff-directory-staff-directory-pane .view-staff-directory > .view-content > .views-row .views-field-field-staff-last-name {
-  font-size: 1.143em;
-  padding-top: 11px;
-}
-.pane-staff-directory-staff-directory-pane .view-staff-directory > .view-content > .views-row .views-field-field-staff-image-thumbnail {
-  float: left;
-  margin-right: 18px;
-}
-.pane-staff-directory-staff-directory-pane .view-staff-directory > .view-content > .views-row-last {
-  border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
+.pane-staff-department-department-title .uclalib-nav-breadcrumb a {
+  font-weight: 400;
 }
 
-/* Staff directory search panel */
-.l-region--main .views-exposed-form-staff-directory-staff-directory-pane .form-radios > div {
+.panel-pane.pane-views-panes.pane-staff-department-department-title {
   float: left;
-  margin: 8px 18px 0 0 !important;
 }
-.l-region--main .views-exposed-form-staff-directory-staff-directory-pane .views-exposed-form .views-exposed-widget .form-submit {
-  margin-top: 0;
+
+.pane-bean-staff-directory-gallery
+.panel-pane.pane-entity-field.pane-taxonomy-term-field-department-social-links {
+  float: right;
 }
-.l-region--main .facetapi-facet-field-staff-glossary-index {
-  list-style: none;
-  padding: 0 0 30px;
+
+body.page-staff .panel-sidebar-left .l-region--sidebar-left,
+body.section-staff-departments .panel-sidebar-left-golden .l-region--sidebar-left {
+  padding: 0;
 }
-.l-region--main .facetapi-facet-field-staff-glossary-index li {
-  border-right: 1px solid #1e4b87;
-  float: left;
-  padding: 0 8px;
+
+.page-taxonomy.page-taxonomy-term .pane-taxonomy-term-field-department-social-links .field__items .field__item {
+  float: right;
+  padding-right: 3px;
 }
-.l-region--main .facetapi-facet-field-staff-glossary-index li:first-child {
-  padding-left: 0;
-}
-.l-region--main .facetapi-facet-field-staff-glossary-index li:last-child {
-  border-right: none;
+
+.panel-pane.pane-views-panes.pane-staff-pane-staff-dept h2,
+.panel-pane.pane-views-panes.pane-staff-staff-loc-list h2,
+.panel-pane.pane-views-panes.pane-staff-department-departments h2 {
+  margin-top: calc(2rem - 0.142857em);
 }
 
 .pane-style-background-blue {

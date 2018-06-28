@@ -10,7 +10,7 @@
 function uclalib_location_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'body'
+  // Exported field_base: 'body'.
   $field_bases['body'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -19,14 +19,6 @@ function uclalib_location_field_default_field_bases() {
       0 => 'node',
     ),
     'field_name' => 'body',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -39,7 +31,7 @@ function uclalib_location_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
-  // Exported field_base: 'comment_body'
+  // Exported field_base: 'comment_body'.
   $field_bases['comment_body'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -48,14 +40,6 @@ function uclalib_location_field_default_field_bases() {
       0 => 'comment',
     ),
     'field_name' => 'comment_body',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -68,21 +52,13 @@ function uclalib_location_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_address'
+  // Exported field_base: 'field_address'.
   $field_bases['field_address'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_address',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -95,14 +71,13 @@ function uclalib_location_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_hours'
+  // Exported field_base: 'field_hours'.
   $field_bases['field_hours'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_hours',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',
@@ -111,21 +86,13 @@ function uclalib_location_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_location_alt_names'
+  // Exported field_base: 'field_location_alt_names'.
   $field_bases['field_location_alt_names'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_location_alt_names',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -140,21 +107,13 @@ function uclalib_location_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_location_building'
+  // Exported field_base: 'field_location_building'.
   $field_bases['field_location_building'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_location_building',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -169,21 +128,13 @@ function uclalib_location_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_location_destinations'
+  // Exported field_base: 'field_location_destinations'.
   $field_bases['field_location_destinations'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_location_destinations',
-    'foreign keys' => array(
-      'node' => array(
-        'columns' => array(
-          'target_id' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -214,14 +165,13 @@ function uclalib_location_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_location_email'
+  // Exported field_base: 'field_location_email'.
   $field_bases['field_location_email'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_location_email',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'email',
@@ -230,21 +180,13 @@ function uclalib_location_field_default_field_bases() {
     'type' => 'email',
   );
 
-  // Exported field_base: 'field_location_floor_plan'
+  // Exported field_base: 'field_location_floor_plan'.
   $field_bases['field_location_floor_plan'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_location_floor_plan',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -261,21 +203,13 @@ function uclalib_location_field_default_field_bases() {
     'type' => 'file',
   );
 
-  // Exported field_base: 'field_location_image'
+  // Exported field_base: 'field_location_image'.
   $field_bases['field_location_image'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_location_image',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -291,21 +225,13 @@ function uclalib_location_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_location_map_file'
+  // Exported field_base: 'field_location_map_file'.
   $field_bases['field_location_map_file'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_location_map_file',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -322,21 +248,13 @@ function uclalib_location_field_default_field_bases() {
     'type' => 'file',
   );
 
-  // Exported field_base: 'field_location_map_image'
+  // Exported field_base: 'field_location_map_image'.
   $field_bases['field_location_map_image'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_location_map_image',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -352,14 +270,13 @@ function uclalib_location_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_location_map_link'
+  // Exported field_base: 'field_location_map_link'.
   $field_bases['field_location_map_link'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_location_map_link',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'link',
@@ -382,14 +299,13 @@ function uclalib_location_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_location_map_link_mobile'
+  // Exported field_base: 'field_location_map_link_mobile'.
   $field_bases['field_location_map_link_mobile'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_location_map_link_mobile',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'link',
@@ -412,21 +328,13 @@ function uclalib_location_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_location_nickname'
+  // Exported field_base: 'field_location_nickname'.
   $field_bases['field_location_nickname'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_location_nickname',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -441,14 +349,13 @@ function uclalib_location_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_location_phone'
+  // Exported field_base: 'field_location_phone'.
   $field_bases['field_location_phone'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_location_phone',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'phone',
@@ -459,14 +366,13 @@ function uclalib_location_field_default_field_bases() {
     'type' => 'phone',
   );
 
-  // Exported field_base: 'field_location_social_links'
+  // Exported field_base: 'field_location_social_links'.
   $field_bases['field_location_social_links'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_location_social_links',
-    'foreign keys' => array(),
     'indexes' => array(
       'field_social_type_value' => array(
         0 => 'field_social_type_value',

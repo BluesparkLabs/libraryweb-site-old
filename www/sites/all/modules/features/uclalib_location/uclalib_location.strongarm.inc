@@ -69,6 +69,27 @@ function uclalib_location_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'diff_enable_revisions_page_node_location';
+  $strongarm->value = 1;
+  $export['diff_enable_revisions_page_node_location'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_show_preview_changes_node_location';
+  $strongarm->value = 1;
+  $export['diff_show_preview_changes_node_location'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_view_mode_preview_node_location';
+  $strongarm->value = 'full';
+  $export['diff_view_mode_preview_node_location'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__location';
   $strongarm->value = array(
     'view_modes' => array(
@@ -79,6 +100,9 @@ function uclalib_location_strongarm() {
         'custom_settings' => FALSE,
       ),
       'weeks_hours' => array(
+        'custom_settings' => TRUE,
+      ),
+      'staff_locations' => array(
         'custom_settings' => TRUE,
       ),
     ),
