@@ -31,7 +31,9 @@ function uclalib_staff_directory_page_alter(&$page) {
       }
     } else {
       if ("/". $alias != $request_uri) {
-        drupal_goto($alias);
+		// DRUP-1317: This breaks navigation through multi-page views, like /yrl/staff?page=1,
+		// and does not seem to be necessary for anything... commenting out for now.
+        //drupal_goto($alias);
       }
     }
   }
