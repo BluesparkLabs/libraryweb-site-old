@@ -46,6 +46,27 @@ function uclalib_staff_directory_views_default_views() {
   $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
   $handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
   $handler->display->display_options['relationships']['term_node_tid']['field'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['term_node_tid']['label'] = 'department';
+  $handler->display->display_options['relationships']['term_node_tid']['vocabularies'] = array(
+    'staff_departments' => 'staff_departments',
+    'academic_departmental_liaison' => 0,
+    'area_of_expertise' => 0,
+    'audience' => 0,
+    'blog_name' => 0,
+    'collection_endowment_initiative' => 0,
+    'events_and_exhibitions_series' => 0,
+    'events_categories' => 0,
+    'location_amenities' => 0,
+    'location_equipment' => 0,
+    'location_study_areas' => 0,
+    'media_subject' => 0,
+    'media_tags' => 0,
+    'news_categories' => 0,
+    'news_tags' => 0,
+    'resource_categories' => 0,
+    'staff_subject_areas' => 0,
+    'tags' => 0,
+  );
   /* Field: Content: Staff Image Thumbnail */
   $handler->display->display_options['fields']['field_staff_image_thumbnail']['id'] = 'field_staff_image_thumbnail';
   $handler->display->display_options['fields']['field_staff_image_thumbnail']['table'] = 'field_data_field_staff_image_thumbnail';
@@ -144,6 +165,11 @@ function uclalib_staff_directory_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'staff_profile' => 'staff_profile',
   );
+  /* Filter criterion: Content: Staff Departments (field_staff_departments:delta) */
+  $handler->display->display_options['filters']['delta']['id'] = 'delta';
+  $handler->display->display_options['filters']['delta']['table'] = 'field_data_field_staff_departments';
+  $handler->display->display_options['filters']['delta']['field'] = 'delta';
+  $handler->display->display_options['filters']['delta']['value']['value'] = '0';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -321,7 +347,7 @@ function uclalib_staff_directory_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['grouping'] = array(
     0 => array(
-      'field' => 'field_staff_departments',
+      'field' => 'name',
       'rendered' => 1,
       'rendered_strip' => 0,
     ),
@@ -389,7 +415,19 @@ function uclalib_staff_directory_views_default_views() {
   $handler->display->display_options['fields']['field_staff_departments']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_staff_departments']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_staff_departments']['delta_offset'] = '0';
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'term_node_tid';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Taxonomy term: Name */
+  $handler->display->display_options['sorts']['name']['id'] = 'name';
+  $handler->display->display_options['sorts']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['sorts']['name']['field'] = 'name';
+  $handler->display->display_options['sorts']['name']['relationship'] = 'term_node_tid';
   /* Sort criterion: Content: Staff Last Name (field_staff_last_name) */
   $handler->display->display_options['sorts']['field_staff_last_name_value']['id'] = 'field_staff_last_name_value';
   $handler->display->display_options['sorts']['field_staff_last_name_value']['table'] = 'field_data_field_staff_last_name';
@@ -704,29 +742,19 @@ function uclalib_staff_directory_views_default_views() {
   $handler->display->display_options['fields']['name']['element_type'] = 'h1';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
-  /* Field: Taxonomy term: Department Social Links */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_department_social_links']['id'] = 'field_department_social_links';
   $handler->display->display_options['fields']['field_department_social_links']['table'] = 'field_data_field_department_social_links';
   $handler->display->display_options['fields']['field_department_social_links']['field'] = 'field_department_social_links';
   $handler->display->display_options['fields']['field_department_social_links']['label'] = '';
   $handler->display->display_options['fields']['field_department_social_links']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_department_social_links']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_department_social_links']['click_sort_column'] = 'field_social_link_url';
-  $handler->display->display_options['fields']['field_department_social_links']['type'] = 'social_links';
-  $handler->display->display_options['fields']['field_department_social_links']['settings'] = array(
-    'view_mode' => 'default',
-  );
-  $handler->display->display_options['fields']['field_department_social_links']['delta_offset'] = '0';
-  /* Field: Taxonomy term: Department Locations */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_department_locations']['id'] = 'field_department_locations';
   $handler->display->display_options['fields']['field_department_locations']['table'] = 'field_data_field_department_locations';
   $handler->display->display_options['fields']['field_department_locations']['field'] = 'field_department_locations';
   $handler->display->display_options['fields']['field_department_locations']['label'] = 'Libraries';
   $handler->display->display_options['fields']['field_department_locations']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_department_locations']['settings'] = array(
-    'link' => 0,
-  );
-  $handler->display->display_options['fields']['field_department_locations']['delta_offset'] = '0';
   $handler->display->display_options['argument_input'] = array(
     'tid' => array(
       'type' => 'panel',
@@ -750,7 +778,7 @@ function uclalib_staff_directory_views_default_views() {
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
-  /* Field: Taxonomy term: Department Phone */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_department_phone']['id'] = 'field_department_phone';
   $handler->display->display_options['fields']['field_department_phone']['table'] = 'field_data_field_department_phone';
   $handler->display->display_options['fields']['field_department_phone']['field'] = 'field_department_phone';

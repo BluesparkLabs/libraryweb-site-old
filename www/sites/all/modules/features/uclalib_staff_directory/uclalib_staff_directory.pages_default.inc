@@ -191,6 +191,29 @@ function uclalib_staff_directory_default_page_manager_pages() {
   $pane->uuid = 'e9ff575e-079f-4d9d-ba89-7ce357719063';
   $display->content['new-e9ff575e-079f-4d9d-ba89-7ce357719063'] = $pane;
   $display->panels['top'][1] = 'new-e9ff575e-079f-4d9d-ba89-7ce357719063';
+  $pane = new stdClass();
+  $pane->pid = 'new-c4b95db3-d137-440a-abbf-cd78a474c6f1';
+  $pane->panel = 'top';
+  $pane->type = 'block';
+  $pane->subtype = 'bean-powell-library-gallery---inqdesk';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = 'c4b95db3-d137-440a-abbf-cd78a474c6f1';
+  $display->content['new-c4b95db3-d137-440a-abbf-cd78a474c6f1'] = $pane;
+  $display->panels['top'][2] = 'new-c4b95db3-d137-440a-abbf-cd78a474c6f1';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-b1f37419-adf0-415d-bcff-8a062162241e';
   $handler->conf['display'] = $display;
