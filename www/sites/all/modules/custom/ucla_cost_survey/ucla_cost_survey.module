@@ -1,0 +1,19 @@
+<?php
+/**
+ * @file
+ * Enables Library Cost Analysis Survey by including external javascript.
+ */
+
+/**
+ * Implements hook_js_alter
+ */
+function ucla_cost_survey_js_alter(&$javascript) {
+  // Not actually altering existing js but seemed the most appropriate hook?
+  // Add reference with no protocol, instead of hard-coding http or https, so will work under both protocols.
+  drupal_add_js('//gitcdn.link/repo/UCLALibrary/unitproj/master/lis/libweb/libsurvey.js', array(
+    'type' => 'external',
+    'scope' => 'header',
+    'every_page' => TRUE,
+  ));
+}
+
