@@ -435,6 +435,8 @@ function editPeopleResearch() {
     /* Gather relevant elements. */
     var object =
         $('#peopleResearch')
+            .children('div.content.middle.aligned')
+            .children('div.ui.inverted.segment.left.floated')
             .children('div.ui.tiny.inverted.statistics.left.floated')
             .children('div.statistic')
             .children('div.value');

@@ -2189,7 +2189,7 @@
       <!-- MODAL #23b - directLoadWarningNgModal -->
       <!-- MODAL #23b - directLoadWarningNgModal -->
       <!-- MODAL #23b - directLoadWarningNgModal -->
-      <div class="ui united large directLoadWarningNgModal modal" id="directLoadWarningNgModal">
+      <div class="ui united large directLoadWarningNgModal modal" id="directLoadWarningNgModal" style="left: auto; right: auto; top: auto; bottom: auto;">
 
         <div class="header">
           You are logged in (as: <?php print( $page['sf_user_first'] ); ?> <?php print( $page['sf_user_last'] ); ?>)<br>but still need to join the Stats Form Group
@@ -2220,7 +2220,7 @@
       <!-- MODAL #24 - reLoginConfirmationWait -->
       <!-- MODAL #24 - reLoginConfirmationWait -->
       <!-- MODAL #24 - reLoginConfirmationWait -->
-      <div class="ui united large reLoginConfSpinner modal" id="reLoginConfSpinner">
+      <div class="ui united large reLoginConfSpinner modal" id="reLoginConfSpinner" style="left: auto; right: auto; top: auto; bottom: auto;">
 
         <div class="header">
         </div>
@@ -2752,17 +2752,15 @@
             <!-- TOP -->
 
             <!-- BOTTOM -->
-            <div class="column">
+            <div class="content">
               <div class="ui stackable grid container">
                 <div class="one column row">
-
-                  <div class="ui column">
-                    <div class="ui fluid buttons">
+                  
+                  <div class="ui fluid buttons">
                       <!-- dhc - dont double huge the buttons! -->
-                      <button data-modal="individualLogin" class="show ui basic orange button" id="unitIndividual" name="unitIndividual">Choose <br>Single <br>Login</button>
-                      <div class="or" style="height: 4.57142857em"></div>
-                      <button data-modal="groupLogin" class="show ui basic blue button" id="unitGroup" name="unitGroup">Choose <br>Group <br>Login</button>
-                    </div>
+                     <button data-modal="individualLogin" class="show ui basic orange button" id="unitIndividual" name="unitIndividual">Choose <br>Single <br>Login</button>
+                     <div class="or" style="height: 4.57142857em"></div>
+                   <button data-modal="groupLogin" class="show ui basic blue button" id="unitGroup" name="unitGroup">Choose <br>Group <br>Login</button>
                   </div>
                 </div>
               </div>
@@ -4134,7 +4132,7 @@
                       'sfTypeID003': '12',
                       'sfModeID003': '01',
                       'sfPolicyVal': document.getElementById("policyVal").textContent,
-                      'sfTypeID004': '01',
+                      'sfTypeID004': '13',
                       'sfModeID004': '01',
                       'sfReferralCount': document.getElementById("referralCount").textContent,
                       'sfTypeID005': '10',
