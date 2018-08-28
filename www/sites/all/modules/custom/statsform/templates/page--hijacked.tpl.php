@@ -799,7 +799,7 @@
       <!-- MODAL #3 - Service Points Arts -->
       <!-- MODAL #3 - Service Points Arts -->
       <!-- MODAL #3 - Service Points Arts -->
-      <div class="ui united large modal" id="unitArts">
+      <div class="ui united large modal" id="unitArts" style="left: auto; right: auto; top: auto; bottom: auto;">
 
         <div class="header initial">
           Please pick a service point.
@@ -891,7 +891,7 @@
       <!-- MODAL #4 - Service Points Biomed -->
       <!-- MODAL #4 - Service Points Biomed -->
       <!-- MODAL #4 - Service Points Biomed -->
-      <div class="ui united large modal" id="unitBiomed">
+      <div class="ui united large modal" id="unitBiomed" style="left: auto; right: auto; top: auto; bottom: auto;">
 
         <div class="header initial">
           Please pick a service point.
@@ -983,7 +983,7 @@
       <!-- MODAL #5 - Service Points Library Special Collections -->
       <!-- MODAL #5 - Service Points Library Special Collections -->
       <!-- MODAL #5 - Service Points Library Special Collections -->
-      <div class="ui united large modal" id="unitLibrarySpecialCollections">
+      <div class="ui united large modal" id="unitLibrarySpecialCollections" style="left: auto; right: auto; top: auto; bottom: auto;">
 
         <div class="header initial">
           Please pick a service point.
@@ -1075,7 +1075,7 @@
       <!-- MODAL #6 - Service Points Clark Library -->
       <!-- MODAL #6 - Service Points Clark Library -->
       <!-- MODAL #6 - Service Points Clark Library -->
-      <div class="ui united large modal" id="unitClark">
+      <div class="ui united small modal" id="unitClark" style="left: auto; right: auto; top: auto; bottom: auto;">
 
         <div class="header initial">
           Please pick a service point.
@@ -1148,7 +1148,7 @@
       <!-- MODAL #7 - Service Points Powell -->
       <!-- MODAL #7 - Service Points Powell -->
       <!-- MODAL #7 - Service Points Powell -->
-      <div class="ui united large modal" id="unitPowell">
+      <div class="ui united large modal" id="unitPowell" style="left: auto; right: auto; top: auto; bottom: auto;">
 
         <div class="header initial">
           Please pick a service point.
@@ -1259,7 +1259,7 @@
       <!-- MODAL #8 - Service Points Digital Library Program -->
       <!-- MODAL #8 - Service Points Digital Library Program -->
       <!-- MODAL #8 - Service Points Digital Library Program -->
-      <div class="ui united large modal" id="unitDigitalLibraryProgram">
+      <div class="ui united tiny modal" id="unitDigitalLibraryProgram" style="left: auto; right: auto; top: auto; bottom: auto;">
 
         <div class="header initial">
           Please pick a service point.
@@ -1313,7 +1313,7 @@
       <!-- MODAL #9 - Service Points East Asian -->
       <!-- MODAL #9 - Service Points East Asian -->
       <!-- MODAL #9 - Service Points East Asian -->
-      <div class="ui united large modal" id="unitEastAsian">
+      <div class="ui united small modal" id="unitEastAsian" style="left: auto; right: auto; top: auto; bottom: auto;">
 
         <div class="header initial">
           Please pick a service point.
@@ -1386,7 +1386,7 @@
       <!-- MODAL #10 - Service Points Law -->
       <!-- MODAL #10 - Service Points Law -->
       <!-- MODAL #10 - Service Points Law -->
-      <div class="ui united large modal" id="unitLaw">
+      <div class="ui united small modal" id="unitLaw" style="left: auto; right: auto; top: auto; bottom: auto;">
 
         <div class="header initial">
           Please pick a service point.
@@ -1459,7 +1459,7 @@
       <!-- MODAL #11 - Service Points Management -->
       <!-- MODAL #11 - Service Points Management -->
       <!-- MODAL #11 - Service Points Management -->
-      <div class="ui united large modal" id="unitManagement">
+      <div class="ui united large modal" id="unitManagement" style="left: auto; right: auto; top: auto; bottom: auto;">
 
         <div class="header initial">
           Please pick a service point.
@@ -1551,7 +1551,7 @@
       <!-- MODAL #12 - Service Points Music -->
       <!-- MODAL #12 - Service Points Music -->
       <!-- MODAL #12 - Service Points Music -->
-      <div class="ui united large modal" id="unitMusic">
+      <div class="ui united large modal" id="unitMusic" style="left: auto; right: auto; top: auto; bottom: auto;">
 
         <div class="header initial">
           Please pick a service point.
@@ -1643,7 +1643,7 @@
       <!-- MODAL #13 - Service Points Rieber Hall -->
       <!-- MODAL #13 - Service Points Rieber Hall -->
       <!-- MODAL #13 - Service Points Rieber Hall -->
-      <div class="ui united large modal" id="unitRieberHall">
+      <div class="ui united tiny modal" id="unitRieberHall" style="left: auto; right: auto; top: auto; bottom: auto;">
 
         <div class="header initial">
           Please pick a service point.
@@ -1697,7 +1697,7 @@
       <!-- MODAL #14 - Service Points SEL -->
       <!-- MODAL #14 - Service Points SEL -->
       <!-- MODAL #14 - Service Points SEL -->
-     <div class="ui united large modal" id="unitSel">
+     <div class="ui united large modal" id="unitSel" style="left: auto; right: auto; top: auto; bottom: auto;">
 
         <div class="header initial">
           Please pick a service point.
@@ -1808,7 +1808,7 @@
       <!-- MODAL #15 - Service Points SRLF -->
       <!-- MODAL #15 - Service Points SRLF -->
       <!-- MODAL #15 - Service Points SRLF -->
-      <div class="ui united large modal" id="unitSrlf">
+      <div class="ui united tiny modal" id="unitSrlf" style="left: auto; right: auto; top: auto; bottom: auto;">
 
         <div class="header initial">
           Please pick a service point.
@@ -1862,7 +1862,7 @@
       <!-- MODAL #16 - Service Points Social Science Data Archive -->
       <!-- MODAL #16 - Service Points Social Science Data Archive -->
       <!-- MODAL #16 - Service Points Social Science Data Archive -->
-      <div class="ui united large modal" id="unitSocialScienceDataArchive">
+      <div class="ui united tiny modal" id="unitSocialScienceDataArchive" style="left: auto; right: auto; top: auto; bottom: auto;">
 
         <div class="header initial">
           Please pick a service point.
@@ -1916,7 +1916,7 @@
       <!-- MODAL #17 - Service Points YRL -->
       <!-- MODAL #17 - Service Points YRL -->
       <!-- MODAL #17 - Service Points YRL -->
-      <div class="ui united large modal" id="unitYrl">
+      <div class="ui united large modal" id="unitYrl" style="left: auto; right: auto; top: auto; bottom: auto;">
 
         <div class="header initial">
           Please pick a service point.
@@ -2027,7 +2027,7 @@
       <!-- MODAL #18 - Library Message -->
       <!-- MODAL #18 - Library Message -->
       <!-- MODAL #18 - Library Message -->
-      <div class="ui united large modal" id="libraryMsg">
+      <div class="ui united large modal" id="libraryMsg" style="left: auto; right: auto; top: auto; bottom: auto;">
 
         <div class="header initial">
           Please pick a service point.
@@ -2083,7 +2083,7 @@
       <!-- MODAL #19 - Individual Login -->
       <!-- MODAL #19 - Individual Login -->
       <!-- MODAL #19 - Individual Login -->
-      <div class="ui united large modal" id="individualLogin">
+      <div class="ui united large modal" id="individualLogin" style="left: auto; right: auto; top: auto; bottom: auto;">
 
         <div class="header">
           Please pick a Login Provider
@@ -2149,7 +2149,7 @@
       <!-- MODAL #20 - Group Login -->
       <!-- MODAL #20 - Group Login -->
       <!-- MODAL #20 - Group Login -->
-      <div class="ui united large modal" id="groupLogin">
+      <div class="ui united large modal" id="groupLogin" style="left: auto; right: auto; top: auto; bottom: auto;">
 
         <div class="header">
           Please pick a User Group
@@ -2182,7 +2182,7 @@
       <!-- MODAL #21 - logoutModal -->
       <!-- MODAL #21 - logoutModal -->
       <!-- MODAL #21 - logoutModal -->
-      <div class="ui united large logoutModal modal" id="logoutModal">
+      <div class="ui united large logoutModal modal" id="logoutModal" style="left: auto; right: auto; top: auto; bottom: auto;">
 
         <div class="header">
           <center>Data saved?<br>Tap on "cancel" to go back and save your data.</center>
@@ -2223,7 +2223,7 @@
       <!-- MODAL #21b - reLoginHereModal -->
       <!-- MODAL #21b - reLoginHereModal -->
       <!-- MODAL #21b - reLoginHereModal -->
-      <div class="ui united large reLoginHereModal modal" id="reLoginHereModal">
+      <div class="ui united large reLoginHereModal modal" id="reLoginHereModal" style="left: auto; right: auto; top: auto; bottom: auto;">
 
         <div class="header">
           <center>Data saved?<br>Tap on "cancel" to go back and save your data.</center>
@@ -2264,7 +2264,7 @@
       <!-- MODAL #22 - changeLoginModal  -->
       <!-- MODAL #22 - changeLoginModal  -->
       <!-- MODAL #22 - changeLoginModal  -->
-      <div class="ui united large changeLoginModal modal" id="changeLoginModal">
+      <div class="ui united large changeLoginModal modal" id="changeLoginModal" style="left: auto; right: auto; top: auto; bottom: auto;">
 
         <div class="header">
           You are already logged in as: <?php print( $page['sfUserFirst'] ); ?> <?php print( $page['sfUserLast'] ); ?>
@@ -2295,7 +2295,7 @@
       <!-- MODAL #23 - directLoadWarningModal -->
       <!-- MODAL #23 - directLoadWarningModal -->
       <!-- MODAL #23 - directLoadWarningModal -->
-      <div class="ui united large directLoadWarningModal modal" id="directLoadWarningModal">
+      <div class="ui united large directLoadWarningModal modal" id="directLoadWarningModal" style="left: auto; right: auto; top: auto; bottom: auto;">
 
         <div class="header">
           You are already logged in as: <?php print( $page['sf_user_first'] ); ?> <?php print( $page['sf_user_last'] ); ?>
@@ -2326,7 +2326,7 @@
       <!-- MODAL #24 - reLoginConfirmationWait -->
       <!-- MODAL #24 - reLoginConfirmationWait -->
       <!-- MODAL #24 - reLoginConfirmationWait -->
-      <div class="ui united large reLoginConfSpinner modal" id="reLoginConfSpinner">
+      <div class="ui united large reLoginConfSpinner modal" id="reLoginConfSpinner" style="left: auto; right: auto; top: auto; bottom: auto;">
 
         <div class="header">
         </div>
@@ -2354,7 +2354,7 @@
 
       <!-- MODAL for Quick Questions page -->
       <!-- Directions Modal -->
-      <div class="ui modal" id="directions-modal">
+      <div class="ui modal" id="directions-modal" style="left: auto; right: auto; top: auto; bottom: auto;">
 
         <div class="actions">
           <div class="ui black deny button">
@@ -2380,7 +2380,7 @@
       </div>
 
       <!-- Lookup Modal -->
-      <div class="ui modal" id="lookup-modal">
+      <div class="ui modal" id="lookup-modal" style="left: auto; right: auto; top: auto; bottom: auto;">
 
         <div class="actions">
           <div class="ui black deny button">
@@ -2406,7 +2406,7 @@
       </div>
 
       <!-- Policy Modal -->
-      <div class="ui modal" id="policy-modal">
+      <div class="ui modal" id="policy-modal" style="left: auto; right: auto; top: auto; bottom: auto;">
 
         <div class="actions">
           <div class="ui black deny button">
@@ -2432,7 +2432,7 @@
       </div>
 
       <!-- Research Modal -->
-      <div class="ui modal" id="research-modal">
+      <div class="ui modal" id="research-modal" style="left: auto; right: auto; top: auto; bottom: auto;">
 
         <div class="actions">
           <div class="ui black deny button">
@@ -2458,7 +2458,7 @@
       </div>
 
       <!-- Technical Modal -->
-      <div class="ui modal" id="technical-modal">
+      <div class="ui modal" id="technical-modal" style="left: auto; right: auto; top: auto; bottom: auto;">
 
         <div class="actions">
           <div class="ui black deny button">
@@ -2493,7 +2493,7 @@
 
       <!-- MODAL for Research Assistance page -->
       <!-- Directions (Research Assistance) Modal -->
-      <div class="ui modal" id="directionsResearch-modal">
+      <div class="ui modal" id="directionsResearch-modal" style="left: auto; right: auto; top: auto; bottom: auto;">
 
         <div class="actions">
           <div class="ui black deny button">
@@ -2519,7 +2519,7 @@
       </div>
 
       <!-- Lookup (Research Assistance) Modal -->
-      <div class="ui modal" id="lookupResearch-modal">
+      <div class="ui modal" id="lookupResearch-modal" style="left: auto; right: auto; top: auto; bottom: auto;">
 
         <div class="actions">
           <div class="ui black deny button">
@@ -2545,7 +2545,7 @@
       </div>
 
       <!-- Policy (Research Assistance) Modal -->
-      <div class="ui modal" id="policyResearch-modal">
+      <div class="ui modal" id="policyResearch-modal" style="left: auto; right: auto; top: auto; bottom: auto;">
 
         <div class="actions">
           <div class="ui black deny button">
@@ -2571,7 +2571,7 @@
       </div>
 
       <!-- Research (Research Assistance) Modal -->
-      <div class="ui modal" id="researchResearch-modal">
+      <div class="ui modal" id="researchResearch-modal" style="left: auto; right: auto; top: auto; bottom: auto;">
 
         <div class="actions">
           <div class="ui black deny button">
@@ -2597,7 +2597,7 @@
       </div>
 
       <!-- Technical (Research Assistance) Modal -->
-      <div class="ui modal" id="technicalResearch-modal">
+      <div class="ui modal" id="technicalResearch-modal" style="left: auto; right: auto; top: auto; bottom: auto;">
 
         <div class="actions">
           <div class="ui black deny button">
@@ -2623,7 +2623,7 @@
       </div>
 
       <!-- People (Research Assistance) Modal -->
-      <div class="ui modal" id="peopleResearch-modal">
+      <div class="ui modal" id="peopleResearch-modal" style="left: auto; right: auto; top: auto; bottom: auto;">
 
         <div class="actions">
           <div class="ui black deny button">
@@ -2649,7 +2649,7 @@
       </div>
 
       <!-- Minutes (Research Assistance) Modal -->
-      <div class="ui modal" id="minutesResearch-modal">
+      <div class="ui modal" id="minutesResearch-modal" style="left: auto; right: auto; top: auto; bottom: auto;">
 
         <div class="actions">
           <div class="ui black deny button">
@@ -2852,7 +2852,7 @@
                       <!-- dhc - dont double huge the buttons! -->
                       <button data-modal="individualLogin" class="show ui basic orange button" id="unitIndividual" name="unitIndividual">Choose <br>Single <br>Login</button>
                       <div class="or" style="height: 4.57142857em"></div>
-                      <button data-modal="groupLogin" class="show ui basic blue button" id="unitGroup" name="unitGroup">Choose <br>Group <br>Login</button>
+                      <button data-modal="groupLogin" class="show ui basic blue button" id="unitGroup" style="height:75px; width:118px" name="unitGroup">Choose <br>Group <br>Login</button>
                     </div>
                   </div>
                 </div>
@@ -2876,7 +2876,7 @@
                 <div class="one column row">
                   <div class="ui center aligned column">
 
-                    <div class="ui massive teal buttons">
+                    <div class="ui massive teal buttons" style="height:75px; width:130px">
                       <div class="ui fluid logout button">
                         <div class="ui logout xlabel"><?php print( $page['sfUserName'] ); ?></div>
                       </div>
@@ -3319,9 +3319,9 @@ document.getElementById('sfUnitGroupID').value
                     </div>
 
                     <div class="four wide column"> 
-                      <div class="ui fluid card withCount">
+                      <div class="ui fluid card withCount" id="peopleResearch">
                         <div class="content middle aligned">
-                          <div class="ui inverted segment left floated" id="peopleResearch">
+                          <div class="ui inverted segment left floated">
                             <div class="ui tiny inverted statistics left floated"> 
                               <div class="statistic">
                                 <div class="value" id="patronCount">0</div> 
@@ -3338,9 +3338,9 @@ document.getElementById('sfUnitGroupID').value
                     </div>
 
                     <div class="four wide column"> 
-                      <div class="ui fluid card withCount">
+                      <div class="ui fluid card withCount" id="minutesResearch">
                         <div class="content middle aligned">
-                          <div class="ui inverted segment left floated" id="minutesResearch">
+                          <div class="ui inverted segment left floated">
                             <div class="ui tiny inverted statistics left floated"> 
                               <div class="statistic">
                                 <div class="value" id="minuteCount">0</div> 
