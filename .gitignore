@@ -1,2 +1,11 @@
-# Copy drushrc.php.example to drushrc.php for each environment.
-/www/sites/all/drush/drushrc.php
+# UCLA-specific settings files - no credentials in repo.
+/www/sites/*/*.settings-db.php
+
+# Ignore drush runtime configs for current environment.
+/www/sites/*/drushrc.php
+
+# Ignore robots.txt - we use site-specific files via symlink
+/www/robots.txt
+
+# Ignore hidden swap files from "kate" editor
+*.kate-swp
