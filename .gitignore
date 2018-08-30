@@ -1,5 +1,5 @@
 # UCLA Library project git ignores
-# See also Drupal-specific ignores in www/.gitignore
+# See also Drupal-specific ignores in /www/.gitignore
 
 # Ignore environment-specific database credentials.
 # @todo rename to settings.<environment>.local.php files and remove this line
