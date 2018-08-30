@@ -29,7 +29,7 @@ $databases = array (
 // Solr settings
 $conf['search_api_solr_overrides'] = array(
   'uclalib_solr_server' => array(
-    'name' => t('Solr (dev)'),
+    'name' => t('Solr (local)'),
     'options' => array(
       'host' => 'localhost',
       'port' => '8983',

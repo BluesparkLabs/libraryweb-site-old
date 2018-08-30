@@ -586,3 +586,8 @@ $env_include = array(
 if (isset($env_include[$_SERVER['HTTP_HOST']])) {
   require_once($env_include[$_SERVER['HTTP_HOST']]);
 }
+
+$on_platformsh = !empty($_ENV['PLATFORM_PROJECT']);
+if ($on_platformsh && file_exists(__DIR__ . '/settings.platformsh.php')) {
+  require_once(__DIR__ . '/settings.platformsh.php');
+}

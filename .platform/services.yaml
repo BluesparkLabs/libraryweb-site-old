@@ -1,0 +1,12 @@
+# The services of the project.
+#
+# Each service listed will be deployed
+# to power your Platform.sh project.
+
+mysql10:
+    type: mysql:10.0
+    disk: 2048
+
+solrsearch:
+    type: solr:4.10
+    disk: 904
