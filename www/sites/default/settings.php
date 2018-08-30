@@ -636,21 +636,19 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
  */
 $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
 
+// UCLA domains and settings: top-level (varnish) and individual webheads
 $env_include = array(
-  // Developer environments.
-  'uclalib.local' => 'settings.local.php',
-  // UCLA domains and settings: top-level (varnish) and individual webheads
-  'www-test.library.ucla.edu' => 'test.settings.php',
-  'www-test1.library.ucla.edu' => 'test.settings.php',
-  'www-test2.library.ucla.edu' => 'test.settings.php',
-  'www-stage.library.ucla.edu' => 'stage.settings.php',
-  'www-stage1.library.ucla.edu' => 'stage.settings.php',
-  'www-stage2.library.ucla.edu' => 'stage.settings.php',
-  'www.library.ucla.edu' => 'prod.settings.php',
-  'library.ucla.edu' => 'prod.settings.php',
-  'www-prod1.library.ucla.edu' => 'prod.settings.php',
-  'www-prod2.library.ucla.edu' => 'prod.settings.php',
-  'www-prod3.library.ucla.edu' => 'prod.settings.php',
+  'www-test.library.ucla.edu' => 'settings.test.php',
+  'www-test1.library.ucla.edu' => 'settings.test.php',
+  'www-test2.library.ucla.edu' => 'settings.test.php',
+  'www-stage.library.ucla.edu' => 'settings.stage.php',
+  'www-stage1.library.ucla.edu' => 'settings.stage.php',
+  'www-stage2.library.ucla.edu' => 'settings.stage.php',
+  'www.library.ucla.edu' => 'settings.prod.php',
+  'library.ucla.edu' => 'settings.prod.php',
+  'www-prod1.library.ucla.edu' => 'settings.prod.php',
+  'www-prod2.library.ucla.edu' => 'settings.prod.php',
+  'www-prod3.library.ucla.edu' => 'settings.prod.php',
   'uclalib-www.docksal' => 'uclalib-www.docksal.settings.php',
 );
 
@@ -658,7 +656,13 @@ if (isset($env_include[$_SERVER['HTTP_HOST']])) {
   require_once($env_include[$_SERVER['HTTP_HOST']]);
 }
 
+// Platform.sh environments
 $on_platformsh = !empty($_ENV['PLATFORM_PROJECT']);
 if ($on_platformsh && file_exists(__DIR__ . '/settings.platformsh.php')) {
   require_once(__DIR__ . '/settings.platformsh.php');
+}
+
+// Local settings files.
+if (!$on_platformsh && file_exists(__DIR__ . '/settings.local.php')) {
+  require_once(__DIR__ . '/settings.local.php');
 }

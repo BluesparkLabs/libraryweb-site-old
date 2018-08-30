@@ -2,6 +2,7 @@
 # See also Drupal-specific ignores in www/.gitignore
 
 # Ignore environment-specific database credentials.
+# @todo rename to settings.<environment>.local.php files and remove this line
 /www/sites/*/*.settings-db.php
 
 # Ignore Drush runtime configs for current environment.

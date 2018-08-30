@@ -1,7 +1,8 @@
 <?php
 
-// Site-specific settings for stage system
+// Environment-specific settings for stage environments.
 // Get database info from file which is excluded from repo
+// @todo rename stage.settings-db.php to settings.stage.local.php
 require_once('stage.settings-db.php');
 
 // Memcache settings
