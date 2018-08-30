@@ -1,10 +1,13 @@
-# UCLA-specific settings files - no credentials in repo.
+# UCLA Library project git ignores
+# See also Drupal-specific ignores in www/.gitignore
+
+# Ignore environment-specific database credentials.
 /www/sites/*/*.settings-db.php
 
-# Ignore drush runtime configs for current environment.
+# Ignore Drush runtime configs for current environment.
 /www/sites/*/drushrc.php
 
-# Ignore robots.txt - we use site-specific files via symlink
+# Ignore robots.txt - we use environment-specific files via symlink
 /www/robots.txt
 
 # Ignore hidden swap files from "kate" editor
