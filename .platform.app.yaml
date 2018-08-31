@@ -96,7 +96,7 @@ hooks:
         # Abort the build if an error occurs.
         set -e
         # Activate Platform.sh drush configurations.
-        cp www/sites/all/drush/drushrc.platformsh.php www/sites/all/drush/drushrc.php
+        cp www/sites/default/drushrc.platformsh.php www/sites/default/drushrc.php
 
     # We run deploy hook after your application has been deployed and started.
     deploy: |
