@@ -14,14 +14,14 @@ $options['dump-dir'] = realpath(dirname(__FILE__) . '/../../../../db');
  * structure-tables-key option will avoid exporting data from a standard list
  * of database tables that can be safely ignored from most database dumps.
  */
-$options['structure-tables']['standard'] = [
+$options['structure-tables']['standard'] = array(
   'cache',
   'cache_*',
   'history',
   'semaphore',
   'sessions',
   'watchdog',
-];
+);
 $options['structure-tables-key'] = 'standard';
 
 /**
@@ -31,7 +31,7 @@ $options['structure-tables-key'] = 'standard';
  * NOTE: this option should not be used as a primary backup setting due to
  * data loss.
  */
-$options['structure-tables']['minimal'] = array_merge($options['structure-tables']['standard'], [
+$options['structure-tables']['minimal'] = array_merge($options['structure-tables']['standard'], array(
   'field_revision_*',
   'flood',
   'linkchecker_*',
@@ -41,7 +41,7 @@ $options['structure-tables']['minimal'] = array_merge($options['structure-tables
   'search_totals',
   'ucla_search_log',
   'webform_submi*',
-]);
+));
 
 /**
  * Specify the --skip-tables-key=minimal option for drush sql-dump and
@@ -50,9 +50,9 @@ $options['structure-tables']['minimal'] = array_merge($options['structure-tables
  * NOTE this option should not be used as a primary backup setting due to
  * data loss.
  */
-$options['skip-tables']['minimal'] = [
+$options['skip-tables']['minimal'] = array(
   'field_deleted_*',
-];
+);
 
 /**
  * Output sql dumps to a file with the database name and current date.

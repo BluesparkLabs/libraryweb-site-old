@@ -8,7 +8,7 @@
 /**
  * Database credentials for current environment.
  */
-$databases['default']['default'] = [
+$databases['default']['default'] = array(
   'database' => 'uclalib',
   'username' => 'uclalib',
   'password' => 'uclalib',
@@ -16,21 +16,21 @@ $databases['default']['default'] = [
   'port' => '3306',
   'driver' => 'mysql',
   'prefix' => '',
-];
+);
 
 /**
  * Solr overrides for local environment.
  */
-$conf['search_api_solr_overrides'] = [
-  'uclalib_solr_server' => [
+$conf['search_api_solr_overrides'] = array(
+  'uclalib_solr_server' => array(
     'name' => t('Solr (local)'),
-    'options' => [
+    'options' => array(
       'host' => 'localhost',
       'port' => '8983',
       'path' => '/solr/uclalibdev',
-    ],
-  ],
-];
+    ),
+  ),
+);
 
 /**
  * Stage File Proxy settings, loads images from production server domain.
