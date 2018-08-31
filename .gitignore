@@ -1,2 +1,15 @@
-# Copy drushrc.php.example to drushrc.php for each environment.
-/www/sites/all/drush/drushrc.php
+# UCLA Library project git ignores
+# See also Drupal-specific ignores in /www/.gitignore
+
+# Ignore environment-specific database credentials.
+# @todo rename to settings.<environment>.local.php files and remove this line
+/www/sites/*/*.settings-db.php
+
+# Ignore Drush runtime configs for current environment.
+/www/sites/*/drushrc.php
+
+# Ignore robots.txt - we use environment-specific files via symlink
+/www/robots.txt
+
+# Ignore hidden swap files from "kate" editor
+*.kate-swp
