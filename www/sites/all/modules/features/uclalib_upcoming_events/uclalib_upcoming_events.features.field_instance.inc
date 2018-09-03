@@ -10,7 +10,8 @@
 function uclalib_upcoming_events_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'bean-upcoming_events-field_upcoming_events_events'
+  // Exported field_instance:
+  // 'bean-upcoming_events-field_upcoming_events_events'.
   $field_instances['bean-upcoming_events-field_upcoming_events_events'] = array(
     'bundle' => 'upcoming_events',
     'default_value' => NULL,

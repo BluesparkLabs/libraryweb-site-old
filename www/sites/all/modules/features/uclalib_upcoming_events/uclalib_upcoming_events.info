@@ -30,5 +30,4 @@ features[views_view][] = recent_news_highlight
 features[views_view][] = upcoming_events_display
 features[views_view][] = upcoming_events_reference
 features[views_view][] = upcoming_news_reference
-mtime = 1476466458
 project path = sites/all/modules/features
