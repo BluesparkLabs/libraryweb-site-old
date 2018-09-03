@@ -4443,10 +4443,10 @@ span#expandAll.links.links, span#collapseAll.links.links.links {
 .pane-bean-upcoming-events h2 + .pane-content {
   padding: 6px;
 }
-.ui-tabs .ui-tabs-panel .view-recent-news-highlight .view-footer,
-.ui-tabs .ui-tabs-panel .view-upcoming-events-display .view-footer,
-.pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .view-footer,
-.pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .view-footer {
+.ui-tabs .ui-tabs-panel .view-recent-news-highlight .more-link,
+.ui-tabs .ui-tabs-panel .view-upcoming-events-display .more-link,
+.pane-bean-upcoming-events h2 + .pane-content .view-recent-news-highlight .more-link,
+.pane-bean-upcoming-events h2 + .pane-content .view-upcoming-events-display .more-link {
   padding-right: 14px;
   text-align: right;
 }
