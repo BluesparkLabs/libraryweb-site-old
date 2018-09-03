@@ -242,7 +242,7 @@ if (count($node->field_resource_associated_loc[LANGUAGE_NONE])) {
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['text'] = '<a class="resource-term-search-link" href="/search-research/find-resources?f[0]=field_resource_type%3A[tid]">[name]</a>';
+  $handler->display->display_options['fields']['name']['alter']['text'] = '<a class="resource-term-search-link" href="/search-research/find-resources?f[0]=field_resource_type&#37;3A[tid]">[name]</a>';
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;

@@ -726,7 +726,7 @@ function uclalib_news_views_default_views() {
   $handler->display->display_options['fields']['name']['relationship'] = 'field_news_categories_tid';
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['text'] = '<a href="/news?f[0]=field_news_categories%3A[tid]">[name]</a>';
+  $handler->display->display_options['fields']['name']['alter']['text'] = '<a href="/news?f[0]=field_news_categories&#37;3A[tid]">[name]</a>';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';

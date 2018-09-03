@@ -480,7 +480,7 @@ function uclalib_resources_default_page_manager_pages() {
     $pane->configuration = array(
       'admin_title' => 'Find Resources Horizontal Tab Navigation',
       'title' => '',
-      'body' => '<p>Get help with your research | <a href="/locations?f[0]=field_study_areas%3A34">Find a quiet Study Area</a> | <a href="/locations?f[0]=field_study_areas%3A36">Find a Group Study Area</a></p>
+      'body' => '<p>Get help with your research | <a href="/locations?f[0]=field_study_areas&#37;3A34">Find a quiet Study Area</a> | <a href="/locations?f[0]=field_study_areas&#37;3A36">Find a Group Study Area</a></p>
 ',
       'format' => 'full_html',
       'substitute' => TRUE,
