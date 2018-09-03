@@ -225,3 +225,42 @@ function uclalib_upcoming_events_cron() {
     }
   }
 }
+
+/**
+ * Prepares variables for views-view.tpl.php
+ */
+function uclalib_upcoming_events_preprocess_views_view(&$variables) {
+  $view = $variables['view'];
+
+  // Build a custom more link to the pre-filtered news page by integrating
+  // the news location field from views context.
+  if ($view->name == 'recent_news_highlight' && in_array($view->current_display, array('panel_pane_1', 'panel_pane_2'))) {
+
+    $options = [];
+    $i = 0;
+
+    // Arg 0 is id from field_news_categories, so let's skip this one so
+    // unless Arg 1 is empty.
+    if ((empty($view->args[1]) || $view->args[1] == 'all') && !empty($view->args[0])) {
+      foreach (explode('+', $view->args[0]) as $id) {
+        if ($id != 'all') {
+          $options['query']['f[' . $i++ . ']'] = "field_news_categories:{$id}";
+        }
+      }
+    }
+
+    // Arg 1 is id from field_news_location
+    if (!empty($view->args[1])) {
+      foreach (explode('+', $view->args[1]) as $id) {
+        if ($id != 'all') {
+          $options['query']['f[' . $i++ . ']'] = "field_news_location:{$id}";
+        }
+      }
+    }
+
+    $theme = views_theme_functions('views_more', $view, $view->current_display);
+    $path = check_url(url('news', $options));
+
+    $variables['more'] = theme($theme, array('more_url' => $path, 'new_window' => FALSE, 'link_text' => t('More'), 'view' => $view));
+  }
+}
