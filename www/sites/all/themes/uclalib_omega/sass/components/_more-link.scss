@@ -28,7 +28,8 @@
 }
 
 div.more-link > a,
-a.more-link {
+a.more-link,
+%more-link {
   color: $ucla-blue;
   @extend .more-link-triangle-after;
 }
@@ -40,6 +41,6 @@ a.more-link {
   padding: 20px;
   text-align: center;
   a {
-    @extend .more-link;
+    @extend %more-link;
   }
 }
