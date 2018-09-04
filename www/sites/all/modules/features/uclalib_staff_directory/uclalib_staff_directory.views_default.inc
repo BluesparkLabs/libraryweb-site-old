@@ -889,6 +889,15 @@ function uclalib_staff_directory_views_default_views() {
     'image_style' => '',
     'image_link' => '',
   );
+  /* Sort criterion: Search: Relevance */
+  $handler->display->display_options['sorts']['search_api_relevance']['id'] = 'search_api_relevance';
+  $handler->display->display_options['sorts']['search_api_relevance']['table'] = 'search_api_index_site_general_search';
+  $handler->display->display_options['sorts']['search_api_relevance']['field'] = 'search_api_relevance';
+  $handler->display->display_options['sorts']['search_api_relevance']['order'] = 'DESC';
+  /* Sort criterion: Indexed Content: Staff Alpha */
+  $handler->display->display_options['sorts']['field_staff_glossary_index']['id'] = 'field_staff_glossary_index';
+  $handler->display->display_options['sorts']['field_staff_glossary_index']['table'] = 'search_api_index_site_general_search';
+  $handler->display->display_options['sorts']['field_staff_glossary_index']['field'] = 'field_staff_glossary_index';
   /* Filter criterion: Indexed Content: Content type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'search_api_index_site_general_search';
