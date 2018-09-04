@@ -240,8 +240,9 @@ function uclalib_upcoming_events_preprocess_views_view(&$variables) {
     $options = [];
     $i = 0;
 
-    // Arg 0 is id from field_news_categories, so let's skip this one so
-    // unless Arg 1 is empty.
+    // Arg 0 is a term id for field_news_categories, so for a simplified more
+    // link that casts a wider net, do not add this filter this unless
+    // Location is empty.
     if ((empty($view->args[1]) || $view->args[1] == 'all') && !empty($view->args[0])) {
       foreach (explode('+', $view->args[0]) as $id) {
         if ($id != 'all') {
@@ -250,13 +251,21 @@ function uclalib_upcoming_events_preprocess_views_view(&$variables) {
       }
     }
 
-    // Arg 1 is id from field_news_location
+    // Arg 1 is a node id for field_news_location, it should be added to the
+    // view's more link when it is non-empty and not set to 'all'.
     if (!empty($view->args[1])) {
       foreach (explode('+', $view->args[1]) as $id) {
         if ($id != 'all') {
           $options['query']['f[' . $i++ . ']'] = "field_news_location:{$id}";
         }
       }
+    }
+
+    // Arg 2 is an id or ids for Subject Area, however the subject area is not
+    // exposed facet filter on /news search page, therefore we're obliged to
+    // ignore it in the more link.
+    if (!empty($view->args[2])) {
+      // do nothing.
     }
 
     $theme = views_theme_functions('views_more', $view, $view->display[$display_id]);
