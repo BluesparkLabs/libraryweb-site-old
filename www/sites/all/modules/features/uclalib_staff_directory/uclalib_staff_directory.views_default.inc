@@ -422,6 +422,7 @@ function uclalib_staff_directory_views_default_views() {
   $handler->display->display_options['fields']['name']['relationship'] = 'term_node_tid';
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Taxonomy term: Name */
   $handler->display->display_options['sorts']['name']['id'] = 'name';
@@ -742,14 +743,14 @@ function uclalib_staff_directory_views_default_views() {
   $handler->display->display_options['fields']['name']['element_type'] = 'h1';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
-  /* Field: Broken/missing handler */
+  /* Field: Taxonomy term: Department Social Links */
   $handler->display->display_options['fields']['field_department_social_links']['id'] = 'field_department_social_links';
   $handler->display->display_options['fields']['field_department_social_links']['table'] = 'field_data_field_department_social_links';
   $handler->display->display_options['fields']['field_department_social_links']['field'] = 'field_department_social_links';
   $handler->display->display_options['fields']['field_department_social_links']['label'] = '';
   $handler->display->display_options['fields']['field_department_social_links']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_department_social_links']['element_label_colon'] = FALSE;
-  /* Field: Broken/missing handler */
+  /* Field: Taxonomy term: Department Locations */
   $handler->display->display_options['fields']['field_department_locations']['id'] = 'field_department_locations';
   $handler->display->display_options['fields']['field_department_locations']['table'] = 'field_data_field_department_locations';
   $handler->display->display_options['fields']['field_department_locations']['field'] = 'field_department_locations';
@@ -778,7 +779,7 @@ function uclalib_staff_directory_views_default_views() {
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
-  /* Field: Broken/missing handler */
+  /* Field: Taxonomy term: Department Phone */
   $handler->display->display_options['fields']['field_department_phone']['id'] = 'field_department_phone';
   $handler->display->display_options['fields']['field_department_phone']['table'] = 'field_data_field_department_phone';
   $handler->display->display_options['fields']['field_department_phone']['field'] = 'field_department_phone';
