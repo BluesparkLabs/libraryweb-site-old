@@ -41,12 +41,18 @@
     });
     mc.checkBreakpoint( mc.media );
 
-    $(mc.element).find(mc.options.titleSelector).on('click', function (e) {
+    console.log(mc.options.titleSelector);
+    $el.find(mc.options.titleSelector).on('click', function (e) {
       if (mc.media.matches) {
         e.preventDefault();
         mc.toggle();
       }
     });
+
+    // Prevent clicks on active links to the current page.
+    $el.find('.active').on('click', function (e) {
+      e.preventDefault();
+    })
     $el.addClass('mobile-collapsible-processed');
   }
 
