@@ -13,6 +13,7 @@ $(document).ready(function() {
         var $checkbox = $(this).find(':checkbox');
         if( $checkbox[0].checked == 1 ){
             $checkbox[0].checked=0;
+            $checkbox[0].value=0;
             $(this)[0].className="ui fluid card withCheckDivTouch";
             var x = document.getElementsByName("researchCheckbox");
             var i;
@@ -32,6 +33,7 @@ $(document).ready(function() {
 
         } else {
             $checkbox[0].checked=1;
+            $checkbox[0].value=1;
             $(this)[0].className="ui fluid card withCheckDivTouchOn"
             document.getElementById("submitResearchAssistance").disabled = false;
         }
@@ -43,6 +45,7 @@ $(document).ready(function() {
       var $checkbox = $(this).find(':checkbox');
       if( $checkbox[0].checked == 1 ){
           $checkbox[0].checked=0;
+          $checkbox[0].value=0;
           var x = document.getElementsByName("researchCheckbox");
           var i;
           var j = 0;
@@ -61,6 +64,7 @@ $(document).ready(function() {
 
         } else {
           $checkbox[0].checked=1;
+          $checkbox[0].value=1;
           document.getElementById("submitResearchAssistance").disabled = false;
       }
     });
@@ -464,6 +468,8 @@ function editMinutesResearch() {
     /* Gather relevant elements. */
     var object =
         $('#minutesResearch')
+            .children('div.content.middle.aligned')
+            .children('div.ui.inverted.segment.left.floated')
             .children('div.ui.tiny.inverted.statistics.left.floated')
             .children('div.statistic')
             .children('div.value');
