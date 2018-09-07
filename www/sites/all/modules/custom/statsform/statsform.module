@@ -533,9 +533,7 @@ $sansfPatronType = check_plain($_POST['sfPatronType']);
 <modeID>".$sansfModeID003."</modeID>
 <count>".$sansfPolicyVal."</count>
 </stats>
-<referral>
-<text>".$sansfReferralVal."</text>
-</referral>
+<referral>".$sansfReferralVal."</referral>
 <interaction>
 <topic>".$sansfTopic."</topic>
 <departmentID>".$sansfDeptID."</departmentID>
