@@ -3825,24 +3825,18 @@ document.getElementById('sfUnitGroupID').value
             // This referral checkbox has extra code to allow an expanded touch area for use on tablets
             $('.referralCheckboxArea').click(function( event ) {
               if( document.getElementById("referralCheckbox").checked == 1 ) {
-alert("0");
                 if( $(event.target)[0].id == 'referralCheckbox' ){
-alert("1");
                   document.getElementById("referralCheckbox").value = 1;
                   document.getElementById("referralCheckbox").checked = 1;
                 } else {
-alert("2");
                   document.getElementById("referralCheckbox").value = 0;
                   document.getElementById("referralCheckbox").checked = 0;
                 }
               } else {
-alert("3");
                 if( $(event.target)[0].id == 'referralCheckbox' ){
-alert("4");
                   document.getElementById("referralCheckbox").value = 0;
                   document.getElementById("referralCheckbox").checked = 0;
                 } else {
-alert("5");
                   document.getElementById("referralCheckbox").value = 1;
                   document.getElementById("referralCheckbox").checked = 1;
                 }
@@ -5107,10 +5101,6 @@ alert("5");
 
                 // Get the request URL without the query string
                 ///var ajaxUrl = ajaxQuickQuestions.attr('href').split('?');
-
-alert(document.getElementById("referralCheckbox").value);
-
-
                 $.ajax({
                   type: "POST",
                   url: "/statsform/ajax",
