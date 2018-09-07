@@ -3697,6 +3697,7 @@ document.getElementById('sfUnitGroupID').value
             document.getElementById("commentTopic").value = "";
             document.getElementById("exboxCourseSection").value = "";
             document.getElementById("referralCheckbox").checked = false;
+            document.getElementById("referralCheckbox").value = 0;
             document.getElementById("researchCheckbox").checked = false;
             document.getElementById("researchCheckbox").value = 0;
             document.getElementById("technicalCheckbox").checked = false;
@@ -3824,18 +3825,24 @@ document.getElementById('sfUnitGroupID').value
             // This referral checkbox has extra code to allow an expanded touch area for use on tablets
             $('.referralCheckboxArea').click(function( event ) {
               if( document.getElementById("referralCheckbox").checked == 1 ) {
+alert("0");
                 if( $(event.target)[0].id == 'referralCheckbox' ){
+alert("1");
                   document.getElementById("referralCheckbox").value = 1;
                   document.getElementById("referralCheckbox").checked = 1;
                 } else {
+alert("2");
                   document.getElementById("referralCheckbox").value = 0;
                   document.getElementById("referralCheckbox").checked = 0;
                 }
               } else {
+alert("3");
                 if( $(event.target)[0].id == 'referralCheckbox' ){
+alert("4");
                   document.getElementById("referralCheckbox").value = 0;
                   document.getElementById("referralCheckbox").checked = 0;
                 } else {
+alert("5");
                   document.getElementById("referralCheckbox").value = 1;
                   document.getElementById("referralCheckbox").checked = 1;
                 }
@@ -5101,6 +5108,9 @@ document.getElementById('sfUnitGroupID').value
                 // Get the request URL without the query string
                 ///var ajaxUrl = ajaxQuickQuestions.attr('href').split('?');
 
+alert(document.getElementById("referralCheckbox").value);
+
+
                 $.ajax({
                   type: "POST",
                   url: "/statsform/ajax",
@@ -5123,7 +5133,7 @@ document.getElementById('sfUnitGroupID').value
                     'sfCourse': document.getElementById("exboxCourseSection").value,
                     'sfTypeID004': '13',
                     'sfModeID004': document.getElementById("interactionModeInput").value,
-                    'sfReferralCount': document.getElementById("referralCheckbox").value,
+                    'sfReferralVal': document.getElementById("referralCheckbox").value,
                     'sfTypeID006': '05',
                     'sfModeID006': document.getElementById("interactionModeInput").value,
                     'sfResearchAsst': document.getElementById("researchCheckbox").value,
