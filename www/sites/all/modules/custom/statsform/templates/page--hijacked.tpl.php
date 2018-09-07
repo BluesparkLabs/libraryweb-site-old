@@ -3324,7 +3324,7 @@ document.getElementById('sfUnitGroupID').value
                           <div class="ui inverted segment left floated">
                             <div class="ui tiny inverted statistics left floated"> 
                               <div class="statistic">
-                                <div class="value" id="patronCount">0</div> 
+                                <div class="value" id="patronCount">1</div> 
                                 <div class="label">Count</div>
                               </div>
                             </div>
@@ -3343,7 +3343,7 @@ document.getElementById('sfUnitGroupID').value
                           <div class="ui inverted segment left floated">
                             <div class="ui tiny inverted statistics left floated"> 
                               <div class="statistic">
-                                <div class="value" id="minuteCount">0</div> 
+                                <div class="value" id="minuteCount">1</div> 
                                 <div class="label">Minutes</div>
                               </div>
                             </div>
@@ -3707,8 +3707,8 @@ document.getElementById('sfUnitGroupID').value
             document.getElementById("directionalCheckbox").value = 0;
             document.getElementById("policyCheckbox").checked = false;
             document.getElementById("policyCheckbox").value = 0;
-            document.getElementById("patronCount").textContent = 0;
-            document.getElementById("minuteCount").textContent = 0;
+            document.getElementById("patronCount").textContent = 1;
+            document.getElementById("minuteCount").textContent = 1;
             document.getElementById("sfResearchCheckbox").className="ui fluid card withCheckDivTouch";
             document.getElementById("sfTechnicalCheckbox").className="ui fluid card withCheckDivTouch";
             document.getElementById("sfLookupCheckbox").className="ui fluid card withCheckDivTouch";
