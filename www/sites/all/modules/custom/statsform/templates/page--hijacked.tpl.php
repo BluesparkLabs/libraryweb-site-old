@@ -2970,14 +2970,10 @@ document.getElementById('sfUnitGroupID').value
           <div class="ui top attached tabular menu" id="tabTabular">
             <a class="active item" id="tabQuick" data-tab="quickQuestionsTab">Quick Questions</a>
             <a class="active grey item" id="tabResearch" data-tab="researchAssistance">Research Assistance</a>
-            <a class="active disabled grey item" data-tab="reportsTabOFF">Reports</a>
-
-
-
-
+            <a class="active grey item" href="https://reports.library.ucla.edu" target="_blank" rel="noopener noreferrer">Reports (opens a new tab)</a>
+            <a class="active grey item" href="https://reports.library.ucla.edu" onclick="
+window.open(this.href, 'mywin', 'right=20,top=20,width=1024,height=768,toolbar=1,resizable=1'); return false;" >Reports (opens a new window)</a>
           </div>
-
-
         </div>
         <!-- PAGE TOP CONTENT - END -->
 
@@ -3122,7 +3118,10 @@ document.getElementById('sfUnitGroupID').value
           <div class="ui top attached tabular menu">
             <a class="active grey item" data-tab="quickQuestionsTab">Quick Questions</a>
             <a class="active item" data-tab="researchAssistance">Research Assistance</a>
-            <a class="active disabled grey item" data-tab="reportsTabOFF">Reports</a>
+            <a class="active grey item" href="https://reports.library.ucla.edu" target="_blank" rel="noopener noreferrer">Reports (opens a new tab)</a>
+            <a class="active grey item" href="https://reports.library.ucla.edu" onclick="
+window.open(this.href, 'mywin', 'right=20,top=20,width=1024,height=768,toolbar=1,resizable=1'); return false;" >Reports (opens a new window)</a>
+
           </div>
         </div>
         <!-- PAGE TOP CONTENT - END -->
