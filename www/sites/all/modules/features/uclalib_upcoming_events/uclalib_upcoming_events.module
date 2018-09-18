@@ -237,7 +237,7 @@ function uclalib_upcoming_events_preprocess_views_view(&$variables) {
   // the news location field from views context.
   if ($view->name == 'recent_news_highlight' && in_array($view->current_display, array('panel_pane_1', 'panel_pane_2'))) {
 
-    $options = [];
+    $options = array();
     $i = 0;
 
     // Arg 0 is a term id for field_news_categories, so for a simplified more
