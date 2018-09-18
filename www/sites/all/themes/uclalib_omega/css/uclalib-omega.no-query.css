@@ -3640,6 +3640,8 @@ body.section-staff-departments .panel-sidebar-left-golden .l-region--sidebar-lef
 .l-region--sidebar-left .pane-uclalib-nav .pane-title a.active {
   background: #1e4b87;
   color: #fff;
+  cursor: default;
+  text-decoration: none;
 }
 .sidebar-tier-1 li a.active:hover, .l-region--sidebar-left .pane-sibling-content li a.active:hover, .l-region--sidebar-left .pane-sub-content li a.active:hover, .l-region--sidebar-left .pane-uclalib-nav li a.active:hover,
 .sidebar-tier-1 .pane-title a.active:hover,

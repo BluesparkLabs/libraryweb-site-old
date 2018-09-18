@@ -28,6 +28,8 @@
     a.active {
       background: $ucla-blue;
       color: #fff;
+      cursor: default;
+      text-decoration: none;
     }
     a.active:hover {
       text-decoration: none;
