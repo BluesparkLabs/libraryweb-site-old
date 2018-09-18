@@ -83,7 +83,7 @@ function uclalib_quick_find_views_default_views() {
   $handler->display->display_options['fields']['name']['relationship'] = 'field_quick_find_terms_target_id';
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['text'] = '<a href="/locations?f[0]=field_equipment%3A[tid]">[name]</a>';
+  $handler->display->display_options['fields']['name']['alter']['text'] = '<a href="/locations?f[0]=field_equipment&#37;3A[tid]">[name]</a>';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   /* Contextual filter: Block: Internal, numeric block ID */
   $handler->display->display_options['arguments']['bid']['id'] = 'bid';
