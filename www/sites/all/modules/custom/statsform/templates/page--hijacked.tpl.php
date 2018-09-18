@@ -21,12 +21,6 @@
       <link rel="stylesheet" type="text/css" src="/<?php print( $page['sf_path'] ); ?>/templates/custom.tap.css">
       <link rel="stylesheet" type="text/css" href="/<?php print( $page['sf_path'] ); ?>/templates/responsive-full-background-image.css">
     
-      <script type='text/javascript'>
-        $(window).load(function(){
-          var bcolor = "show huge ui blue button";
-
-        });
-      </script>
 
       <style id="jsbin-css">
         @charset "UTF-8";
@@ -3091,7 +3085,7 @@ window.open(this.href, 'mywin', 'right=20,top=20,width=1024,height=768,toolbar=1
 
                     <div class="eight wide column"> 
                       <div class="ui fluid card ">
-                        <button style = "height: 120px" class=" ui button" id="submitQuickQuestions"> <h1 style = "font-size:70px"> SUBMIT </h1> </button>
+                        <button style = "height: 120px" class=" ui button" id="submitQuickQuestions" data-value="valNotUsed"> <h1 style = "font-size:70px"> SUBMIT </h1> </button>
                       </div>
                     </div>
 
@@ -3365,7 +3359,7 @@ window.open(this.href, 'mywin', 'right=20,top=20,width=1024,height=768,toolbar=1
 
                     <div class="eight wide right floated column">
                       <div class="ui fluid card ">
-                        <button style = "height: 120px" class=" ui button" id="submitResearchAssistance"> <h1 style = "font-size:70px"> SUBMIT </h1> </button>
+                        <button style = "height: 120px" class=" ui button" id="submitResearchAssistance" data-value="valNotUsed"> <h1 style = "font-size:70px"> SUBMIT </h1> </button>
                       </div>
                     </div>
 
@@ -4888,12 +4882,17 @@ window.open(this.href, 'mywin', 'right=20,top=20,width=1024,height=768,toolbar=1
     
     
               // disable the submit button "Go to Login" if Unit or Service Point or Login Type are not set chosen - else enable
+
+if ( document.getElementById("submit0") ) {
+
               if( (document.getElementById("result").textContent == "Choose Library Unit") || (document.getElementById("servicePoint").textContent == "Choose Service Point") || ((document.getElementById("unitIndividual").textContent == "Choose Single Login") && (document.getElementById("unitGroup").textContent == "Choose Group Login")) ) {
     
                 document.getElementById("submit0").disabled = true;
               } else {
                 document.getElementById("submit0").disabled = false;
               }
+}
+
             });
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             // if a button is tapped
