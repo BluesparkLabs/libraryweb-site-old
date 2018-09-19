@@ -5048,7 +5048,7 @@ if ( document.getElementById("submit0") ) {
                       'sfTypeID003': '12',
                       'sfModeID003': '01',
                       'sfPolicyVal': document.getElementById("policyVal").textContent,
-                      'sfTypeID004': '01',
+                      'sfTypeID004': '13',
                       'sfModeID004': '01',
                       'sfReferralCount': document.getElementById("referralCount").textContent,
                       'sfTypeID005': '10',
