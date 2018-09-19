@@ -3314,7 +3314,7 @@ window.open(this.href, 'mywin', 'right=20,top=20,width=1024,height=768,toolbar=1
                     <div class="four wide column"> 
                       <div class="ui fluid card withCount" id="peopleResearch">
                         <div class="content middle aligned">
-                          <div class="ui inverted segment left floated">
+                          <div class="ui inverted segment left floated" id="people">
                             <div class="ui tiny inverted statistics left floated"> 
                               <div class="statistic">
                                 <div class="value" id="patronCount">1</div> 
@@ -3333,7 +3333,7 @@ window.open(this.href, 'mywin', 'right=20,top=20,width=1024,height=768,toolbar=1
                     <div class="four wide column"> 
                       <div class="ui fluid card withCount" id="minutesResearch">
                         <div class="content middle aligned">
-                          <div class="ui inverted segment left floated">
+                          <div class="ui inverted segment left floated" id="minutes">
                             <div class="ui tiny inverted statistics left floated"> 
                               <div class="statistic">
                                 <div class="value" id="minuteCount">1</div> 

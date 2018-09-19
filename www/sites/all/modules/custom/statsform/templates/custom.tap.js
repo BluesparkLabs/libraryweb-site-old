@@ -80,19 +80,19 @@ $(document).ready(function() {
         }
     });
 
-    $('#directionsArea').on('taphold', editDirections);
-    $('#lookupArea').on('taphold', editLookup);
-    $('#policyArea').on('taphold', editPolicy);
-    $('#researchArea').on('taphold', editResearch);
-    $('#technicalArea').on('taphold', editTechnical);
+    $('#directions').on('click', editDirections);
+    $('#lookup').on('click', editLookup);
+    $('#policy').on('click', editPolicy);
+    $('#research').on('click', editResearch);
+    $('#technical').on('click', editTechnical);
 
     $('#directionsResearch').on('taphold', editDirectionsResearch);
     $('#lookupResearch').on('taphold', editLookupResearch);
     $('#policyResearch').on('taphold', editPolicyResearch);
     $('#researchResearch').on('taphold', editResearchResearch);
     $('#technicalResearch').on('taphold', editTechnicalResearch);
-    $('#peopleResearch').on('taphold', editPeopleResearch);
-    $('#minutesResearch').on('taphold', editMinutesResearch);
+    $('#people').on('click', editPeopleResearch);
+    $('#minutes').on('click', editMinutesResearch);
 });
 
 /******************************************************************************
@@ -175,7 +175,7 @@ function editDirections() {
     var object_modal = $('#directions-modal');
 
     /* Show modal with current count as default. */
-    object_count.val(current_value);
+    object_count.val(current_value+1);
     object_modal.modal('show');
 
     /* Update count on 'Enter', and hide modal. */
@@ -202,7 +202,7 @@ function editLookup() {
     var object_modal = $('#lookup-modal');
 
     /* Show modal with current count as default. */
-    object_count.val(current_value);
+    object_count.val(current_value+1);
     object_modal.modal('show');
 
     /* Update count on 'Enter', and hide modal. */
@@ -229,7 +229,7 @@ function editPolicy() {
     var object_modal = $('#policy-modal');
 
     /* Show modal with current count as default. */
-    object_count.val(current_value);
+    object_count.val(current_value+1);
     object_modal.modal('show');
 
     /* Update count on 'Enter', and hide modal. */
@@ -256,7 +256,7 @@ function editResearch() {
     var object_modal = $('#research-modal');
 
     /* Show modal with current count as default. */
-    object_count.val(current_value);
+    object_count.val(current_value+1);
     object_modal.modal('show');
 
     /* Update count on 'Enter', and hide modal. */
@@ -283,7 +283,7 @@ function editTechnical() {
     var object_modal = $('#technical-modal');
 
     /* Show modal with current count as default. */
-    object_count.val(current_value);
+    object_count.val(current_value+1);
     object_modal.modal('show');
 
     /* Update count on 'Enter', and hide modal. */
@@ -449,7 +449,7 @@ function editPeopleResearch() {
     var object_modal = $('#peopleResearch-modal');
 
     /* Show modal with current count as default. */
-    object_count.val(current_value);
+    object_count.val(current_value+1);
     object_modal.modal('show');
 
     /* Update count on 'Enter', and hide modal. */
@@ -478,7 +478,7 @@ function editMinutesResearch() {
     var object_modal = $('#minutesResearch-modal');
 
     /* Show modal with current count as default. */
-    object_count.val(current_value);
+    object_count.val(current_value+1);
     object_modal.modal('show');
 
     /* Update count on 'Enter', and hide modal. */
