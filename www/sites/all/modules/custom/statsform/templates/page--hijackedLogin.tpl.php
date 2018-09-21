@@ -3929,7 +3929,7 @@
                 //
                 case ($(this).data("value").match(/^reLogin/) || {}).input:
 //alert("cvbncvbncvbn");
-//                  location.href = '/services/statsformLogin';
+//                  location.href = '/services/statsform';
 //                  $('.ui.united.large.reLoginConfSpinner.modal')
 //                    .modal('setting', 'closable', false)
 //                    $('#reLoginConfSpinner').modal('show')

@@ -14,7 +14,7 @@ global $base_url;
 function statsform_menu() {
   $items = array();
   
-  $items['services/statsformLogin'] = array(
+  $items['services/statsform'] = array(
     'title' => 'Stats Form Login Chooser',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('statsform_page_one'),
@@ -90,7 +90,7 @@ function statsform_user_login(&$edit, $account) {
       if(in_array('statsform',$account->roles)) {
         drupal_goto('statsform/form');
       } else {
-        drupal_goto( $base_url.'services/statsformLogin' );
+        drupal_goto( $base_url.'services/statsform' );
       }
     }
   }
@@ -161,7 +161,7 @@ function statsform_page_alter(&$page) {
       // Chooser
       // Chooser
       // Chooser
-      if (arg(1) == 'statsformLogin') {
+      if (arg(1) == 'statsform') {
 
         // set page name: 0=pre, 1=login, 2=form
         $sf_page_name = 0;
@@ -254,7 +254,7 @@ function statsform_page_alter(&$page) {
 //        $_GET['destination'] = drupal_get_destination();
           $sfsd = user_logout();
         } else if( $sf_user_login == 1  && $query_parameters[reloginhereflag] != 2 ) {
-          drupal_goto( $base_url.'services/statsformLogin?missingParm=1' );
+          drupal_goto( $base_url.'services/statsform?missingParm=1' );
         }
 
 
@@ -277,7 +277,7 @@ function statsform_page_alter(&$page) {
             ( $sf_user_login == 0 )
             ) {
               // go back to the start with an error message: missing parameters (prevents direct loading without parameters)
-              drupal_goto( $base_url.'services/statsformLogin?missingParm=1' );
+              drupal_goto( $base_url.'services/statsform?missingParm=1' );
 
           // looks good, build out the Form page
           } else {
@@ -316,11 +316,11 @@ function statsform_page_alter(&$page) {
           // else, the user may already be logged in but not in group
           //  send user to help page with directions to ask supervisor to add user to the Drupal statsform role
         } else if (!empty($sf_user->uid) && ($sf_user->uid >= 0) && $roleFlag == 0 ){
-          drupal_goto( $base_url.'services/statsformLogin' ); // temp until help page is available
+          drupal_goto( $base_url.'services/statsform' ); // temp until help page is available
 
         // else, user is not logged; send user to web app pre-login page
         } else {
-          drupal_goto( $base_url.'services/statsformLogin' );
+          drupal_goto( $base_url.'services/statsform' );
         }
       }
     } else if (arg(0) == 'app') {
@@ -339,7 +339,7 @@ function statsform_page_alter(&$page) {
         $_SESSION['statsform']['sfShib'] = 1;
         drupal_goto('statsform/form');
       } else {
-        drupal_goto( $base_url.'services/statsformLogin?groupMember=0' );
+        drupal_goto( $base_url.'services/statsform?groupMember=0' );
       }
     }
   }
@@ -398,7 +398,7 @@ function logout_request_callback() {
 
     // Finally, destroy the session.
     session_destroy();
-    drupal_goto( $base_url.'services/statsformLogin' );
+    drupal_goto( $base_url.'services/statsform' );
   }
   exit;
 }

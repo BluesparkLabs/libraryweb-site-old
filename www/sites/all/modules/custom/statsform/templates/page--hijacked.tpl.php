@@ -2964,9 +2964,6 @@ document.getElementById('sfUnitGroupID').value
           <div class="ui top attached tabular menu" id="tabTabular">
             <a class="active item" id="tabQuick" data-tab="quickQuestionsTab">Quick Questions</a>
             <a class="active grey item" id="tabResearch" data-tab="researchAssistance">Research Assistance</a>
-            <a class="active grey item" href="https://reports.library.ucla.edu" target="_blank" rel="noopener noreferrer">Reports (opens a new tab)</a>
-            <a class="active grey item" href="https://reports.library.ucla.edu" onclick="
-window.open(this.href, 'mywin', 'right=20,top=20,width=1024,height=768,toolbar=1,resizable=1'); return false;" >Reports (opens a new window)</a>
           </div>
         </div>
         <!-- PAGE TOP CONTENT - END -->
@@ -4855,7 +4852,7 @@ window.open(this.href, 'mywin', 'right=20,top=20,width=1024,height=768,toolbar=1
                 // Login, reLogin
                 //
                 case ($(this).data("value").match(/^reLogin/) || {}).input:
-                  location.href = '/services/statsformLogin?reLogin=1';
+                  location.href = '/services/statsform?reLogin=1';
                   $('.ui.united.large.reLoginConfSpinner.modal')
                     .modal('setting', 'closable', false)
                     $('#reLoginConfSpinner').modal('show')

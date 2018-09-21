@@ -183,6 +183,11 @@ function editDirections() {
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if (keycode == '13') {
             var new_value = parseInt(object_count.val());
+
+            /* if the entry is not a number (NaN), replace it with a 0 */
+            if(new_value !== new_value) {
+              new_value = 0;
+            }
             object.text(new_value);
             object_modal.modal('hide');
         }
@@ -210,6 +215,11 @@ function editLookup() {
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if (keycode == '13') {
             var new_value = parseInt(object_count.val());
+
+            /* if the entry is not a number (NaN), replace it with a 0 */
+            if(new_value !== new_value) {
+              new_value = 0;
+            }
             object.text(new_value);
             object_modal.modal('hide');
         }
@@ -237,6 +247,11 @@ function editPolicy() {
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if (keycode == '13') {
             var new_value = parseInt(object_count.val());
+
+            /* if the entry is not a number (NaN), replace it with a 0 */
+            if(new_value !== new_value) {
+              new_value = 0;
+            }
             object.text(new_value);
             object_modal.modal('hide');
         }
@@ -264,6 +279,11 @@ function editResearch() {
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if (keycode == '13') {
             var new_value = parseInt(object_count.val());
+
+            /* if the entry is not a number (NaN), replace it with a 0 */
+            if(new_value !== new_value) {
+              new_value = 0;
+            }
             object.text(new_value);
             object_modal.modal('hide');
         }
@@ -291,6 +311,11 @@ function editTechnical() {
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if (keycode == '13') {
             var new_value = parseInt(object_count.val());
+
+            /* if the entry is not a number (NaN), replace it with a 0 */
+            if(new_value !== new_value) {
+              new_value = 0;
+            }
             object.text(new_value);
             object_modal.modal('hide');
         }
@@ -320,6 +345,11 @@ function editDirectionsResearch() {
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if (keycode == '13') {
             var new_value = parseInt(object_count.val());
+
+            /* if the entry is not a number (NaN), replace it with a 0 */
+            if(new_value !== new_value) {
+              new_value = 0;
+            }
             object.text(new_value);
             object_modal.modal('hide');
         }
@@ -347,6 +377,11 @@ function editLookupResearch() {
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if (keycode == '13') {
             var new_value = parseInt(object_count.val());
+
+            /* if the entry is not a number (NaN), replace it with a 0 */
+            if(new_value !== new_value) {
+              new_value = 0;
+            }
             object.text(new_value);
             object_modal.modal('hide');
         }
@@ -374,6 +409,11 @@ function editPolicyResearch() {
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if (keycode == '13') {
             var new_value = parseInt(object_count.val());
+
+            /* if the entry is not a number (NaN), replace it with a 0 */
+            if(new_value !== new_value) {
+              new_value = 0;
+            }
             object.text(new_value);
             object_modal.modal('hide');
         }
@@ -401,6 +441,11 @@ function editResearchResearch() {
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if (keycode == '13') {
             var new_value = parseInt(object_count.val());
+
+            /* if the entry is not a number (NaN), replace it with a 0 */
+            if(new_value !== new_value) {
+              new_value = 0;
+            }
             object.text(new_value);
             object_modal.modal('hide');
         }
@@ -428,6 +473,11 @@ function editTechnicalResearch() {
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if (keycode == '13') {
             var new_value = parseInt(object_count.val());
+
+            /* if the entry is not a number (NaN), replace it with a 0 */
+            if(new_value !== new_value) {
+              new_value = 0;
+            }
             object.text(new_value);
             object_modal.modal('hide');
         }
@@ -457,6 +507,11 @@ function editPeopleResearch() {
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if (keycode == '13') {
             var new_value = parseInt(object_count.val());
+
+            /* if the entry is not a number (NaN), replace it with a 0 */
+            if(new_value !== new_value) {
+              new_value = 0;
+            }
             object.text(new_value);
             object_modal.modal('hide');
         }
@@ -486,6 +541,11 @@ function editMinutesResearch() {
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if (keycode == '13') {
             var new_value = parseInt(object_count.val());
+
+            /* if the entry is not a number (NaN), replace it with a 0 */
+            if(new_value !== new_value) {
+              new_value = 0;
+            }
             object.text(new_value);
             object_modal.modal('hide');
         }

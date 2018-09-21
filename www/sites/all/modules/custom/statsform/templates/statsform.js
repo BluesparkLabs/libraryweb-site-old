@@ -1077,7 +1077,7 @@
                 // Login, reLogin
                 //
                 case ($(this).data("value").match(/^reLogin/) || {}).input:
-                  location.href = '/services/statsformLogin?reLogin=1';
+                  location.href = '/services/statsform?reLogin=1';
                   $('.ui.united.large.reLoginConfSpinner.modal')
                     .modal('setting', 'closable', false)
                     $('#reLoginConfSpinner').modal('show')
