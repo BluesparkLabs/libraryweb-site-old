@@ -70,6 +70,7 @@ function statsform_menu() {
 /**
  * Implements hook_permission().
  */
+/** Temporary role removal
 function statsform_permission() {
   return array(
     'Use statsform' => array(
@@ -78,7 +79,7 @@ function statsform_permission() {
     )
   );
 }
-
+*/
 
 //=============================================================================
 /**
