@@ -2667,6 +2667,31 @@
               </div>
           </div>
       </div>
+      
+      
+      <!-- Reports (Research Assistance) Modal -->
+      <div class="ui modal" id="reportsModal" style="left: auto; right: auto; top: auto; bottom: auto;">
+        
+        <div class="header initial">
+          Please choose one of the following
+        </div>
+        
+        <div class="content">
+          <a href="https://unitproj.library.ucla.edu/statistics/reference/reports/generator.cfm?Level=Library" target="_blank">Library-Wide Report Generator<br><br></a>
+          <a href="https://unitproj.library.ucla.edu/statistics/reference/reports/generator.cfm?Level=Unit" target="_blank">Unit-Specific Report Generator<br><br></a>
+          <a href="https://unitproj.library.ucla.edu/statistics/reference/reports/generator.cfm?Level=Account" target="_blank">Individual Account Report Generator (not working)<br><br></a>
+          <a href="https://unitproj.library.ucla.edu/statistics/export/index.cfm"target="_blank">Export Data<br><br></a>
+          <a href="https://shb.ais.ucla.edu/shibboleth-idp/profile/SAML2/POST/SSO?execution=e1s2"target="_blank">Jaspersoft Report</a>
+        </div>
+        
+        <div class="actions">
+         <div class="ui black deny button">
+          Cancel
+         </div>
+        </div>
+        
+      </div>
+
 
       <!-- MODAL for Research Assistance page - END -->
       <!-- MODALS END --------------------------------------------------------------------------------------- -->
@@ -2964,6 +2989,11 @@ document.getElementById('sfUnitGroupID').value
           <div class="ui top attached tabular menu" id="tabTabular">
             <a class="active item" id="tabQuick" data-tab="quickQuestionsTab">Quick Questions</a>
             <a class="active grey item" id="tabResearch" data-tab="researchAssistance">Research Assistance</a>
+            <a class="active grey item">
+              <div class="ui buttons">
+                <button data-modal="reportsModal" class="show ui basic button" id="reportsButton" name="reportsButton">Reports</button>
+              </div>
+            </a>            
           </div>
         </div>
         <!-- PAGE TOP CONTENT - END -->
@@ -3109,10 +3139,11 @@ document.getElementById('sfUnitGroupID').value
           <div class="ui top attached tabular menu">
             <a class="active grey item" data-tab="quickQuestionsTab">Quick Questions</a>
             <a class="active item" data-tab="researchAssistance">Research Assistance</a>
-            <a class="active grey item" href="https://reports.library.ucla.edu" target="_blank" rel="noopener noreferrer">Reports (opens a new tab)</a>
-            <a class="active grey item" href="https://reports.library.ucla.edu" onclick="
-window.open(this.href, 'mywin', 'right=20,top=20,width=1024,height=768,toolbar=1,resizable=1'); return false;" >Reports (opens a new window)</a>
-
+            <a class="active grey item">
+              <div class="ui buttons">
+                <button data-modal="reportsModal" class="show ui basic button" id="reportsButton" name="reportsButton">Reports</button>
+              </div>
+            </a>   
           </div>
         </div>
         <!-- PAGE TOP CONTENT - END -->
@@ -4010,7 +4041,11 @@ window.open(this.href, 'mywin', 'right=20,top=20,width=1024,height=768,toolbar=1
               if( $(this).attr('id') == "result" ) {
                 fromTab = 0;
                 modal = 'libraryUnits';
-
+                
+              //else if Reports button  
+              } else if ($(this).attr('id') == "reportsButton") {
+                modal = 'reportsModal';
+              
               // else if Service Point button is tapped before Unit is set
               } else if( ($(this).attr('id') == "servicePoint") && (result.textContent == "Choose Library Unit") ) {
                 alert("Please choose a Library Unit first.");
@@ -4134,10 +4169,11 @@ window.open(this.href, 'mywin', 'right=20,top=20,width=1024,height=768,toolbar=1
                   return false;
                 }
               }).modal("show");
-
+              
             // on button tap
             }).on("click", ".ui.button", function () {
 
+                
               // respond to the item tapped on in the modal
               switch ($(this).data("value")) {
 
@@ -4800,8 +4836,6 @@ window.open(this.href, 'mywin', 'right=20,top=20,width=1024,height=768,toolbar=1
                   $(".ui.modal").modal("hide");
                   document.getElementById("submit0").disabled = false;
                   break;
-
-
 
                 // Re-login here
                 //
